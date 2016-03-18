@@ -1,0 +1,41 @@
+# Associations in Rails
+
+You've made a simple app with only one data model. Now it's time to up our game and create multiple related models and associate them together.
+
+
+## Agenda
+
+1. Reading the docs
+2. What is Active Record?
+2. What is an association?
+3. Types of Associations
+4. belongs_to (and has_one)
+5. has_many
+6. has_many, :through
+7. has_and_belongs_to_many
+
+
+## Reading the docs
+- [Active Record Associations](http://guides.rubyonrails.org/association_basics.html)
+- Rails Guides and the Rails API are your best resources on the different associations and how they work
+- Sections 1 and 2 will be your starting point for learning about the different association types
+- Section 3 is for more advanced use cases, you'll probably only need this info periodically
+- Section 4 will be your bread and butter once you're comfortable with the basics
+
+
+## What is Active Record?
+- Active Record is what's called an Object Relational Mapper (ORM)
+- This is the magic sauce that translates regular Ruby methods into SQL statements to query the database
+- The purpose of an ORM is to abstract out the database and move your schema into your code
+- An extremely useful purpose of the ORM is to allow you to change databases without changing code
+
+
+## What is an association?
+- Associations are the mechanism used in Rails (and most database systems) to relate separate classes of data together.
+- For instance, you might have a Recipes model that is made up of many Ingredients. You can use the same Ingredients in many different Recipes, and we need a way to make that connection.
+
+
+## Types of Associations
+- 1-to-1 associations
+- 1-to-many associations
+- many-to-many associations

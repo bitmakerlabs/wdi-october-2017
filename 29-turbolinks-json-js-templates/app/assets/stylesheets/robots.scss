@@ -1,0 +1,21 @@
+// Place all the styles related to the Robots controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.robot-box {
+  float: left;
+  width: 50%;
+}
+
+#robot-details {
+  background-color: #e0e0e0;
+  min-height: 200px;
+}
+
+a {
+	display: block;
+}
+
+.is-active {
+	background-color: green;
+}

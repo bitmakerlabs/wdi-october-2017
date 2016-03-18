@@ -1,0 +1,14 @@
+html {
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+body {
+  margin: 2em auto;
+  padding: 0;
+  width: 85%;
+}
+
+h1 {
+  line-height: 1.1;
+}

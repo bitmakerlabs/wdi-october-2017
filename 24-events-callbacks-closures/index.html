@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EVENTS!</title>
+    <style>
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      html {
+        box-sizing: border-box;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 24px;
+      }
+
+      h1, h2, h3 {
+        margin-top: 0;
+      }
+
+      #container {
+        height: 5000px;
+        width: 100%;
+        background-color: #ccc;
+      }
+
+      #first-level {
+        min-height: 200px;
+        background-color: tomato;
+      }
+
+      #second-level {
+        min-height: 100px;
+        background-color: cornflowerblue;
+      }
+
+      .event-block {
+        width: 80%;
+        margin: 0 auto;
+        padding: 1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container" class="event-block">
+        <h1>Container</h1>
+        <div class="keypressed"></div>
+
+        <div id="first-level" class="event-block">
+          <h2>First Level</h2>
+
+          <div id="second-level" class="event-block">
+            <h3>Second Level</h3>
+
+            <a href="http://google.com" id="click-bait">Click Me!</a>
+          </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <!-- <script src="variables.js"></script> -->
+    <!-- <script src="closures.js"></script> -->
+  </body>
+</html>
