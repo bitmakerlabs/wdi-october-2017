@@ -23,31 +23,12 @@ So that...
 ## Prioritize
 
 - MUST HAVE
-As a user, I should be able to add a new contact
-As a user, I should be able to display all Contacts
-As a user, I should be able to edit a Contact
 
 - SHOULD HAVE
-As a user, I should be able to delete a Contact
-As a user, I should be able to search for a contact
-As a user, I should be able to sort my contacts
-As a user, I should be able to group my contacts
-As a user, I should be able to contact my contacts
-As a user, I should be able resolve duplicates
-As a user, I should be able to prioritize contact info
 
 - COULD HAVE
-As a user, I should be able to sync my contacts across devices
-As a user, I should be able to secure my contact list
-As a user, I should be able to upload a photo of each contact
-As a user, I should be able to share my contacts
-As a user, I should be able to share things with my contacts
-As a user, I should be able to store my contacts remotely
 
 - WON'T HAVE
-As a user, I should be able to hide my contacts
-As a user, I should be able to scroll through my contacts quickly
-As a user, I should be able to find relationships among my contacts
 
 
 
