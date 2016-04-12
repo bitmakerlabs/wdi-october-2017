@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Photogur</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag  'http://fonts.googleapis.com/css?family=Poiret+One|Lora' %>
+  </head>
+
+  <body>
+
+    <header>
+      <h1><%= link_to 'Photogur', root_path %></h1>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+
+  </body>
+</html>

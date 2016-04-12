@@ -1,0 +1,119 @@
+// Place all the styles related to the pictures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body, html {
+  margin: 0;
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* TYPOGRAPHY */
+body {
+  font-size:62.5%;
+  color: rgba(0,0,0,0.75);
+  font-family: 'Lora', sans-serif;
+}
+
+h1, h1 a {
+  font-size: 3.5rem;
+}
+
+h2, h2 a {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+main {
+  padding: 1rem 0.5rem;
+  margin-bottom: 40px;
+}
+
+/* BUTTONS AND LINKS */
+a, input[type="submit"] {
+  font-size: 1rem;
+  background: #eee;
+  padding: 0.2rem 0.3rem;
+}
+
+a {
+  color: rgba(0,0,0,0.8);
+  text-decoration: none;
+}
+
+a:active, a:focus {
+  color: rgba(0,0,0,0.75);
+}
+
+input[type="submit"] {
+  border: none;
+  font-family: Lora,serif;
+}
+
+input[type="submit"]:focus, input[type="submit"]:hover, main a:hover {
+  cursor: pointer;
+  background: #ddd;
+}
+
+
+/* HEADER */
+header {
+  background: #F7F9F9;
+  padding: 0.66rem;
+  line-height: 3.5rem;
+  box-shadow: 0 0.2rem 0.2rem rgba(0,0,0,0.5);
+}
+header h1 a:hover, header h1 a {
+  background : none;
+}
+
+h1, h1 a {
+  color: rgba(0,0,0,0.75);
+  font-family: 'Poiret One', cursive;
+  margin: 0;
+}
+
+/* PICTURES */
+.show-picture img, .picture img {
+  border: 0.1rem solid rgba(0,0,0,0.5);
+  padding: 0.8rem;
+}
+
+.picture img {
+  max-height: 250px;
+  max-width: 90%;
+}
+
+.picture {
+  float: left;
+  margin: 1rem;
+  width: 30%;
+  max-width: 500px;
+  min-width: 100px;
+}
+
+.pictures {
+  overflow: hidden;
+}
+
+p.description {
+  overflow: hidden;
+  height: 4rem;
+  margin: 0.25rem;
+}
+
+.image-frame a, .image-frame a:hover {
+  background: none;
+}
+
+.image-frame {
+  height: 255px;
+}

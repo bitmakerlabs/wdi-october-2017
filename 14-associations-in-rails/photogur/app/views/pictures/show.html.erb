@@ -1,0 +1,6 @@
+<section class="show-picture">
+  <p> <%= link_to 'Edit', edit_picture_path(@picture) %> <%= link_to 'Delete', picture_path(@picture), method: :delete, data: {confirm: "Are you sure?" } %> </p>
+  <p> <%= @picture.title %> </p>
+  <p> <%= @picture.description %> </p>
+  <%= image_tag @picture.url %>
+</section>
