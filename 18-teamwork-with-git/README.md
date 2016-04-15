@@ -11,12 +11,12 @@
 7. Pull requests
 
 
-### Class Mode
+## Typical Teamwork Workflow
 
-* I fork rainforest repo
+* I fork a repo
 * I add team as collaborators with write access
-* Everyone in the class clones that repo
-* I create a branch (add-review-validations)
+* Everyone in the group clones that repo
+* I create a feature branch (ie. add-review-validations)
 * I make changes and commit to the branch
 * I push the branch
 * Everyone pulls the latest on master
@@ -25,23 +25,37 @@
 * I merge the changes into master
 * Everyone pulls again
 
+## Branching
+### Creating a branch
+* git checkout -b my-feature-branch
+  * This will create a new branch called `my-feature-branch`
+  * This will also move you to your new branch
+
+### Moving between branches
+* git checkout another-branch
+
+### Git Them Bugs Exercise (Branching Drill)
+* Fork and clone the Git-Them-Bugs repo
+  * https://github.com/bitmakerlabs/wdi-git-them-bugs
 
 
-### Group Mode
 
+## Merging
+1. Checkout to the branch where you want to merge content into (ie. master)
+  * git checkout master
+2. Merge the changes from your feature branch (ie. my-feature-branch)
+  * git merge my-feature-branch
+3. If there are merge conflicts, resolve conflicts
+
+### Mad Libbing Exercise
+#### Getting started
 * Get into groups
-* One person forks the rainforest repo
-  * https://github.com/bitmakerlabs/rainforest
-* Owner adds group-mates as collaborators with write access
+* One person forks the Mad Libs repo
+  * https://github.com/bitmakerlabs/mad-libs
+* Owner adds teammates as collaborators with write access
 * Everyone in the group clones the repo
 
-* Divide up the tasks
-  * Add validations to the Review model
-  * Ensure that a Review belongs to a User
-  * Add a view for showing all of a user's reviews
-  * Add styles to the products#show view
-  * Add tags to products
-
+#### Exercise
 * Everyone makes a feature branch
 * Follow the usual edit-stage-commit process
 * When finished,
