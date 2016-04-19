@@ -10,7 +10,7 @@
 *,
 *:after,
 *:before {
-  box-sizing: border-box;
+
 }
 
 
@@ -53,8 +53,6 @@ section h2 {
 */
 
 
-
-
 /*
   == STYLING THE LAYOUT ==
 
@@ -64,7 +62,6 @@ section h2 {
     - Main on the right side, taking up 65% width
     - Footer on the bottom, spanning all the way across the page
 */
-
 
 
 /*
