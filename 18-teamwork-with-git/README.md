@@ -62,3 +62,30 @@
   * Switch back to master and pull to get the latest code
   * Merge your feature branch into master
   * If there are conflicts, resolve them first
+
+## Recap
+* When working on a new feature, create a new branch
+  * git checkout -b my-cool-branch
+
+* When moving between branches, use this command:
+  * git checkout name-of-branch
+    * ie. git checkout master
+
+* To merge:
+  * git merge name-of-branch
+    * ie. git merge my-cool-branch
+
+* Resolving merge conflicts
+  * Merge conflicts look like this!
+
+>>>>>>>>> HEAD
+stuff from remote
+=========
+stuff from my own feature branch
+<<<<<<< my-cool-branch
+
+* Anytime you want to merge to master, it's best practice to pull first
+  * git checkout master (move back to master)
+  * git pull (pull from origin/master)
+
+  
