@@ -1,0 +1,22 @@
+/*****************************************************************************
+  transitions
+******************************************************************************/
+.shape {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.shape-square {
+  background-color: #FF6347; // tomato (obviously!)
+  top: 10%;
+  left: 10%;
+}
+
+.shape-circle {
+  border-radius: 50%;
+  background-color: #6495ED; // cornflowerblue
+  bottom: 10%;
+  left: 10%;
+}

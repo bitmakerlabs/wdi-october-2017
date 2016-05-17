@@ -1,0 +1,39 @@
+$ink: #990000;
+$border: #e0e0e0;
+
+.menu {
+  width: 300px;
+  margin: 3em auto;
+  padding: 0;
+  list-style-type: none;
+  border-top: 8px solid $ink;
+
+  & > li {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid $border;
+
+    & > a {
+      padding: 1em;
+      display: block;
+      color: #333;
+      text-decoration: none;
+    }
+  }
+}
+
+.ink {
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  background-color: lighten($ink, 25%);
+  opacity: 1;
+
+  transform: scale(0);
+  transition: all 0.65s linear;
+}
+
+.ink.animate {
+  opacity: 0;
+  @include transform(scale(2.5));
+}

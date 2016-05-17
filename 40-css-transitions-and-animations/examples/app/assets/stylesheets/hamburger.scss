@@ -1,0 +1,55 @@
+/*****************************************************************************
+  Base Styles
+******************************************************************************/
+html,
+body,
+.hamburger-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.hamburger-container {
+  background-color: black;
+}
+
+
+/*****************************************************************************
+  Layout Styles
+******************************************************************************/
+
+
+
+
+/*****************************************************************************
+  Module Styles
+******************************************************************************/
+#nav-toggle {
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  cursor: pointer;
+  padding: 30px 100px 36px 0px;
+}
+
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  height: 10px;
+  width: 100px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+
+#nav-toggle span:before {
+  top: -25px;
+}
+
+#nav-toggle span:after {
+  bottom: -25px;
+}
