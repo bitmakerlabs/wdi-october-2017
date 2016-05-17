@@ -1,4 +1,20 @@
-# Methods and Collections
+# Collections and Methods
+
+One of the main driving forces behind the evolution of computing power is to reliably and safely perform repetitive tasks. Our goal as developers is often to figure out a reliable approach once and apply it to a whole set of different values.
+
+Collections are a fundamental data structure in most programming languages, allowing us to group objects together. Next, we often want to apply some operation or transformation to each item in our collection, which is where methods come in.
+
+## Agenda
+After this lesson, you will know:
+
+  * How to set up Atom for success
+  * Different types of collections you'll come across
+  * Operations you can perform on collections
+  * The purpose of a method
+  * How to define a method
+  * The basics of variable scope
+  * The importance of inputs and outputs
+  * Code style
 
 ## Atom Overview
 

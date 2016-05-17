@@ -8,4 +8,7 @@ Introduction to objects and classes, what they are, why we use them, how to code
 * [Classes, Objects and Instances](#classes-objects-and-instances)
 * [Instance Variables and Instance Methods](#instance-variables-and-methods)
 * [Inheritance](#inheritance)
-* Modules
+
+## Slides
+
+[Object-Oriented Programming Slides](http://bitmakerlabs.s3.amazonaws.com/slides/cohort9/Object-Oriented%20Programming.pdf)

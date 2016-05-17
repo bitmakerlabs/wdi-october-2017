@@ -3,7 +3,7 @@
 Before we dive into programming, it's good to get to know the lay of the land and how to get around our computers: our operating systems, the command-line interface and how to manage files and directories. We'll also learn about git and GitHub so that we can track changes to our projects.
 
 ## Agenda
-After this lesson, you will know:
+After this lesson, you should have an understanding of:
 
   * How to use Alexa
   * [OS keyboard shortcuts](#os-overview)
