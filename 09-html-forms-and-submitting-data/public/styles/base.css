@@ -1,0 +1,60 @@
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.35;
+  color: #323232;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+form {
+  display: block;
+  margin: 0;
+  padding: 1em;
+  background-color: #f0f0f0;
+}
+
+input,
+textarea {
+  display: inline-block;
+  font-size: 32px;
+  font-family: Georgia, Times, serif;
+}
+
+
+[type=radio],
+[type=checkbox] {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.field,
+fieldset {
+  margin-bottom: 1em;
+}
+
+label {
+  display: inline-block;
+  width: 25%;
+}
+
+fieldset > label {
+  width: auto;
+}
+
+[type=text],
+[type=email] {
+  padding: 0.25em 0.5em;
+}
