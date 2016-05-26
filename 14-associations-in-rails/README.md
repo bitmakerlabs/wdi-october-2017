@@ -5,23 +5,18 @@ You've made a simple app with only one data model. Now it's time to up our game 
 
 ## Agenda
 
-1. Reading the docs
-2. What is Active Record?
+0. Migrations overview
+1. What is Active Record?
 2. What is an association?
-3. Types of Associations
-4. belongs_to
-5. has_many
-6. has_many, through:
-7. has_and_belongs_to_many
-8. has_one
-
-
-## Reading the docs
-- [Active Record Associations](http://guides.rubyonrails.org/association_basics.html)
-- Rails Guides and the Rails API are your best resources on the different associations and how they work
-- Sections 1 and 2 will be your starting point for learning about the different association types
-- Section 3 is for more advanced use cases, you'll probably only need this info periodically
-- Section 4 will be your bread and butter once you're comfortable with the basics
+3. Foreign key review
+3. Types of associations
+4. Reading the docs
+5. belongs_to
+6. has_many
+7. has_many , through:
+8. has_and_belongs_to_many
+9. has_one
+10. has_one , through:
 
 
 ## What is Active Record?
@@ -40,3 +35,10 @@ You've made a simple app with only one data model. Now it's time to up our game 
 - 1-to-1
 - 1-to-many
 - many-to-many
+
+## Reading the docs
+- [Active Record Associations](http://guides.rubyonrails.org/association_basics.html)
+- Rails Guides and the Rails API are your best resources on the different associations and how they work
+- Sections 1 and 2 will be your starting point for learning about the different association types
+- Section 3 is for more advanced use cases, you'll probably only need this info periodically
+- Section 4 will be your bread and butter once you're comfortable with the basics
