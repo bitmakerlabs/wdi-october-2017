@@ -1,0 +1,23 @@
+<h1>Monsters</h1>
+
+<%= form_tag monsters_path, method: :get, id: 'search-form' do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<ul class="monsters">
+  <% @monsters.each do |monster| %>
+    <li class="monster">
+      <img src="https://robohash.org/<%= monster.id %>?set=set2" alt="<%= monster.name %>">
+      <h1><%= monster.name %></h1>
+
+      <dl>
+        <dt>Home</dt>
+        <dd><%= monster.home %></dd>
+
+        <dt>Creepiness</dt>
+        <dd><%= monster.creepiness %></dd>
+      </dl>
+    </li>
+  <% end %>
+</ul>
