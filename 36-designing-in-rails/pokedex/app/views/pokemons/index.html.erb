@@ -1,0 +1,44 @@
+<h1 class="logo">Pokedex!</h1>
+
+<ul id="pokemon-list">
+  <% @pokemon.each do |pokemon| %>
+    <li class="pokemon">
+      <%= link_to pokemon do %>
+        <figure class="pokemon-image-container">
+          <%= image_tag pokemon.image_url, class: 'pokemon-image' %>
+        </figure>
+        <div class="pokemon-metadata">
+          <h1>
+            <%= pokemon.name %>
+          </h1>
+          <dl>
+            <dt class="pokemon-metadata-label">
+              Species
+            </dt>
+            <dd class="pokemon-metadata-value">
+              <%= pokemon.species %>
+            </dd>
+            <dt class="pokemon-metadata-label">
+              Attack
+            </dt>
+            <dd class="pokemon-metadata-value">
+              <%= pokemon.attack %>
+            </dd>
+            <dt class="pokemon-metadata-label">
+              Defense
+            </dt>
+            <dd class="pokemon-metadata-value">
+              <%= pokemon.defense %>
+            </dd>
+            <dt class="pokemon-metadata-label">
+              Speed
+            </dt>
+            <dd class="pokemon-metadata-value">
+              <%= pokemon.speed %>
+            </dd>
+          </dl>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
