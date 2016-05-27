@@ -23,10 +23,4 @@ $(document).ready(function() {
 
       console.log('link was clicked');
   });
-
-  $('#container').on('click', '.circle', function() {
-    $(this).remove();
-    count--;
-    console.log('Removed a circle');
-  });
 });
