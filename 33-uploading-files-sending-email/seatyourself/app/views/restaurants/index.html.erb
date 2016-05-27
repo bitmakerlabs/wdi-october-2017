@@ -1,0 +1,19 @@
+<h3>All restaurants</h3>
+
+<section>
+<% @restaurants.each do |restaurant| %>
+
+  <section class="restaurant">
+    <%= link_to restaurant.name, restaurant %>
+    <% if restaurant.category %>
+      <p class="category">Category: <%= restaurant.category.name %></p>
+    <% end %>
+    <p class="desc"><%= shorten(restaurant.description) %></p>
+  </section>
+
+<% end %>
+</section>
+
+<% if current_user %>
+  <p><%= link_to 'Add Restaurant', new_restaurant_path %></p>
+<% end %>
