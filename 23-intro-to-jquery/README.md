@@ -12,41 +12,12 @@ Now that we know the basics of JavaScript, it's time to start using it to affect
 6. What can we do with jQuery?
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### DOM
+## DOM
 
 * DOM is a tree
 
 
-### jQuery
+## jQuery
 
 * Released in 2006
 * Used by 73% of the 10,000 most visited websites (https://trends.builtwith.com/javascript/jQuery), as of Nov 24, 2015
-
-
-
-
-
-
-
-
-
-
-
-
-
-
