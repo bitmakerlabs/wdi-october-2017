@@ -3,8 +3,7 @@
 ## Agenda
 1. What's a bug?
 2. Good habits for avoiding bugs
-3. Debugging techniques
-4. Tools for debugging
+3. Debugging techniques and tools
 
 ## Debugging
 
