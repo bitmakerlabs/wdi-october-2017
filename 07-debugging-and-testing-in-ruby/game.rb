@@ -13,7 +13,7 @@ class Game
     print "How many people are adventuring? "
     number_of_players = gets.chomp.to_i
 
-    game = new(number_of_players)
+    g = new(number_of_players)
     game.turn
   end
 
@@ -24,8 +24,13 @@ class Game
       new_x = moves.sample
       new_y = moves.sample
 
-      player.x += new_x if new_x >= 0 && new_x < width
-      player.y += new_y if new_y >= 0 && new_y < height
+      if new_x >= 0 && new_x < width
+        player.x += new_x
+      end
+
+      if new_y >= 0 && new_y < height
+        player.y += new_y
+      end
     end
   end
 end
