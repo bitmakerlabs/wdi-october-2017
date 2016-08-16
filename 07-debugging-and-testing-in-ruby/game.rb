@@ -15,12 +15,14 @@ class Game
 
     g = new(number_of_players)
     game.turn
+    end
   end
 
   def turn
     moves = [1, -1]
 
     @players.each do |player|
+      puts "Player #{player.id} moved!"
       new_x = moves.sample
       new_y = moves.sample
 
@@ -33,6 +35,7 @@ class Game
       end
     end
   end
+
 end
 
 Game.start
