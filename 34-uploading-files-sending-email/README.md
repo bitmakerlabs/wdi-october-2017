@@ -1,14 +1,14 @@
-# Uploading files and sending email
-In this lecture, we'll be looking at how to upload files to our web apps and how to send email from your Rails app.  We'll also talk about keeping your secret data safe and how to evaluate gems.
+# Environments, Emails, and more about using Gems
+In this lecture, we'll be looking at how to send email from your Rails apps.  We will also return to the topic of "environments", talk about how to evaluate a gem before deciding to include it in your project, and when it's appropriate to consider looking for a gem in the first place.  Finally, we will spend some time talking about what's involved in the process of uploading files to web apps.
 
 ## Agenda
 
   1. Configuration management (aka keeping your secrets secret)
   2. Evaluating a gem
-  3. A little bit about how email works
-  4. How to send emails through your Rails apps
-  5. What's involved in uploading files
-  6. How to upload files to your Rails apps
+  3. Environments
+  4. A little bit about how email works
+  5. How to send emails through your Rails apps
+  6. What's involved in uploading files
 
 ## ActionMailer
 - This is how we send mail through our Rails app
