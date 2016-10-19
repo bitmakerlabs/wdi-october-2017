@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spaceship Junkyard</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class='container'>
+      <div id='header' class='col-xs-12'>
+        <div id='title'>
+          <h1>Guido's<br>Spaceship<br>Junkyard</h1>
+          <h4><i>You crash it, we smash it!</i></h4>
+        </div><!--title-->
+      </div>
+    </div><!--container-->
+    <% if flash[:notice] %>
+      <div class='container'>
+        <div class='col-md-12'>
+          <div class='notice bg-success'>
+            <%= flash[:notice] %>
+          </div>
+        </div>
+      </div><!--container-->
+    <% end %>
+    <%= render 'layouts/nav' %>
+    <div class='container'>
+      <div class='col-md-12'>
+        <%= yield %>
+      </div>
+    </div><!--container-->
+  </body>
+</html>

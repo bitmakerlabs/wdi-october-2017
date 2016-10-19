@@ -1,0 +1,45 @@
+<div class='container well'>
+  <%= form_for(@spaceship) do |f| %>
+
+    <% if @spaceship.errors.any? %>
+      <div class='alert alert-danger'>
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <%= pluralize(@spaceship.errors.count, 'error') %> prohibited this spaceship from being saved:
+        <ul>
+          <% @spaceship.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class='form-group'>
+      <%= f.label :name %><br />
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :universe %><br />
+      <%= f.text_field :universe, class: 'form-control'  %>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :max_speed %><br />
+      <%= f.text_field :max_speed, class: 'form-control'  %>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :image_url %><br />
+      <%= f.text_field :image_url, class: 'form-control'  %>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :history %><br />
+      <%= f.text_area :history, class: 'form-control'  %>
+    </div>
+
+    <%= f.submit 'Save', class: 'btn btn-success' %>
+
+  <% end %>
+
+</div>

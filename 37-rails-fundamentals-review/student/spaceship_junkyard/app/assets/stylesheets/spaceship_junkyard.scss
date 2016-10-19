@@ -1,0 +1,26 @@
+#header {
+  background-image: image-url('junkyard_owner.png');
+  background-position-x: calc(100% - 30px);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 300px;
+  margin: 20px 0;
+}
+
+#title {
+  text-align: right;
+  margin-right: 220px;
+}
+
+#spaceship_index_header {
+  margin: 20px 0;
+}
+
+#spaceship_index_header h2 {
+  float: left;
+  margin: 0 20px 0 0;
+}
+
+.notice {
+  padding: 15px;
+}

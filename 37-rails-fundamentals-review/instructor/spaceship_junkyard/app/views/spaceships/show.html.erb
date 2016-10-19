@@ -1,0 +1,17 @@
+<div class='container well'>
+  <h3><%= @spaceship.name %></h3>
+  <div class='col-xs-6'>
+    <ul class='list-group'>
+      <li class='list-group-item'><strong>Universe:</strong> <%= @spaceship.universe %></li>
+      <li class='list-group-item'><strong>Maximum Speed:</strong> <%= @spaceship.max_speed %></li>
+    </ul>
+    <h4>History</h4>
+    <p><%= @spaceship.history %></p>
+    <%= link_to 'Edit', edit_spaceship_path(@spaceship), class: 'btn btn-success' %>
+    <%= link_to 'Delete', @spaceship,  method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  </div>
+  <div class='col-xs-6'>
+    <%= image_tag(@spaceship.image_url, class: 'img-responsive') %>
+  </div>
+</div>
+

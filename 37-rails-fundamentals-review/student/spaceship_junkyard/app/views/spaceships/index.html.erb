@@ -1,0 +1,26 @@
+<div id='spaceship_index_header' class='container'>
+  <h2>Spaceships Available</h2>
+  <%= link_to 'Add New', new_spaceship_path, class: 'btn btn-success' %>
+</div>
+
+<% if @spaceships.exists? %>
+  <% @spaceships.each do |spaceship| %>
+    <div class='container well'>
+      <h3><%= spaceship.name %></h3>
+      <div class='col-xs-8'>
+        <ul class='list-group'>
+          <li class='list-group-item'><strong>Universe:</strong> <%= spaceship.universe %></li>
+          <li class='list-group-item'><strong>Maximum Speed:</strong> <%= spaceship.max_speed %></li>
+        </ul>
+        <%= link_to 'Details', spaceship_path(spaceship), class: 'btn btn-primary' %>
+      </div>
+      <div class='col-xs-4'>
+        <%= image_tag(spaceship.image_url, class: 'img-responsive') %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div class='container well'>
+    There are no spaceships currently docked.
+  </div>
+<% end %>
