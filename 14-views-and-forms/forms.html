@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Forms Recap</title>
+  </head>
+  <body>
+    <form action="/films" method="post">
+
+      <label for="film-title">Title</label>
+      <input type="text" name="title" id="film-title" placeholder="e.g. Star Wars">
+
+      <input type="hidden" name="_method" value="patch">
+
+      <!-- <input type="submit" value="Update film"> -->
+      <button type="submit">
+        <h1>Update film</h1>
+      </button>
+    </form>
+  </body>
+</html>
