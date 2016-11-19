@@ -23,12 +23,12 @@ if ( conditionA === true ) {
 
 
 
-if ( somethingTrue === false ) {
-  alert("Something TRUE");
+if (somethingTrue === false ) {
+    alert("Something TRUE");
 } else if (aString.length > 15) {
-  alert("REALLY TRUE");
+    alert("REALLY TRUE");
 } else {
-  alert("DEFAULT CASE");
+    alert("DEFAULT CASE");
 }
 
 
@@ -37,19 +37,19 @@ if ( somethingTrue === false ) {
 var fruit = "Banana";
 
 switch (fruit) {
-  case "Banana":
-  // case "Costa Rican Banana":
-  // case "African Banana":
-  // case "Plantain":
-      alert("BANANA");
-      break;
-  case "Apple":
-      alert("APPLE");
-      break;
-  case "Pear":
-      alert("PEAR");
-      break;
-  default:
-      alert("DEFAULT");
-      break;
+    case "Banana":
+    // case "Costa Rican Banana":
+    // case "African Banana":
+    // case "Plantain":
+        alert("BANANA");
+        break;
+    case "Apple":
+        alert("APPLE");
+        break;
+    case "Pear":
+        alert("PEAR");
+        break;
+    default:
+        alert("DEFAULT");
+        break;
 }
