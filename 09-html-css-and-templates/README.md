@@ -254,8 +254,8 @@ With Sinatra, our main template will be called `layout.erb` and we'll put page s
 
 ## Resrouces
 
-[Sean Lerner's Instructor Notes](instructor-notes/lesson.md)
-[Box-Model Image](instructor-notes/box-model.gif)
+* [Sean Lerner's Instructor Notes](instructor-notes/lesson.md)
+* [Box-Model Image](instructor-notes/box-model.gif)
 
 ### In-Class Exercise files
 
