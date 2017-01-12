@@ -1,0 +1,14 @@
+#columns {
+  background: hotpink;
+}
+
+.column {
+  width: 32%;
+  background: antiquewhite;
+  padding: 20px;
+  float: left;
+}
+
+.middle {
+  margin: 0 2%;
+}

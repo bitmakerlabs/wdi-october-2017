@@ -1,0 +1,30 @@
+.container {
+    background: antiquewhite;
+    border: 2px solid coral;
+    margin: 50px;
+    padding: 30px 40px;
+    overflow: hidden;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.floated_numbers {
+  overflow: hidden;
+}
+
+.float_number {
+    background: seagreen;
+    color: white;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    width: 20%;
+    border: 1px solid black;
+}
+
+.unfloated {
+  clear: both;
+  margin-top: 20px;
+}

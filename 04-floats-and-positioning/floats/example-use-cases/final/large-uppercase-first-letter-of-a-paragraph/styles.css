@@ -1,0 +1,13 @@
+h2 {
+  margin-bottom: 60px;
+}
+
+.big-letter {
+  float: left;
+  font-family: cursive;
+  font-size: 100px;
+  line-height: 1;
+  margin-right: 20px;
+  margin-top: -3px;
+}
+

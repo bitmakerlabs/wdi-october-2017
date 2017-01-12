@@ -1,0 +1,177 @@
+/* Page Wide */
+
+body {
+  background: honeydew;
+}
+
+h2 {
+  text-align: center;
+  margin: 30px;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+h3 {
+  margin-bottom: 0.5em;
+}
+
+img {
+  width: 100%;
+}
+
+
+/* Header */
+
+header {
+  background: orange;
+  border-bottom: 5px solid grey;
+  height: 120px;
+  margin-bottom: 50px;
+  padding: 40px 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+
+/* Main Content */
+
+#container {
+  margin: 40px auto;
+  width: 90%;
+}
+
+main {
+  margin-top: 150px;
+}
+
+section {
+  border: 3px solid peru;
+  margin-bottom: 40px;
+}
+
+
+/* Features */
+
+.features {
+  height: 700px;
+  position: relative;
+  text-align: center;
+}
+
+.feature {
+  position: absolute;
+  top: 5em;
+  width: 47%;
+}
+
+.avocado-burger {
+  left: 2%;
+}
+
+.sushi-donuts {
+  right: 2%;
+}
+
+
+/* Combos */
+
+.combo-item {
+  position: absolute;
+  text-align: center;
+  top: 5em;
+  width: 30%;
+}
+
+.combo-deal {
+  height: 506px;
+  position: relative;
+}
+
+.combo-item.beer {
+  left: 2%;
+}
+
+.combo-item.fries {
+  left: 35%;
+}
+
+.combo-item.burger {
+  right: 2%;
+}
+
+
+/* Desserts */
+
+.desserts {
+  height: 1200px;
+  position: relative;
+}
+
+.dessert {
+  position: absolute;
+  width: 46%;
+}
+
+.cake {
+  left: 2%;
+  position: absolute;
+  top: 2%;
+}
+
+.cats-in-blanket {
+  right: 2%;
+  top: 2%;
+}
+
+.cookies {
+  bottom: 2%;
+  left: 2%;
+}
+
+.cupcake {
+  bottom: 2%;
+  right: 2%;
+}
+
+.desserts h2 {
+  background: white;
+  border-radius: 25px;
+  border: 6px dashed saddlebrown;
+  font-size: 30px;
+  left: 36%;
+  padding: 20px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 42%;
+  width: 24%;
+  z-index: 100;
+}
+
+.desserts h4 {
+  background: black;
+  color: white;
+  padding: 20px;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+}
+
+
+/* Footer */
+
+footer {
+  background: mediumseagreen;
+  border-left: 3px solid white;
+  border-top: 3px solid white;
+  bottom: 0;
+  color: white;
+  height: 8em;
+  padding: 1.5em 2em;
+  position: fixed;
+  right: 0;
+  width: 8em;
+}

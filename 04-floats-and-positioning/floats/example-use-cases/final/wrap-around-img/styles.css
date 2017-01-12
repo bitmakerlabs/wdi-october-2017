@@ -1,0 +1,16 @@
+p {
+  background: antiquewhite;
+  clear: both;
+  margin-bottom: 2em;
+  padding: 20px;
+}
+
+.img-left {
+  float: left;
+  padding: 0 30px 20px 0;
+}
+
+.img-right {
+  float: right;
+  padding: 0 0 20px 30px;
+}
