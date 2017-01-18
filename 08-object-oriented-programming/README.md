@@ -21,7 +21,7 @@ Introduction to objects and classes, what they are, why we use them, how to code
   * Parts of an Object: Name, State, Behaviour
 * Why OOP?
   * Encapsulation
-  * Abstraction 
+  * Abstraction
   * Information Hiding
 * Classes and Instances
 * Instance Variables and Instance Methods
@@ -29,6 +29,11 @@ Introduction to objects and classes, what they are, why we use them, how to code
 ## OOP in Ruby
 
 * Implement Person class
+* Instantiating instances of Person
+* Instance variables and the @ symbol
+* Getters and Setters
+* attr\_reader / attr\_writer / attr\_accessor
+* Examples of other instance methods
 
 ## Slides
 
