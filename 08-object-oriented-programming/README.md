@@ -1,14 +1,36 @@
-# Object Oriented Programming (OOP)
+# Object Oriented Programming (OOP) - Part 1
 
-Introduction to objects and classes, what they are, why we use them, how to code them, and why they are important to Ruby.
+Introduction to objects and classes, what they are, why we use them, how to code them, and why they are important in programming.
 
 ## Agenda
 
-* [What is Object-Oriented Programming?](#what-is-object-oriented-programming?)
-* [Classes, Objects and Instances](#classes-objects-and-instances)
-* [Instance Variables and Instance Methods](#instance-variables-and-methods)
-* [Inheritance](#inheritance)
+* [Review of Methods and Variables](#review-of-methods-and-variables) (20-30 mins)
+* [OOP Theory](#oop-theory) (30-45 mins)
+* [OOP in Ruby](#oop-in-ruby) (45-60 mins)
+* Recap (5 mins)
+
+## Review of Methods and Variables
+
+* Implement Pizzaiolo method
+
+## OOP Theory
+
+* Brief discussion of programming history and paradigms
+* Object-Oriented Programming Fundamentals
+  * What is an Object?
+  * Parts of an Object: Name, State, Behaviour
+* Why OOP?
+  * Encapsulation
+  * Abstraction 
+  * Information Hiding
+* Classes and Instances
+* Instance Variables and Instance Methods
+
+## OOP in Ruby
+
+* Implement Person class
 
 ## Slides
 
-[Object-Oriented Programming Slides](http://bitmakerlabs.s3.amazonaws.com/slides/cohort9/Object-Oriented%20Programming.pdf)
+[Object-Oriented Programming Slides](http://bitmakerlabs.s3.amazonaws.com/slides/cohort9/Object-Oriented%20Programming.pdf) - These are old slides and are for Reference Only
+
