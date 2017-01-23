@@ -7,11 +7,10 @@ Introduction to objects and classes, what they are, why we use them, how to code
 * [Review of Methods and Variables](#review-of-methods-and-variables) (20-30 mins)
 * [OOP Theory](#oop-theory) (30-45 mins)
 * [OOP in Ruby](#oop-in-ruby) (45-60 mins)
-* Recap (5 mins)
 
 ## Review of Methods and Variables
 
-* Implement Pizzaiolo method
+* Implement `order_pizza` method
 
 ## OOP Theory
 
@@ -30,12 +29,11 @@ Introduction to objects and classes, what they are, why we use them, how to code
 
 * Implement Person class
 * Instantiating instances of Person
-* Instance variables and the @ symbol
+* Instance variables and the `@` symbol
 * Getters and Setters
-* attr\_reader / attr\_writer / attr\_accessor
+* `attr_reader` / `attr_writer` / `attr_accessor`
 * Examples of other instance methods
 
 ## Slides
 
 [Object-Oriented Programming Slides](http://bitmakerlabs.s3.amazonaws.com/slides/cohort9/Object-Oriented%20Programming.pdf) - These are old slides and are for Reference Only
-

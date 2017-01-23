@@ -4,11 +4,14 @@ Today we'll be going further in depth into Object Oriented Programming to see ho
 
 ## Agenda
 
-* Review of Classes, Objects and Instances (15 mins)
+* [Review of Classes and Instances](#review-of-classes-and-instances) (15 mins)
 * [Inheritance](#inheritance) (45 mins)
 * [Class Variables and Class Methods](#class-variables-and-class-methods) (45-60 mins)
 * [Modules](#modules) (0-15 mins)
-* Recap (5 mins)
+
+## Review of Classes, Objects, and Instances
+
+* Implement Pizzeria program
 
 ## Inheritance
 
