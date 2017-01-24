@@ -36,4 +36,4 @@ Introduction to objects and classes, what they are, why we use them, how to code
 
 ## Slides
 
-[Object-Oriented Programming Slides](http://bitmakerlabs.s3.amazonaws.com/slides/cohort9/Object-Oriented%20Programming.pdf) - These are old slides and are for Reference Only
+* [Slides](http://bitmakerlabs.s3.amazonaws.com/slides/cohort9/Object-Oriented%20Programming.pdf) - These are old slides and are for Reference Only
