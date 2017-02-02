@@ -6,14 +6,19 @@ We will learn about migrations and what they are used for. We'll also look at th
 
 ## Agenda
 
-* [Review](#review) (15 mins)
-* [Migrations](#migrations) (40 min)
-* [Validations](#validations) (60 min)
+* [Review](#review) (5 mins)
+* [ActiveRecord Continued](#activerecord-continued) (30 mins)
+* [Migrations](#migrations) (30 min)
+* [Validations](#validations) (50 min)
 
 ## Review
 
 * Review of ActiveRecord querying
-* Take up anything that was not covered in **SQL and ActiveRecord** due to time constraints
+
+## ActiveRecord Continued
+
+* Scopes
+* Class Methods vs Scopes
 
 ## Migrations
 

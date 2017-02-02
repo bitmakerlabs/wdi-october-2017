@@ -71,7 +71,6 @@ Allows you to associate to another table. i.e.
 * Using `.or` to create OR queries
 * Difference between `find` and `where`
 * Difference between `find` and `find_by`
-* Scope and Class Methods
 
 ## Links
 
