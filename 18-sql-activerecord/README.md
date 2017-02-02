@@ -1,5 +1,9 @@
 # SQL and ActiveRecord
 
+We will now start learning more about the Model Layer of Rails.
+
+SQL will be covered more in depth (which was introduced in ***Intro to Databases***), and we will also go more in depth with ActiveRecord, which allows us to access a database by writing Ruby code instead of SQL.
+
 ## Agenda
 
 * [Review](#review) (5 mins)
@@ -16,18 +20,17 @@
 
 ## Components of a Database
 
-### Tables
-
-* Emulating a database with spreadsheet tables
+* **Tables**: Demonstration of emulating a database with Google spreadsheet tables
 * **Columns**: attributes, name, data type
 * **Row**: Record, represents a set of data for each column
-* **Primary key**: `id` unique
-  * can be an integer (starts at 1 and 10000000)
-  * UUID 349tu-hbe0984-5hww9e8y5h
+* **Primary key**:
+  * `id`
+  * Uniqueness
+  * Can be an integer or [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) (349tu-hbe0984-5hww9e8y5h)
 * **Foreign key**:
-Allows you to associate to another table
+Allows you to associate to another table. i.e.
 `objectname_id`
-* ACID
+* [ACID](https://en.wikipedia.org/wiki/ACID)
 
 ## Postgres
 
@@ -56,6 +59,7 @@ Allows you to associate to another table
 ## ActiveRecord
 
 * Installation of `awesome_print` gem, which requires running `AwesomePrint.irb!` in the Rails console.
+* Required Reading: [Rails Guide: Active Record Basics](http://guides.rubyonrails.org/active_record_basics.html), and [Rails Guide: Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html) chapters 1-6, 14, 18-21
 * Why do we use ActiveRecord instead of SQL?
 * Examples of various ActiveRecord queries that exercise `first`, `last`, `all`, `where`, `size`, `order`, `limit`
 * The 3 different styles of `where` queries:
@@ -63,10 +67,10 @@ Allows you to associate to another table
   * Array style
   * String style
 * Mention of SQL Injection Attacks
-* Chaining `where` to create AND queries.
-* Using `.or` to create OR queries.
-* Difference between `find` and `where`.
-* Difference between `find` and `find_by`.
+* Chaining `where` to create AND queries
+* Using `.or` to create OR queries
+* Difference between `find` and `where`
+* Difference between `find` and `find_by`
 * Scope and Class Methods
 
 ## Links
@@ -76,6 +80,6 @@ Allows you to associate to another table
 * [XKCD: SQL Injection Attack](https://xkcd.com/327/)
 * [Wikipedia: ACID](https://en.wikipedia.org/wiki/ACID)
 * [Wikipedia: UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)
-* [Rails Guide: ActiveRecord Basics](http://guides.rubyonrails.org/active_record_basics.html)
-* [Rails Guide: ActiveRecord Query Interface](http://guides.rubyonrails.org/active_record_querying.html)
+* [Rails Guide: Active Record Basics](http://guides.rubyonrails.org/active_record_basics.html)
+* [Rails Guide: Active Record Query Interface](http://guides.rubyonrails.org/active_record_querying.html)
 * [Chinook](https://github.com/bitmakerlabs/chinook)
