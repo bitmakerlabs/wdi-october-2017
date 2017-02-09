@@ -41,6 +41,15 @@ In this lesson, we'll be looking at the mechanisms by which you can identify you
 * Using the `session` hash
 * Logout with `SessionsController#destroy`
 
+## Authentication Libraries
+
+* To be investigated independently
+* Can do things like Resetting Passwords, which must be carefully managed as passwords should not be sent in cleartext in email.
+* [`sorcery`](https://github.com/Sorcery/sorcery): Recommended for those just starting out with authentication
+* [`devise`](https://github.com/plataformatec/devise): More advanced. Quote from the [docs](https://github.com/plataformatec/devise#starting-with-rails): 
+  
+> If you are building your first Rails application, we recommend you do not use Devise. Devise requires a good understanding of the Rails Framework. ... Once you have solidified your understanding of Rails and authentication mechanisms, we assure you Devise will be very pleasant to work with.
+
 ## Authorization
 
 * Sneak peek at authorization
