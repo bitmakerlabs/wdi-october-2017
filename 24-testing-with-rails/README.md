@@ -45,6 +45,7 @@ Testing is a fundamental part of Rails. Today we'll introduce how testing works 
   * `restaurant is not available when it is full`
   * `restaurant is available when it is not full`
   * `restaurant is available for reservations later`
+  * `restaurant is not available for reservations now`
 * `bin/rails stats` command
 
 ## Links
