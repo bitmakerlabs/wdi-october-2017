@@ -66,7 +66,7 @@ After this lesson, you should have an understanding of:
   * In fact, when using `respond_to`, the action will throw an exception if a data type that's not defined is requested
 
 ## How this affects your routes
-* Knowing about different data formats should demystify one more thing in the `rake routes` output
+* Knowing about different data formats should demystify one more thing in the `rails routes` output
 * Each of the routes accepts a format at the end, which can be used to indicate which response the client wants
   * e.g. `/products/1.json` will return the JSON response rather than the HTML response for that resource
   * See how that looks like a file extension!
