@@ -32,11 +32,12 @@ Today we'll learn the various ways to create a form in Rails.
 
 (10 minutes including questions)
 
+Diagram: https://srikantmahapatra.files.wordpress.com/2013/11/mvc1.png
 - Request comes in through the Router
 - The router matches the request on the method and the path
   - When matching the path, it uses a pattern to match the path string, so we can have variable placeholders in paths
   - i.e. `/films/:id` matches with `/films/12` and `/films/monkeys`, where :`id` is a value representing the unique id of one film
-  - It's **VERY IMPORTANT** to understand how the router works, what `rake routes` shows you and how to use route helpers
+  - It's **VERY IMPORTANT** to understand how the router works, what `rails routes` shows you and how to use route helpers
 - Once the router finds a match, it routes the request to the corresponding controller and action
   - The controller and action combo is often written as `controller#action` in your routes file
   - If there are variable placeholders in the path, they are added to the params hash so the controller and view have access
@@ -47,12 +48,17 @@ Today we'll learn the various ways to create a form in Rails.
 
 
 ## Using form helpers - 55 minutes
+
+- Make a new app to build on/demonstrate for the rest of the lecture
+
 - [`form_tag`](http://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html#method-i-form_tag) - 25 minutes
   - Forms unconnected to models
   - Use the `_tag` variant of form helpers (e.g. `text_field_tag`)
   - adds some hidden fields for us (show in browser dev tools)
   - Notice the names of the fields. They shouldn't have changed. Eg. `title`.
+
 - LESSON BREAK ------- 5-10 minutes
+
 - [`form_for`](http://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html#method-i-form_for) - 30 minutes
   - Create a form for doing CRUD on an object
   - We generally want to deal with objects rather than values
