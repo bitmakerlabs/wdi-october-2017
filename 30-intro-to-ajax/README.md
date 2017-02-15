@@ -1,34 +1,58 @@
 # Intro to AJAX
 
+Today we introduce Ajax, the last major conceptual piece of building a modern web application. 
+
 ## Agenda
-  * What is AJAX, history
-    * What is asynchronous?
-  * Unobtrusive JavaScript
-  * AJAX with XMLHTTPRequest (xhr)
-  * AJAX with jQuery
-  * "respond_to" JS
 
-## What is AJAX?
+* Requests and Responses Review (10 mins)
+* Intro to Ajax (45 mins)
+* Code Example (60 mins)
 
-http://wiki.hashphp.org/images/6/67/HTTP_Model.jpg
+## Requests and Responses Review
 
-A - Asynchronous: Non-blocking communication
-J - JavaScript
-a - and
-X - XML (HTML, JS, JSON, etc.)
+* HTTP Basics
+* Synchronous vs Asynchronous
 
-http://imps.mcmaster.ca/courses/SE-4C03-07/wiki/vanschj/vanschj_picture1.png
+## Intro to Ajax
 
-## Unobtrusive JavaScript
+* History of Ajax
+* What is Ajax
+  * A - Asynchronous: Non-blocking communication
+  * J - JavaScript
+  * A - and
+  * X - XML (HTML, JS, JSON, etc.)
+* Ajax with XMLHttpRequest (i.e. xhr)
+* Ajax with JQuery
+  * 90% case:
 
-## Graceful degradation
-(Sigh, JavaScript)[http://sighjavascript.tumblr.com/]
+```javascript
+$.ajax({
+  url: _____,
+  method: _____,
+  data: _____,
+  dataType: _____
+});
+```
 
-## Add search feature to Rainforest
-To the code!
+* Unobtrusive Javascript
 
-## Anatomy of an AJAX request
-* an event happens!
-1. Javascript makes request (method/action/verb, URL, data type, body(sometimes))
-2. Server responds to JS request (needs to respond to requested data type (HTML, JSON, JS), if HTML (partial))
-3. Back in JS: callback (DOM manipulation to insert response back into document)
+## Code Example
+
+* [Monsters API](monsters-api.herokuapp.com/monsters) Example
+* Anatomy of an AJAX request
+  * An event happens!
+  * Javascript makes request (method/action/verb, URL, data type, body(sometimes))
+  * Server responds to JS request (needs to respond to requested data type (HTML, JSON, JS), if HTML (partial))
+  * Back in Javascript: a callback function does DOM manipulation to insert response back into document
+
+## Progressive Enhancement / Graceful Degradation
+
+* [Sigh, JavaScript](http://sighjavascript.tumblr.com)
+
+## Links
+
+* [HTTP Diagram](http://wiki.hashphp.org/images/6/67/HTTP_Model.jpg)
+* [Classic vs Ajax Web Application Model](http://adaptivepath.org/uploads/archive/images/publications/essays/ajax-fig2.png)
+* [Ajax: A New Approach to Web Applications](http://adaptivepath.org/ideas/ajax-new-approach-web-applications/)
+* [JSON Example](http://json.org/example.html)
+* [`jQuery.ajax()` Documentation](http://api.jquery.com/jquery.ajax)
