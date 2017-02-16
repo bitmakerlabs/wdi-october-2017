@@ -1,6 +1,6 @@
 # Intro to AJAX
 
-Today we introduce Ajax, the last major conceptual piece of building a modern web application. 
+Today we introduce Ajax, the last major conceptual piece of building a modern web application.
 
 ## Agenda
 
@@ -11,7 +11,8 @@ Today we introduce Ajax, the last major conceptual piece of building a modern we
 ## Requests and Responses Review
 
 * HTTP Basics
-* Synchronous vs Asynchronous
+* [Classic vs Ajax Web Application Model](http://adaptivepath.org/uploads/archive/images/publications/essays/ajax-fig1.png)
+* [Synchronous vs Asynchronous Web Application Model](http://adaptivepath.org/uploads/archive/images/publications/essays/ajax-fig2.png)
 
 ## Intro to Ajax
 
@@ -34,10 +35,11 @@ $.ajax({
 });
 ```
 
-* Unobtrusive Javascript
 
 ## Code Example
 
+* Unobtrusive Javascript
+* Query String Parameters
 * [Monsters API](monsters-api.herokuapp.com/monsters) Example
 * Anatomy of an AJAX request
   * An event happens!
@@ -52,7 +54,6 @@ $.ajax({
 ## Links
 
 * [HTTP Diagram](http://wiki.hashphp.org/images/6/67/HTTP_Model.jpg)
-* [Classic vs Ajax Web Application Model](http://adaptivepath.org/uploads/archive/images/publications/essays/ajax-fig2.png)
 * [Ajax: A New Approach to Web Applications](http://adaptivepath.org/ideas/ajax-new-approach-web-applications/)
 * [JSON Example](http://json.org/example.html)
 * [`jQuery.ajax()` Documentation](http://api.jquery.com/jquery.ajax)
