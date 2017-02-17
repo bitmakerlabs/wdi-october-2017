@@ -5,17 +5,5 @@ class RobotsController < ApplicationController
 
   def show
     @robot = Robot.find(params[:id])
-
-    respond_to do |format|
-      # format.html do
-      #   if request.xhr?
-      #     render layout: false
-      #   end
-      # end
-
-      format.html
-      format.json { render json: @robot }
-    end
-
   end
 end
