@@ -5,8 +5,8 @@ Today we introduce Ajax, the last major conceptual piece of building a modern we
 ## Agenda
 
 * Requests and Responses Review (10 mins)
-* Intro to Ajax (45 mins)
-* Code Example (60 mins)
+* Intro to Ajax (30 mins)
+* Code Example (75 mins)
 
 ## Requests and Responses Review
 
@@ -35,7 +35,6 @@ $.ajax({
 });
 ```
 
-
 ## Code Example
 
 * Unobtrusive Javascript
@@ -49,6 +48,7 @@ $.ajax({
 
 ## Progressive Enhancement / Graceful Degradation
 
+* Accessibility concerns
 * [Sigh, JavaScript](http://sighjavascript.tumblr.com)
 
 ## Links
