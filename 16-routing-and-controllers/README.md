@@ -1,42 +1,40 @@
-# Routing and Controllers
+# Routing and Controllers - Introduction
 
 Today we'll take our first deep dive into Rails and learn all about Routing and Controllers in Rails.
 
 ## Agenda (5 min)
 
-After this lesson, you will know:
+After this lesson, you will know about:
 
-- Routing
-  - Static Segments
-  - Dynamic Segments
-  - Path and URL Helpers
-  - How To Display Routes
-  - Resource Routing
-  - Nested Routes
+### Routing
+- Static Segments
+- Dynamic Segments
+- Path Helpers
+- How To Display Routes
+- Resource Routing
 
-- Controllers
-  - CRUD
-  - Seven Controller Methods
-  - Views
-  - Params Hash
-  - Index
-  - Show
-  - New
-  - Create
-  - Edit
-  - Update
-  - Destroy
-  - Strong Params
-  - Filters
-  - Application Controller
+### Controllers
+- CRUD
+- Seven Controller Methods: Overview
+- Views
+- Params Hash
+- Seven Controller Methods: In-depth
+ - Index
+ - Show
+ - New
+ - Create
+ - Edit
+ - Update
+ - Destroy
 
+### Wrap-up
+- Recap
 - Further Resources
 
-- Lessons Exercise: Ipsum's Fairground
 
-## Overview 
+## Overview
 
-When an http request hits a Rails app, the **Router** analyzes the request and decides which **Controller** it will direct it to. 
+When an http request hits a Rails app, the **Router** analyzes the request and decides which **Controller** it will direct it to.
 
 The **Controller** works with any **Models** necessary, and then renders the appropriate **View**.
 
@@ -48,7 +46,7 @@ The router looks at **http request method** and **path** of the request, and the
 
 ## Example
 
-A visitor looking for details on a particular product goes to http://store.com/products/55 with their web browser.
+A visitor looking for details on a particular product goes to `http://store.com/products/55` with their web browser.
 
 We have the following route defined:
 
@@ -57,21 +55,21 @@ We have the following route defined:
 
 Rails.application.routes.draw do
 
-  get '/products/:id', to: 'products#show'
+  get 'products/:id' => 'products#show'
 
 end
 ```
 
 This routes matches the request like so:
 
-`get` - matches the http request method.
-`/products/` - matches **/products/** in http://store.com/products/55
-`:id` - as it starts with a colon `:`, it's a wildcard match, and therefore matches **55** in http://store.com/products/55
+- `get` - matches the http request method.
+- `/products/` - matches **/products/** in http://store.com/products/55
+- `:id` - as it starts with a colon `:`, it's a wildcard match and will match anything. Therefore it matches **55** in http://store.com/products/55
 
 It then sends that request to:
 
-`products` - the **Products**Controller
-`show` - the **show** action (ruby method) in the ProductsController
+- `products` - the **Products**Controller
+- `show` - the **show** action (ruby method) in the ProductsController
 
 Inside of the Products Controller:
 
@@ -87,7 +85,7 @@ class ProductsController < ApplicationController
 end
 ```
 
-The controller finds the product and renders and returns the view.
+The show method finds the product and then renders and returns the view.
 
 ## Static Segments
 
@@ -96,7 +94,7 @@ Anything static (not prefixed with a **colon**) must be matched exactly for a ro
 In the following example:
 
 ```ruby
-get '/stores/:store_id/products/:id', to: 'products#show'
+get 'stores/:store_id/products/:id' => 'products#show'
 ```
 
 `stores` and `products` are static segments.
@@ -108,7 +106,7 @@ Anything dynamic (prefixed with a **colon**) can match on *anything*:
 In the following example:
 
 ```ruby
-get '/stores/:store_id/products/:id', to: 'products#show'
+get 'stores/:store_id/products/:id' => 'products#show'
 ```
 
 `:store_id` and `:id` are dynamic segments, and the following would be legitimate matches:
@@ -118,22 +116,20 @@ http://localhost:3000/stores/99/products/333
 http://localhost:3000/stores/silver_snail/products/spiderman_comic
 ```
 
-## Path and URL Helpers
+## Path Helpers
 
-Along with deciding how it will dispatch an http request, it can create Path and URL helpers that can be used in Controllers and Views.
+Along with deciding how it will dispatch an http request, the router can create Path and URL helpers that can be used in Controllers and Views.
 
 For example, if we add `as: 'product'` to the end of our route like so:
 
 ```ruby
 # config/routes.rb
-get '/products/:id', to: 'products#show', as: 'product'
+get 'products/:id' => 'products#show', as: 'product'
 ```
 
 We will be able to use the following methods to generate a links to the product:
 
-`product_path(55)` generates `/products/55` 
-
-`product_url(55)` generates `http://localhost:3000/products/55`
+`product_path(55)` generates `/products/55`
 
 
 ## Displaying Routes
@@ -165,61 +161,25 @@ is the equivalent of:
 
 ```ruby
 # config/routes.rb
-
-get    '/products',          to: 'products#index', as: 'products#index'
-post   '/products',          to: 'products#create'
-get    '/products/new',      to: 'products#new',   as: 'products#new
-get    '/products/:id',      to: 'products#show',  as: 'products#show'
-get    '/products/:id/edit', to: 'products#edit',  as: 'products#edit'
-patch  '/products/:id',      to: 'products#update'
-put    '/products/:id',      to: 'products#update'
-delete '/products/:id',      to: 'products#destroy'
+get    'products'          => 'products#index',  as: 'products'
+post   'products'          => 'products#create'
+get    'products/new'      => 'products#new',    as: 'new_product'
+get    'products/:id'      => 'products#show',   as: 'product'
+get    'products/:id/edit' => 'products#edit',   as: 'edit_product'
+patch  'products/:id'      => 'products#update'
+delete 'products/:id'      => 'products#destroy'
 ```
 
-#### Note: Put vs Patch
+## Root
 
-Both **Put** and **Patch** are for **updating** a record. Technically, Put replaces the record completely, where as Patch updates only a part of a record, though in practice when developing a Rails App, you never need to distinguish between the two.
-
-
-## Nested Routes
-
-Resources can be nested.  For example:
+To direct a url without a path (aka the `root` path), use:
 
 ```ruby
-# config/routes.rb
-
-resources :stores do
-  resources :products
-end
+root to: 'products#index'
 ```
 
-Would produce the following routes:
-
-```bash
-            Prefix  Verb    URI Pattern                          Controller#Action
-    store_products  GET     /stores/:store_id/products           products#index
-                    POST    /stores/:store_id/products           products#create
- new_store_product  GET     /stores/:store_id/products/new       products#new
-edit_store_product  GET     /stores/:store_id/products/:id/edit  products#edit
-     store_product  GET     /stores/:store_id/products/:id       products#show
-                    PATCH   /stores/:store_id/products/:id       products#update
-                    PUT     /stores/:store_id/products/:id       products#update
-                    DELETE  /stores/:store_id/products/:id       products#destroy
-            stores  GET     /stores                              stores#index
-                    POST    /stores                              stores#create
-         new_store  GET     /stores/new                          stores#new
-        edit_store  GET     /stores/:id/edit                     stores#edit
-             store  GET     /stores/:id                          stores#show
-                    PATCH   /stores/:id                          stores#update
-                    PUT     /stores/:id                          stores#update
-                    DELETE  /stores/:id                          stores#destroy
-```
-
-Note that nested routes still only route to a single controller, but make more parameters available in the Params Hash (`params[:store_id]` and `params[:id]` in this example).
-
-#### Tip
-
-When you're first starting out as a Rails developer, try to find solutions that avoid nested routes, as often beginners unnecessarily overcomplicate apps with nested routes.
+If your url is `localhost:3000`, then this would direct 
+`http://localhost:3000/` to the index method in the Products Controller.
 
 
 # Controllers (35 min)
@@ -235,17 +195,21 @@ When we think about data and how we manipulate it, we use the acronym CRUD to de
 
 You'll hear developers say things like "Oh ya, it's just a basic **CRUD** app." (and one day, you'll say it too).
 
-## Seven Controller Methods
+## Seven Controller Methods - Overview
 
 A standard controller will have the following methods:
 
-- `index` - **get** request that lists a collection
-- `show` - **get** request that shows a single record
-- `new` - **get** request to pull up a form for a new record
-- `create` - **post** request that handles the submission of a form
-- `edit` - **get** request to pull up a form for an existing record
-- `update` - **put / patch** request handles the submission of a form
-- `destroy` - **delete** request to remove a single record
+Controller Method | HTTP Request Method | Description
+----------------- | ------------------- | -----------
+index | get | request that retrieves a collection of records
+show | get | request that retrieves a single record
+new | get | request to pull up a form for a new record
+create | post | request that handles the submission of a form to create a new record
+edit | get | request to pull up a form for an existing record
+update | patch | request handles the submission of a form to update an existing record
+destroy | delete | request to remove a single record
+
+
 
 ## Views
 
@@ -258,37 +222,27 @@ For example, a `ProductsController` will try to render the following:
 class ProductsController < ApplicationController
 
   def show
-   
-   # renders /app/views/products/show.html.erb
+
+   # renders app/views/products/show.html.erb
   end
-  
+
   def index
 
-   # renders /app/views/products/index.html.erb  
+   # renders app/views/products/index.html.erb
   end
-  
+
   def new
 
-   # renders /app/views/products/new.html.erb  
-  end    
-  
+   # renders app/views/products/new.html.erb
+  end
+
   def edit
 
-   # renders /app/views/products/edit.html.erb  
-  end  
-  
+   # renders app/views/products/edit.html.erb
+  end
+
 end
 ```
-
-We can override the default template to be rendered by specifying what template we'd like rendered. For example:
-
-```ruby 
-  def show
-    render 'my_special_template'
-  end
-```
-
-will attempt to render `/app/views/products/my_special_template.html.erb`
 
 ## Params Hash
 
@@ -296,26 +250,26 @@ Information about the http request will be accessible via the **Params Hash**.
 
 It will contain:
 
-- the current controller and action (method)
-- form data from a `post` or `put` request
-- dynamic segment route matches in url. For example: 
+- form data from a `post` or `patch` request
+- dynamic segment route matches in url. For example:
 
 ```ruby
-get '/stores/:store_id/products/:id', to: 'products#show'
-``` 
-
-would match the route: 
-
-`http://localhost:3000/stores/99/products/333` 
-
-and would make `{ store_id: 99, id: 333 }` accessible via the params hash:
-
-```ruby
-params[:store_id]  # equals 99
-params[:id]  # equals 333
+get 'products/:id' => 'products#show'
 ```
 
-## Index
+would match the route:
+
+`http://localhost:3000/products/333`
+
+and would make `{ id: 333 }` accessible via the params hash:
+
+```ruby
+params[:id]  # returns 333
+```
+
+## Seven Controller Methods - In-depth
+
+### Index
 
 For retrieving a collection of items.
 
@@ -325,9 +279,9 @@ def index
 end
 ```
 
-Notice how @products is pluralized as it's a collection.
+Notice how `@products` is pluralized. This is because it's a collection (more than 1) of all the products.
 
-## Show
+### Show
 
 For retrieving a single item.
 
@@ -337,11 +291,11 @@ def show
 end
 ```
 
-Notice how @products is pluralized as it's a single item.
+Notice how `@product` is singular. This is because it's an individual item.
 
-## New
+### New
 
-For retrieving a form for a new item:
+For retrieving a form for a new item using a **get** request.
 
 ```ruby
 def new
@@ -349,46 +303,56 @@ def new
 end
 ```
 
-## Create
+We setup a `new` product and store it inside the `@product` **instance variable**. Note that this `product` hasn't yet been saved to the database.
 
-For processing a post request to create a new item:
+### Create
+
+For processing a **post** request to create a new item:
 
 ```ruby
 def create
   @product = Product.new
-  @product.name = params[:name]
-  @product.price = params[:price]
+  @product.name = params[:product][:name]
+  @product.description = params[:product][:description]
+  @product.price = params[:product][:price]
+  
   if @product.save
     flash.notice = 'Product successfully created!'
     redirect_to products_url
   else
     flash.alert = 'Product could not be created. Please correct and try again.'
     render 'new'
-  end  
+  end
 end
 ```
 
+If the `product` successfully saves, it will now be stored permanently in the database.
 
+### Edit
 
-## Edit
-
-For retrieving a form for a new item:
+For retrieving a form for an existing item using a **get** request:
 
 ```ruby
 def edit
+
   @product = Product.find(params[:id])
+  
 end
 ```
 
-## Update
+This loads the product from the database and stores its current state inside the `@product` **instance variable**. Note that the **edit** method does not yet save the changes to the product.
 
-For processing a put request to update an existing item:
+### Update
+
+For processing a **patch** request to update an existing item:
 
 ```ruby
-def edit
-  @product = Product.find(params[:id])
-  @product.name = params[:name]
-  @product.price = params[:price]
+def update
+
+  @product = Product.find(params[:product][:id])
+  @product.name = params[:product][:name]
+  @product.price = params[:product][:price]
+  
   if @product.save
     flash.notice = 'Product successfully updated!'
     redirect_to product_url(@product)
@@ -396,104 +360,27 @@ def edit
     flash.alert = 'Product could not be updated. Please correct and try again.'
     render 'edit'
   end
+  
 end
 ```
 
-## Destroy
+If the `product` successfully saves with the altered values from the form, the changes will now be stored permanently in the database.
+
+### Destroy
 
 ```ruby
 def destroy
+
   @product = Product.find(params[:id])
   @product.destroy!
   flash.notice = 'Product successfully deleted.'
-  redirect_to products_url  
-end
-```
-
-
-## Strongs Params
-
-Usually we specify what params we'll allow through using **Strong Params** instead of specifying each parameters. 
-
-So instead of:
-
-```ruby
-  def create
-    @product = Product.new
-    @product.name = params[:name]
-    @product.description = params[:description]    
-    @product.price = params[:price]        
-
-    if @product.save
-      redirect_to products_url
-    else
-      render :new
-    end
-  end
-```
-
-We would construct our Strong Params method like so:
-
-```ruby
-  def create
-    @product = Product.new(product_params)
-
-    if @product.save
-      redirect_to products_url
-    else
-      render :new
-    end
-  end
-
-  private
-
-  def product_params
-    params.require(:product).permit(:name, :description, :price)
-  end
-```  
-
-## Filters
-
-If we need something to run before every method, we can use the `before_action` filter.  For example, this ensures the user is logged in before accessing this controller:
-
-```ruby
-class ProductsController < ApplicationController
+  redirect_to products_url
   
-  before_action :require_login
-  
-  # rest of controller
-  ...
 end
 ```
 
-## Application Controller
+## Recap and Further Resources
 
-Notice how our controller inherits from ApplicationController:  
+#### Rails Guides: Rails Routing from the Outside In:<br><http://guides.rubyonrails.org/routing.html>
 
-```ruby
-class ProductsController < ApplicationController
-```
-
-We can put methods we want accessible to multiple controllers in the ApplicationController as they'll all inherit from them.
-
-For example, the following would provide a useful current_user method throughout our controllers:
-
-```ruby
-class ApplicationController < ActionController::Base
-
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
-
-end
-```
-
-## Further Resources: Rails Guides
-
-#### Rails Routing from the Outside In:
-http://guides.rubyonrails.org/routing.html
-
-#### Action Controller Overview:
-http://guides.rubyonrails.org/action_controller_overview.html
-
-# Lesson Exercise: Ipsum's Fairground (remaining time)
+#### Rails Guides: Action Controller Overview:<br><http://guides.rubyonrails.org/action_controller_overview.html>
