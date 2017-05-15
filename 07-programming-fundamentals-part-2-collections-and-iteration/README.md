@@ -106,7 +106,7 @@ irb > my_array
 
 Ruby arrays follow the computer science convention [LIFO](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) (last in, first out).
 
-![](imgs/lifo-stack.jpg)
+![](https://upload.wikimedia.org/wikipedia/commons/b/b4/Lifo_stack.png)
 
 ### `.delete`
 
@@ -724,7 +724,7 @@ Grumpy Bear battles Professor Coldheart
 Professor Coldheart flees to the Land Without Feelings.
 ```
 
-![](imgs/professor-no-heart.jpg)
+![](http://vignette1.wikia.nocookie.net/carebears/images/7/72/Professor_Coldheart_-_Care_Bears.jpg)
 
 Let's try another `.each` loop.
 
