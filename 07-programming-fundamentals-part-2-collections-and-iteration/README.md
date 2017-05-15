@@ -1025,6 +1025,7 @@ end
 This is like saying:
 > Yeah, I don't really want the `_action` variable, but Ruby is making me set it just so I can iterate through the hash. Eesh!
 
+![](https://s-media-cache-ak0.pinimg.com/originals/28/44/13/284413cc8247c884e3ad04342fc7fc00.jpg)
 
 ## Other Enumerable Methods
 
