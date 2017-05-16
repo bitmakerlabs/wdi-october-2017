@@ -16,7 +16,7 @@
 
 # Introduction
 
-`Arrays` and `Hashes` are the two most common Ruby classes for holding collections (i.e. more than one).
+`Arrays` and `Hashes` are the two most common Ruby classes for holding collections (i.e. more than one object).
 
 As you code, keep in mind whether you are working with a single item, or a collection of items.
 
@@ -45,7 +45,7 @@ Notice on the left hand side of the Array documentation, there's a subtle **Incl
 
 This means that the `Enumerable` functionality has been ***"Mixed In"*** (aka included) in the `Array` class.
 
-In computer science,  ***Enumerable*** means "able to be counted". The reason it's a separate module is because other types of collections also include `Enumerable`. Like, for example, the `Hash` data type. It makes sense to keep our code DRY (Don't - Repeat - Yourself), and therefore they've separated like-functionality into a separate module that can be used for over and over again in collection types.
+In computer science,  ***Enumerable*** means "able to be counted". The reason it's a separate module is because other types of collections also include `Enumerable`. Like, for example, the `Hash` data type. It makes sense to keep our code DRY (Don't - Repeat - Yourself), and therefore they've separated like-functionality into a separate module that can be used over and over again in collection types.
 
 When looking up documentation on arrays, you'll want to look at both the Array documention and the Enumerable documentation:
 
@@ -217,7 +217,7 @@ puts my_array
 
 `puts` displays each item in the array on a separate line.
 
-We can access items starting from the end of the array and working backwards by using a negative index:
+We can access items starting from the end of the array and work backwards by using a negative index:
 
 ```ruby
 my_array = ['Ray', 'Egon', 'Peter', 'Winston']
@@ -289,7 +289,7 @@ Notice the square brackets on the outside of `my_arrays`. This denotes that my_a
 
 ### Step #1: Create Your Array Of Items
 
-Create an array of items of something you like. Include at least five items. For example, if you like ice cream, you could create the following array:
+Create an array of things you like. Include at least five items. For example, if you like ice cream, you could create the following array:
 
 ```ruby
 flavours = ['Chocolate', 'Strawberry', 'Vanilla', 'Rocky Road', 'Green Tea']
@@ -299,9 +299,9 @@ flavours = ['Chocolate', 'Strawberry', 'Vanilla', 'Rocky Road', 'Green Tea']
 
 Find a classmate and exchange items in your arrays.
 
-When you exchange an item, ensure you remove the item that you're giving your classmate from your array, and add the item your classmate is giving to you. Use the shovel operator `<<` to add your new item and either `pop`, `shift`, `delete`, or `delete_at` to remove an item.
+When you give your classmate an item, ensure you remove that item from your array, and add the item your classmate is giving to you. Use the shovel operator `<<` to add your new item and either `pop`, `shift`, `delete`, or `delete_at` to remove an item.
 
-Exchange a few times so that you end up with an array quite different than what you started out with.
+Exchange a few times so that you end up with an array that's quite different from your original array.
 
 ### Step #4: Change The Value Of An Item
 
@@ -607,7 +607,7 @@ Let's take apart the example:
 bears = ['Cheer', 'Funshine', 'Love-a-lot', 'Grumpy']
 ```
 
-Here we setup a local variables called `bears`. In this variable we store an array that contains 4 strings: *Cheer*, *Funshine*, *Love-a-lot* and *Grumpy*. Notice that our variable name `bears` has an `s` on the end of it. It's common to pluralize collections, and when you move onto rails, pluralization has significant meaning.
+Here we setup a local variable called `bears`. In this variable we store an array that contains 4 strings: *Cheer*, *Funshine*, *Love-a-lot* and *Grumpy*. Notice that our variable name `bears` has an `s` on the end of it. It's common to pluralize collections, and when you move onto rails, pluralization has significant meaning.
 
 ```ruby
 bears.each do |bear|
@@ -629,7 +629,7 @@ end
 
 The above example would be processed exactly like our original code block, but is more difficult to understand as `x` has less meaning.
 
-One of the most important goals in programming is make your code ***easy to reason about***. Once to start developing bigger programs, it can be difficult to follow code that hasn't used well thoughtout variable names. Let's put `bear` back in as our block scoped variable name:
+One of the most important goals in programming is make your code ***easy to reason about***. Once you start developing bigger programs, it can be difficult to follow code that doesn't use thoughtful variable names. Let's put `bear` back in as our block scoped variable name:
 
 ```ruby
 bears.each do |bear|
@@ -732,7 +732,7 @@ Let's try another `.each` loop.
 numbers = [1, 2, 3, 4, 5]
 
 numbers.each do |number|
-  puts "#{number} * #{5} is equal to #{number * 5}"
+  puts "#{number} * 5 is equal to #{number * 5}"
 end
 ```
 
@@ -750,11 +750,11 @@ Another way to write this is:
 
 ```ruby
 [1, 2, 3, 4, 5].each do |number|
-  puts "#{number} * #{5} is equal to #{number * 5}"
+  puts "#{number} * 5 is equal to #{number * 5}"
 end
 ```
 
-In the example above, I never set up the local variable `numbers`. Instead I just setup an array and immediately called `.each` on it.
+In the example above, I never set up the local variable `numbers`. Instead I just set up an array and immediately called `.each` on it.
 
 ### `do...end` vs `{ }`
 
@@ -763,16 +763,16 @@ You'll often come across examples that use `{ }` instead of `do...end`. The open
 Ruby coders usually use curlys for simpler iteration loops that only contain one line of code in their code block. For example, the loop above could be written like this:
 
 ```ruby
-[1, 2, 3, 4, 5].each { |number| puts "#{number} * #{5} is equal to #{number * 5}" }
+[1, 2, 3, 4, 5].each { |number| puts "#{number} * 5 is equal to #{number * 5}" }
 ```
 
-Notice the above example is the same as the earlier `do...end` block, except that everything is on one line, and `do` has been substituded with `{`, and `end` with `}`.
+Notice the above example is the same as the earlier `do...end` block, except that everything is on one line, and `do` has been substituted with `{`, and `end` with `}`.
 
 You may even find curlys used on multiple lines:
 
 ```ruby
 [1, 2, 3, 4, 5].each { |number|
-  puts "#{number} * #{5} is equal to #{number * 5}"
+  puts "#{number} * 5 is equal to #{number * 5}"
 }
 ```
 
@@ -798,7 +798,7 @@ puts list_item_bears
 puts '</ul>'
 ```
 
-When we run this progarm, we'll see the bears all setup nicely in a list that we can copy to our HTML page:
+When we run this progarm, we'll see the bears all set up nicely in a list that we can copy to our HTML page:
 
 ```
 <ul>
@@ -872,9 +872,9 @@ irb > bears
   ]
 ```
 
-<small>(note: I separated the output onto separate lines for easy reading).</small>
+<small>(Note: I separated the output onto separate lines for easy reading.)</small>
 
-The original array we setup with:
+The original array we set up with:
 
 ```ruby
 bears = ['Cheer', 'Funshine', 'Love-a-lot', 'Grumpy']
@@ -886,7 +886,7 @@ bears = ['Cheer', 'Funshine', 'Love-a-lot', 'Grumpy']
 
 In Ruby, it's common to put a `!` after methods that mutate data. That's why the mutating `.map!` version has a `!` at the end of it it.
 
-Sometimes a `!` is called a '***bang***', as it's easier to say than '***explanation mark***'.
+Sometimes a `!` is called a '***bang***', as it's easier to say than '***exclamation mark***'.
 
 Not all mutating methods have a `!` though. For example:
 
@@ -1012,7 +1012,7 @@ bears.each do |bear, action|
 end
 ```
 
-We setup a local variable called `action` even though we never used `action` in the `do...end` block. This is because hashes are always `key - value` pairs, and you need to specify both regardless when iterating.
+We set up a local variable called `action` even though we never used `action` in the `do...end` block. This is because hashes are always `key - value` pairs, and you need to specify both regardless when iterating.
 
 One technique programmers use when they're forced to set a variable name they don't need is to use an underscore at the start of that variable. So for example, we could put:
 
@@ -1090,14 +1090,14 @@ end
 
 # Wrap-up
 
-We've covered a lot of material here. Don't worry if you didn't take it all in. It can take months if not years (if ever) for it to sink in and for you to be able to recite this by rote.
+We've covered a lot of material here. Don't worry if you didn't take it all in. It can take some time to fully understand these concepts.
 
 What's important to take away for today is:
 
 - when to use an array
 - when to use an hash
 - how to identify an array (with square brackets `[]`)
-- how to identify a has (with curly braces `{}`)
+- how to identify a hash (with curly braces `{}`)
 - that both arrays and hashes are collections of other objects
 - that there are useful methods you can use on both of these
 - how to access the documentation to perform all of the above
@@ -1114,4 +1114,3 @@ https://ruby-doc.org/core-2.4.1/Hash.html
 
 **Ruby Enumerable Module Documentation**
 https://ruby-doc.org/core-2.4.1/Enumerable.html
-
