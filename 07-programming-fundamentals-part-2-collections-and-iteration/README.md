@@ -24,7 +24,6 @@ As you code, keep in mind whether you are working with a single item, or a colle
 
 ---
 # Arrays
-<small>(30 min)</small>
 
 ## Definition
 
