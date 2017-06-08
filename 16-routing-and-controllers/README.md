@@ -1,36 +1,49 @@
 # Routing and Controllers - Introduction
 
-Today we'll take our first deep dive into Rails and learn all about Routing and Controllers in Rails.
+Today we'll take our first deep dive into Rails and learn about Routing and Controllers.
 
-## Agenda (5 min)
+---
 
-After this lesson, you will know about:
+## Agenda
 
-### Routing
-- Static Segments
-- Dynamic Segments
-- Path Helpers
-- How To Display Routes
-- Resource Routing
+- #### Introduction <small>(5 min)</small>
+  - Intro
+  - Agenda
+  - Overview
 
-### Controllers
-- CRUD
-- Seven Controller Methods: Overview
-- Views
-- Params Hash
-- Seven Controller Methods: In-depth
- - Index
- - Show
- - New
- - Create
- - Edit
- - Update
- - Destroy
+- #### Routing <small>(25 min)</small>
+  - Static Segments
+  - Dynamic Segments
+  - Path Helpers
+  - How To Display Routes
+  - Resource Routing
 
-### Wrap-up
-- Recap
-- Further Resources
+- #### Controllers <small>(35 min)</small>
+  - CRUD
+  - Seven Controller Methods: Overview
+  - Views
+  - Params Hash
+  - Seven Controller Methods: In-depth
+  <ul>
+    - Index
+    - Show
+    - New
+    - Create
+    - Edit
+    - Update
+    - Destroy
+  </ul>
+  
+- #### Wrap-up <small>(5 min)</small>
+  - Recap
+  - Further Resources
 
+- #### Lesson Exercise: Ipsum's Fairground <small>(remaining time)</small>
+  - Let's create a Rails App!
+
+<br>
+
+---
 
 ## Overview
 
@@ -38,11 +51,15 @@ When an http request hits a Rails app, the **Router** analyzes the request and d
 
 The **Controller** works with any **Models** necessary, and then renders the appropriate **View**.
 
-# Routing (25 min)
+<br>
+
+---
+
+# Routing
 
 Routes are defined in `config/routes.rb`.
 
-The router looks at **http request method** and **path** of the request, and then using pattern matching, calls the appropriate **controller** and **action** (aka. ruby method).
+The router looks at **http request method** and **path** of the request, and then using pattern matching, calls the appropriate **controller** and **action** (ruby method).
 
 ## Example
 
@@ -62,7 +79,7 @@ end
 
 This routes matches the request like so:
 
-- `get` - matches the http request method.
+- `get` - matches the ***http request method***.
 - `/products/` - matches **/products/** in http://store.com/products/55
 - `:id` - as it starts with a colon `:`, it's a wildcard match and will match anything. Therefore it matches **55** in http://store.com/products/55
 
@@ -89,15 +106,15 @@ The show method finds the product and then renders and returns the view.
 
 ## Static Segments
 
-Anything static (not prefixed with a **colon**) must be matched exactly for a route to take effect.
+Anything static (not prefixed with a **colon**) must be matched exactly for its route to take effect.
 
 In the following example:
 
 ```ruby
-get 'stores/:store_id/products/:id' => 'products#show'
+get '/products/:id' => 'products#show'
 ```
 
-`stores` and `products` are static segments.
+`products` is a static segment.
 
 ## Dynamic Segments
 
@@ -106,15 +123,32 @@ Anything dynamic (prefixed with a **colon**) can match on *anything*:
 In the following example:
 
 ```ruby
-get 'stores/:store_id/products/:id' => 'products#show'
+get '/products/:id' => 'products#show'
 ```
 
-`:store_id` and `:id` are dynamic segments, and the following would be legitimate matches:
+`:id` is a dynamic segment, and the following would be legitimate matches:
 
 ```bash
-http://localhost:3000/stores/99/products/333
-http://localhost:3000/stores/silver_snail/products/spiderman_comic
+http://localhost:3000/products/333
+http://localhost:3000/products/spiderman_comic
 ```
+
+For:
+
+```bash
+http://localhost:3000/products/333
+```
+
+`:id` captures `333`
+
+For:
+
+```bash
+http://localhost:3000/products/spiderman_comic
+```
+
+`:id` captures `spiderman_comic`
+
 
 ## Path Helpers
 
@@ -140,7 +174,7 @@ To see what routes currently exist in your application, use the following from t
 rails routes
 ```
 
-For our products example, we would see the following:
+For our products example above, we would see the following:
 
 ```bash
 Prefix   Verb  URI Pattern    Controller#Action
@@ -178,11 +212,14 @@ To direct a url without a path (aka the `root` path), use:
 root to: 'products#index'
 ```
 
-If your url is `localhost:3000`, then this would direct 
-`http://localhost:3000/` to the index method in the Products Controller.
+If your url is `localhost:3000`, then this would direct
+`http://localhost:3000/` to the `index` method in the `ProductsController`.
 
+<br>
 
-# Controllers (35 min)
+---
+
+# Controllers
 
 ## CRUD
 
@@ -194,6 +231,7 @@ When we think about data and how we manipulate it, we use the acronym CRUD to de
 - **D**elete a record
 
 You'll hear developers say things like "Oh ya, it's just a basic **CRUD** app." (and one day, you'll say it too).
+
 
 ## Seven Controller Methods - Overview
 
@@ -210,7 +248,6 @@ update | patch | request handles the submission of a form to update an existing 
 destroy | delete | request to remove a single record
 
 
-
 ## Views
 
 For `get` requests, the **controller** will implicitly try to render (process and send back as html) a template in a folder named after the controller, and a file named after the method.
@@ -222,27 +259,24 @@ For example, a `ProductsController` will try to render the following:
 class ProductsController < ApplicationController
 
   def show
-
    # renders app/views/products/show.html.erb
   end
 
   def index
-
    # renders app/views/products/index.html.erb
   end
 
   def new
-
    # renders app/views/products/new.html.erb
   end
 
   def edit
-
    # renders app/views/products/edit.html.erb
   end
 
 end
 ```
+
 
 ## Params Hash
 
@@ -266,6 +300,7 @@ and would make `{ id: 333 }` accessible via the params hash:
 ```ruby
 params[:id]  # returns 333
 ```
+
 
 ## Seven Controller Methods - In-depth
 
@@ -291,11 +326,11 @@ def show
 end
 ```
 
-Notice how `@product` is singular. This is because it's an individual item.
+Notice how `@product` is singular. This is because it's only one item.
 
 ### New
 
-For retrieving a form for a new item using a **get** request.
+For retrieving a form for a new item.
 
 ```ruby
 def new
@@ -315,7 +350,7 @@ def create
   @product.name = params[:product][:name]
   @product.description = params[:product][:description]
   @product.price = params[:product][:price]
-  
+
   if @product.save
     flash.notice = 'Product successfully created!'
     redirect_to products_url
@@ -326,21 +361,21 @@ def create
 end
 ```
 
-If the `product` successfully saves, it will now be stored permanently in the database.
+If `@product` successfully saves, it will now be stored permanently in the database.
+
+If `@product` doesn't save, the form will be displayed again. It will contain validation errors and the fields filled out from the previous submission.
 
 ### Edit
 
-For retrieving a form for an existing item using a **get** request:
+For retrieving a form for an existing item.
 
 ```ruby
 def edit
-
   @product = Product.find(params[:id])
-  
 end
 ```
 
-This loads the product from the database and stores its current state inside the `@product` **instance variable**. Note that the **edit** method does not yet save the changes to the product.
+This loads the product from the database and stores its current state inside the `@product` **instance variable**. Note that the **edit** method does not yet save the changes to `@product`.
 
 ### Update
 
@@ -352,7 +387,7 @@ def update
   @product = Product.find(params[:product][:id])
   @product.name = params[:product][:name]
   @product.price = params[:product][:price]
-  
+
   if @product.save
     flash.notice = 'Product successfully updated!'
     redirect_to product_url(@product)
@@ -360,7 +395,7 @@ def update
     flash.alert = 'Product could not be updated. Please correct and try again.'
     render 'edit'
   end
-  
+
 end
 ```
 
@@ -368,19 +403,34 @@ If the `product` successfully saves with the altered values from the form, the c
 
 ### Destroy
 
+For removing a an item from the database.
+
 ```ruby
 def destroy
-
   @product = Product.find(params[:id])
   @product.destroy!
   flash.notice = 'Product successfully deleted.'
   redirect_to products_url
-  
 end
 ```
 
+<br>
+
+---
+
 ## Recap and Further Resources
 
-#### Rails Guides: Rails Routing from the Outside In:<br><http://guides.rubyonrails.org/routing.html>
+#### Rails Guides: Rails Routing from the Outside In:<br>[http://guides.rubyonrails.org/routing.html](http://guides.rubyonrails.org/routing.html)
 
-#### Rails Guides: Action Controller Overview:<br><http://guides.rubyonrails.org/action_controller_overview.html>
+#### Rails Guides: Action Controller Overview:<br>[http://guides.rubyonrails.org/action_controller_overview.html](http://guides.rubyonrails.org/action_controller_overview.html)
+
+<br>
+
+---
+
+## Lesson Exercise: Ipsum's Fairground 
+
+Let's create a Rails App!
+
+Open [ipsums-fairground.html](ipsums-fairground.html)
+

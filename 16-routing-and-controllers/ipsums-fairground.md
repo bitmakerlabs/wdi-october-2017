@@ -17,7 +17,7 @@ rails server
 ### Browser:
 
 ```
-http://localhost:3000/
+http://localhost:3000
 ```
 
 - You should the default **Yay! You're on Rails! page**.
@@ -25,12 +25,14 @@ http://localhost:3000/
 
 # Restarting Rails
 
-## Generally, unlike Sinatra, Rails does not need a restart when these files are changed:
+Unlike Sinatra, Rails does not need a restart when most files are changed.
+
+**Rails does not need a restart when the following are changed:**
 
 - anything inside of `/app` (models, view controllers, assets, etc.)
-- `routes.rb`
+- `config/routes.rb`
 
-## Generally, Rails does need a restart when:
+**Rails does need a restart when the following are changed:**
 
 - `Gemfile`
 - `/initializers/*`
@@ -59,14 +61,14 @@ Now we'll configure our first route.
 ### Editor:
 
 ```ruby
-# /config/routes.rb
+# config/routes.rb
 
 Rails.application.routes.draw do
-  get '/about', to: 'rides#about'
+  get 'about' => 'rides#about'
 end
 ```
 
-- `get '/about', to: 'rides#about'` means when `about` is the path (after the domain), go to the `RidesController` and call the `def about` method
+- `get 'about' => 'rides#about'` means when `about` is the path (after the domain), go to the `RidesController` and call the `def about` method
 
 - Let's see if our route exists now.
 
@@ -94,20 +96,29 @@ http://localhost:3000/about
 Let's create a controller.
 
 ### Terminal:
+
 ```shell
-rails generate controller Rides
+rails generate controller rides
 ```
 
-Now we'll add an `about` method to handle the route we created.
+What happens when we try the website now?
+
+### Browser:
+
+```
+http://localhost:3000/about
+```
+
+Add an `about` method to handle the route we created.
 
 ### Editor:
 
 ```ruby
-# /app/controllers/rides_controller.rb
+# app/controllers/rides_controller.rb
 
 class RidesController < ApplicationController
   def about
-    render text: "Welcome to Ipsum's Fair!  Come for our rides, stay for our hotdogs."
+    render plain: "Welcome to Ipsum's Fair!  Come for our rides, stay for our hotdogs."
   end
 end
 ```
@@ -121,7 +132,7 @@ http://localhost:3000/about
 ---
 # Lorem Ipsum
 
-Useful when you need filler text.
+Lorem Ipsum is useful as filler text.
 
 ### Browser:
 
@@ -145,9 +156,9 @@ Then we'll add our route and save our file.
 ### Editor:
 
 ```ruby
-# /config/routes.rb
+# config/routes.rb
 ...
-  get '/lorem', to: 'rides#lorem_ride'
+  get 'lorem' => 'rides#lorem_ride'
 ...  
 ```
 
@@ -158,9 +169,9 @@ Now let's see if the route we just added exists:
 rails routes
 ```
 
-- Notice that our new route's path `lorem` is different than the action name `lorem_ride` (unlike our first `about` route)
+Notice that our new route's path `lorem` is different than the action name `lorem_ride` (unlike our first `about` route)
 
-- What URL do we put into our browser to get this new route?
+What URL do we put into our browser to get this new route?
 
 ### Browser:
 
@@ -174,12 +185,12 @@ http:// What url goes here?
 
 
 ```ruby
-# /app/controllers/rides_controller.rb
+# app/controllers/rides_controller.rb
 
 class RidesController < ApplicationController
 ...  
   def lorem_ride
-    render text: '???' # we need to generate some lorem ipsum text
+    render plain: '???' # we need to generate some lorem ipsum text
   end
 end
 ```
@@ -205,45 +216,48 @@ http://localhost:3000/lorem
 
 ## Your Turn
 
-Add two more routes and controller methods using Ipsum generators from this list I'll post to slack.
+Add two more routes and controller methods using Ipsum generators from this blog post:
 
-### Browser:
+[http://mashable.com/2013/07/11/lorem-ipsum](http://mashable.com/2013/07/11/lorem-ipsum)
 
-```
-http://mashable.com/2013/07/11/lorem-ipsum/#47xbLkuhAqqV
-```
 
 I can help people now who are stuck.
 
+<br>
+
 ---
+
+## My Turn
 
 Now I'll catch-up to where you're at.
 
 ### Editor:
 
 ```ruby
-# /config/routes.rb
+# config/routes.rb
 
 ...
-  get '/bacon', to: 'rides#bacon_ride'
-  get '/hodor', to: 'rides#game_of_thrones_ride'
+  get 'bacon' => 'rides#bacon_ride'
+  get 'hodor' => 'rides#game_of_thrones_ride'
 ...
 ```
 
 
 ```ruby
-# /app/controllers/rides_controller.rb
+# app/controllers/rides_controller.rb
 
 ...  
   def bacon_ride
-    render text: 'Bacon ipsum dolor amet pastrami alcatra kevin ribeye turkey, spare ribs shank jerky.'
+    render plain: 'Bacon ipsum dolor amet pastrami alcatra kevin ribeye turkey, spare ribs shank jerky.'
   end
 
   def game_of_thrones_ride
-    render text: 'Hodor, hodor; hodor HODOR hodor, hodor hodor? Hodor hodor - hodor...'
+    render plain: 'Hodor, hodor; hodor HODOR hodor, hodor hodor? Hodor hodor - hodor...'
   end
 ...
 ```
+
+<br>
 
 ---
 # Root
@@ -255,7 +269,7 @@ Now I'll catch-up to where you're at.
 ### Editor:
 
 ```ruby
-# /config/routes.rb
+# config/routes.rb
 ...
   root to: 'rides#home'
 ...  
@@ -281,7 +295,7 @@ touch app/views/rides/home.html.erb
 ### Editor:
 
 ```html
-# app/views/rides/home.html.erb
+<!-- app/views/rides/home.html.erb -->
 
 <h1>Welcome to the Ipsum Fair</h1>
 ```
@@ -292,9 +306,9 @@ touch app/views/rides/home.html.erb
 ### Editor:
 
 ```ruby
-# /config/routes.rb
+# config/routes.rb
 ...
-  get 'rides/:ride_name', to: 'rides#show'
+  get 'rides/:ride_name' => 'rides#show'
 ...  
 ```
 
@@ -310,7 +324,7 @@ http://localhost:3000/rides/lorem
 
 
 ```ruby
-# /app/controllers/rides_controller.rb
+# app/controllers/rides_controller.rb
 ...  
   def show
     render html: params.inspect
@@ -318,7 +332,7 @@ http://localhost:3000/rides/lorem
 ...
 ```
 
-`inspect` is a ruby method you can call on any object to open it up and look inside. It's very useful for debugging.
+`inspect` is a ruby method you can call on any object to open it up and look inside. It's useful for debugging.
 
 ### Browser:
 
@@ -329,10 +343,10 @@ http://localhost:3000/rides/lorem
 ### Editor:
 
 ```ruby
-# /app/controllers/rides_controller.rb
+# app/controllers/rides_controller.rb
 ...  
   def show
-    render text: "Your Ride is '#{params[:ride_name]}'"
+    render plain: "Your Ride is '#{params[:ride_name]}'"
   end
 ...
 ```
@@ -367,12 +381,12 @@ Let's go back to our original `lorem` ride.
 http://localhost:3000/rides/lorem
 ```
 
-Let's take away `render text` from our show.
+Let's take away the `render plain` line from our `show`.
 
 ### Editor:
 
 ```ruby
-# /app/controllers/rides_controller.rb
+# app/controllers/rides_controller.rb
 ...  
   def show
   end
@@ -385,7 +399,7 @@ Let's take away `render text` from our show.
 http://localhost:3000/rides/lorem
 ```
 
-- Rails impliciately tries to render a template for 'show'.
+- Rails impliciately tries to render a template for `show`.
 - Where are templates stored?
 
 ### Terminal:
@@ -397,7 +411,7 @@ touch app/views/rides/show.html.erb
 ### Editor:
 
 ```html
-# app/views/rides/show.html.erb
+<!-- app/views/rides/show.html.erb -->
 
 <h1>I am the show!</h1>
 ```
@@ -421,7 +435,7 @@ Let's pass our ride name to the view.
 ### Editor:
 
 ```ruby
-# /app/controllers/rides_controller.rb
+# app/controllers/rides_controller.rb
 ...  
   def show
     @ride_name = params[:ride_name]
@@ -434,18 +448,18 @@ What do we have to do to display the ride name in the view?
 ### Editor:
 
 ```html
-# app/views/rides/show.html.erb
+<!-- app/views/rides/show.html.erb -->
 
 <h1>Welcome to the <%= @ride_name %> Ride!</h1>
 ```
 
-Let's do this using a more conventional way.
+Let's do this using a more conventional way:
 
 ### Editor:
 ```ruby
-# /config/routes.rb
+# config/routes.rb
 ...
-  get '/rides/:id', to: 'rides#show'
+  get 'rides/:id' => 'rides#show'
 ...
 ```
 
@@ -454,15 +468,13 @@ Now how do I get the Ride Name?
 ### Editor:
 
 ```ruby
-# /app/controllers/rides_controller.rb
+# app/controllers/rides_controller.rb
 ...  
   def show
     @ride_name = params[:id]
   end
 ...
 ```
-
-Test.
 
 ### Browser:
 
@@ -475,24 +487,26 @@ Let's move our Lorem Ipsum text to be retrieved by the show.
 
 ### Editor:
 ```ruby
-# /app/controllers/rides_controller.rb
+# app/controllers/rides_controller.rb
 ...  
   def show
     @ride_name = params[:id]
     @description = case @ride_name
-                  when 'lorem'
-                    lorem_ride
-                  when 'bacon'
-                    bacon_ride                    
-                  when 'hodor'
-                    game_of_thrones_ride
-                  else
-                    "We don't have that ride, sorry."
-                  end
+                   when 'lorem'
+                     lorem_ride
+                   when 'bacon'
+                     bacon_ride                    
+                   when 'hodor'
+                     game_of_thrones_ride
+                   else
+                     "We don't have that ride, sorry."
+                   end
   end
 ...
 
-  private
+  def lorem_ride
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  end
     
   def bacon_ride
     'Bacon ipsum dolor amet pastrami alcatra kevin ribeye turkey, spare ribs shank jerky.'
@@ -502,9 +516,6 @@ Let's move our Lorem Ipsum text to be retrieved by the show.
     'Hodor, hodor; hodor HODOR hodor, hodor hodor? Hodor hodor - hodor...'
   end
   
-  def lorem_ride
-    '???'
-  end
 ```
 
 
@@ -519,7 +530,7 @@ What do I need to put in my view template to show both the name and description?
 ### Editor:
 
 ```html
-# app/views/rides/show.html.erb
+<!-- app/views/rides/show.html.erb -->
 
 <h1><%= @ride_name %> Ride</h1>
 <p><%= @description %></p>
@@ -543,60 +554,7 @@ http://localhost:3000/rides/hodor
 http://localhost:3000/rides/are-you-for-real
 ```
 
-# Several Parameters
-
-### Editor:
-
-```ruby
-# /config/routes.rb
-...
-  get '/funfun/:name/:age/:weight/please', to: 'rides#funfun'
-...
-```
-
-What of the new route are parameters?
-
-### Editor:
-```ruby
-# /app/controllers/rides_controller.rb
-...
-  def funfun
-    render text: "Welcome #{params[:name]}! You are #{params[:age]} years old. You weigh #{params[:weight]} pounds. Not bad."
-  end
-...
-```
-
-Which of the following will match?
-
-### Browser:
-
-```
-http://localhost:3000/funfun/bernie/80/300/please
-http://localhost:3000/funfun/bernie/80/300/thankyou
-http://localhost:3000/funfun/melissa/20/100/please
-http://localhost:3000/funfun/:melissa/80/300/please
-```
-
-Let's remove this funfun route.
-
-### Editor:
-
-
-```ruby
-# /config/routes.rb
-...
-  <snip>
-...  
-
-```
-
-```ruby
-# /app/controllers/rides_controller.rb
-...
-  <snip>
-...  
-
-```
+<br>
 
 ---
 # Index
@@ -604,15 +562,15 @@ Let's remove this funfun route.
 ### Editor:
 
 ```ruby
-# /config/routes.rb
+# config/routes.rb
 ...
-  get '/rides', to: 'rides#index'
+  get 'rides' => 'rides#index'
 ...  
 
 ```
 
 ```ruby
-# /app/controllers/rides_controller.rb
+# app/controllers/rides_controller.rb
 ...
   def index
     @rides = { lorem: lorem_ride, bacon: bacon_ride, hodor: game_of_thrones_ride }
@@ -622,7 +580,7 @@ Let's remove this funfun route.
 ```
 
 ```html
-# /app/views/index.html.erb
+<!-- app/views/rides/index.html.erb -->
 
 <h1>Rides We Have</h1>
 
@@ -637,17 +595,17 @@ Let's remove this funfun route.
 ### Editor:
 
 ```ruby
-# /config/routes.rb
+# config/routes.rb
 
 ...
-  get 'rides/new', to: 'rides#new'
-  post 'rides', to: 'rides#create'
+  get 'rides/new' => 'rides#new'
+  post 'rides' 	 => 'rides#create'
 ...  
 
 ```
 
 ```ruby
-# /app/controllers/rides_controller.rb
+# app/controllers/rides_controller.rb
 
 ...
   def new
@@ -664,12 +622,13 @@ Let's remove this funfun route.
 
 
 ```html
-# /app/views/new.html.erb
+<!-- app/views/rides/new.html.erb -->
 
 <h1>Add New Ride</h1>
 
 <%= form_tag rides_path do %>
-  Imagine a new ride form here.<br>
+  Imagine a new ride form here.
+  <br><br>
   <%= submit_tag 'Save New Ride' %>
 <% end %>
 ```
@@ -681,39 +640,58 @@ Let's remove this funfun route.
 ### Editor:
 
 ```ruby
-# /config/routes.rb
-
+# config/routes.rb
 ...
-  get 'rides/edit', to: 'rides#edit'
-  put 'rides', to: 'rides#update'
+  get   'rides/:id/edit' => 'rides#edit'
+  patch 'rides'          => 'rides#update'
 ...  
 
 ```
 
 ```ruby
-# /app/controllers/rides_controller.rb
-
+# app/controllers/rides_controller.rb
 ...
+  def show
+    get_name_and_description
+  end
+...  
   def edit
-    # Code to display the edit form
+    get_name_and_description
   end
   
   def update
     # Code to update the ride
     redirect_to rides_path
   end  
-...  
+...
+  def get_name_and_description
+    @ride_name = params[:id]
+
+    @description =
+      case @ride_name
+        when 'lorem'
+          lorem_ride
+        when 'bacon'
+          bacon_ride
+        when 'hodor'
+          game_of_thrones_ride
+        else
+          "Sorry, we don't have that ride."
+        end
+  end
+...
 
 ```
 
 
 ```html
-# /app/views/edit.html.erb
+<!-- app/views/rides/edit.html.erb -->
 
-<h1>Edit Existing Ride</h1>
+<h1>Edit <%= @ride_name %> Ride</h1>
 
 <%= form_tag rides_path do %>
-  Imagine an edit ride form here.<br>
+  Imagine an edit ride form here.
+  <br><br>
   <%= submit_tag 'Save Ride' %>
 <% end %>
 ```
@@ -725,17 +703,17 @@ Let's remove this funfun route.
 ### Editor:
 
 ```ruby
-# /config/routes.rb
+# config/routes.rb
 
 ...
-  delete 'ride', to: 'rides#destroy'
+  delete 'ride' => 'rides#destroy'
 ...  
 
 ```
 
 
 ```ruby
-# /app/controllers/rides_controller.rb
+# app/controllers/rides_controller.rb
 
 ...
   def destroy
@@ -748,12 +726,17 @@ Let's remove this funfun route.
 
 # Resourceful Routing
 
-let's use the Rails shortcut to create these routes
+Let's use resourceful routing to create these routes instead.
+
+### Terminal:
+```shell
+rails routes
+```
 
 ### Editor:
 
 ```ruby
-# /config/routes.rb
+# config/routes.rb
 ...
   resources :rides
 ...  
@@ -764,100 +747,3 @@ let's use the Rails shortcut to create these routes
 rails routes
 ```
 
----
-# Cities
-
-Our fair has expanded to more than one city!
-
-## Your Turn
-
-Create routes for your cities
-
-## Controller
-
-What happens when we try to go to our cities routes in our browser?
-Let's create a controller for our cities.
-
-### Terminal:
-```shell
-rails generate controller Cities
-```
-
-- Now what happens when we try to go to our cities routes in our browser?
-- Where are our controller actions?
-- if you have time: create views for your cities.
-
----
-
-# Path and URL Helpers
-
-### Terminal
-```shell
-rails routes
-```
-
-- We are using the index path helper in our controller.
-
-# Filters
-
-- Use `before_action` to run the same method on multiple actions
-
-### Editor:
-
-```ruby
-# /app/controllers/rides_controller.rb
-...
-
-  before_action :set_title
-  
-...
-
-  private
-  
-  def set_title
-    @title = 'Ipsum fair!'
-  end
-...  
-
-```
-
-Now let's put that title in our layout.
-
-# ApplicationController
-
-- If I try to pull up a city, I don't get a page title.
-- Our controllers are subclasses of the ApplicationController, so I could move the `before_action` to the application controller so that all actions execute the `before_action`
-
-### Editor:
-
-```ruby
-# /app/controllers/application_controller.rb
-...
-
-  before_action :set_title
-  
-...
-
-  private
-  
-  def set_title
-    @title = 'Ipsum fair!'
-  end
-...  
-
-```
-
-# Filter Specifity
-
-- We can also just execute the before_action on certain methods.
-- I'll set this `before_action` to only execute on the new, create, edit, update & delete
-
-### Editor:
-
-```ruby
-# /app/controllers/application_controller.rb
-...
-  before_action :ensure_admin, only: [:new, :create, :edit, :update, :delete]
-...
-
-```

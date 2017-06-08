@@ -1,0 +1,6 @@
+<h1>Rides We Have</h1>
+
+<% @rides.each do |ride_name, ride_description| %>
+  <h2><%= ride_name %></h2>
+  <p><%= ride_description %></p>
+<% end %>
