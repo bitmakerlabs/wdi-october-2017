@@ -1,0 +1,42 @@
+* {
+  /* height/width dictate the size of the box, border inward */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 48px;
+  padding: 100px;
+}
+
+
+
+.box {
+  background-color: tomato;
+  width: 100%;
+  max-width: 800px;
+  /*height: 300px;*/
+
+  padding: 15px;
+  border: 5px dashed #000000;
+  margin: 20px auto;
+
+  /*overflow: scroll;*/
+}
+
+
+
+
+
+
+
+
+/*end */
