@@ -117,7 +117,7 @@ Follow along with the lesson file: [Positioning Lesson Working File](positioning
 - `z-index` accepts negative numbers, although those can be difficult to work with
 
 
-### In Class Exercise: Galaxy Restaurant Menu
+### In Class Positioning Exercise: Galaxy Restaurant Menu
 (30 minutes)
 
 * [Galaxy Restaurant Menu](positioning/menu-exercise/galaxy-restaurant-menu.pdf)
@@ -137,6 +137,6 @@ Follow along with the lesson file: [Positioning Lesson Working File](positioning
 
 ### Positioning Resources
 
-- [MDN: position](https://developer.mozilla.org/en/docs/Web/CSS/position) (documentation)
+- [MDN: position] (https://developer.mozilla.org/en/docs/Web/CSS/position) (documentation)
 - [Learn CSS Layout: Position](http://learnlayout.com/position.html) (tutorial)
 - [CSS Positioning 101](http://alistapart.com/article/css-positioning-101) (tutorial)

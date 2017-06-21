@@ -1,4 +1,4 @@
-# Ruby FUNdamentals, part 1
+# Programming fundamentals: basic data types, variables, flow control
 
 Ruby is the primary programming language we'll be learning in this course. Ruby was created by Yukihiro Matsumoto aka Matz in 1995.
 
@@ -39,8 +39,6 @@ Data types are basic building blocks of programming languages. Programs are cons
 How we represent numeric data in our programs
 
   * Integers
-    * FixNum
-    * BigNum
   * Floats
 
 ### Strings
