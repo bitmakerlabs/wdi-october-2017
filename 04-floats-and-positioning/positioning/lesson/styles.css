@@ -1,0 +1,128 @@
+body,
+div,
+header,
+main,
+section,
+footer {
+  padding: 20px;
+}
+
+main {
+  position: relative;
+  background: silver;
+}
+
+.static-electricity {
+  position: static;
+  background: yellowgreen;
+  width: 20%;
+}
+
+.its-all-relative {
+  position: relative;
+  left: 20%;
+  width: 20%;
+  background: salmon;
+}
+
+.absolute-truth {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20%;
+  background: antiquewhite;
+}
+
+.spans-container {
+  position: relative;
+  background: lightblue;
+  display: inline-block;
+  margin-top: 50px;
+  width: 700px;
+  height: 200px;
+}
+
+span {
+  position: absolute;
+  border: 2px solid black;
+  width: 150px;
+  height: 100px;
+  padding: 10px;
+  color: white;
+  font-size: 2em;
+}
+
+.z1 {
+  top: 10px;
+  left: 100px;
+  background: green;
+}
+
+.z2 {
+  top: 20px;
+  left: 200px;
+  background: red;
+}
+
+.z3 {
+  top: 30px;
+  left: 300px;
+  background: brown;
+}
+
+.z4 {
+  top: 40px;
+  left: 400px;
+  background: purple;
+}
+
+.z5 {
+  top: 50px;
+  left: 500px;
+  background: blue;
+}
+
+.relative-container-for-absolute {
+  margin-top: 50px;
+  position: relative;
+}
+
+.absolute-inside-inner-most-secret {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6em;
+  overflow-wrap: break-word;
+  background: white;
+  color: black;
+}
+
+.relative-container-for-absolute,
+.static-edgecase,
+.static-in-between-days,
+.static-inner-most-secret {
+  border: 5px solid tomato;
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+h3 {
+  margin-bottom: 20px;
+  font-weight: 100;
+}
+
+p {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 40%;
+  width: 20%;
+  text-align: center;
+  background: chocolate;
+  color: white;
+}
