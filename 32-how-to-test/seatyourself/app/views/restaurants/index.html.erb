@@ -1,0 +1,17 @@
+<h3>All restaurants</h3>
+
+<%= button_tag "Find Restaurants Near Me", id: "nearby-search" %>
+
+<%= form_tag restaurants_path, method: :get do %>
+  <%= label_tag :search %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Find restaurants" %>
+<% end %>
+
+<section class="restaurants-list">
+  <%= render @restaurants %>
+</section>
+
+<% if current_user %>
+  <p><%= link_to 'Add Restaurant', new_restaurant_path %></p>
+<% end %>
