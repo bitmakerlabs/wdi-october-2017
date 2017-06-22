@@ -78,7 +78,7 @@ To make a parent element aware of its floated child, we need to set its `overflo
 ## Positioning
 (30 min)
 
-Follow along with the lesson file: [Positioning Lesson Working File](positioning/lesson/index.html)
+Follow along with the lesson file: [Positioning Lesson Working File](positioning/index.html)
 
 
 ### `position: static`:
@@ -120,7 +120,7 @@ Follow along with the lesson file: [Positioning Lesson Working File](positioning
 ### In Class Positioning Exercise: Galaxy Restaurant Menu
 (30 minutes)
 
-* [Galaxy Restaurant Menu](positioning/menu-exercise/galaxy-restaurant-menu.pdf)
+* [Galaxy Restaurant Menu](menu-exercise/galaxy-restaurant-menu.pdf)
 
 
 ---
