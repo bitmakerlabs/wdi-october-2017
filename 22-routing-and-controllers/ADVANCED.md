@@ -7,7 +7,7 @@ This lesson is meant to come after the Routing and Controllers - Introduction le
 After this lesson, you will know about:
 
 ### Routing
-- Multiple Static in a single URL
+- Multiple Static Segments in a single URL
 - Multiple Dynamic Segments in a single URL
 - Nested Resources
 - URL Helpers
@@ -24,7 +24,7 @@ After this lesson, you will know about:
 
 # Routing
 
-## Multiple Segments Resources
+## Multiple Static Segments
 
 Anything static (not prefixed with a **colon**) must be matched exactly for a route to take effect.
 
@@ -128,7 +128,7 @@ will attempt to render `app/views/products/my_special_template.html.erb`
 
 ## Params Hash
 
-### Control and Action available
+### Controller and Action available
 
 Less used information about the http request will be accessible via the **Params Hash**.
 
