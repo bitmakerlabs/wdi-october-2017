@@ -3,18 +3,23 @@
 
 # Agenda
 
-- Introduction <small>(5 min)</small>
-- Arrays <small>(30 min)</small>
-- Hashes <small>(20 min)</small>
-- Hashes vs. Arrays <small>(10 mins)</small>
-- Iteration <small>(40 min)</small>
-- Further Resources and Wrap Up <small>(5 min)</small>
+|||
+|---|--:|
+| Introduction                  | <small> 5 min</small> |
+| Arrays                        | <small>30 min</small> |
+| Hashes                        | <small>20 min</small> |
+| Hashes vs. Arrays             | <small>10 min</small> |
+| Iteration                     | <small>40 min</small> |
+| Further Resources and Wrap Up | <small> 5 min</small> |
+
 
 <br>
 
 ---
 
 # Introduction
+
+In Ruby, iteration is the act of going through a collection.
 
 `Arrays` and `Hashes` are the two most common Ruby classes for holding collections (i.e. more than one object).
 
@@ -31,7 +36,7 @@ As you code, keep in mind whether you are working with a single item, or a colle
 
 ## Documentation
 
-https://ruby-doc.org/core-2.4.1/Array.html
+[https://ruby-doc.org/core-2.4.1/Array.html](https://ruby-doc.org/core-2.4.1/Array.html)
 
 - you can see where I got the definition from!
 
@@ -44,7 +49,7 @@ Notice on the left hand side of the Array documentation, there's a subtle **Incl
 
 This means that the `Enumerable` functionality has been ***"Mixed In"*** (aka included) in the `Array` class.
 
-In computer science,  ***Enumerable*** means "able to be counted". The reason it's a separate module is because other types of collections also include `Enumerable`. Like, for example, the `Hash` data type. It makes sense to keep our code DRY (Don't - Repeat - Yourself), and therefore they've separated like-functionality into a separate module that can be used over and over again in collection types.
+In computer science,  ***Enumerable*** means "able to be counted". The reason it's a separate module is because other types of collections also include `Enumerable`. Like, for example, the `Hash` data type. It makes sense to keep our code DRY (Don't - Repeat - Yourself), and therefore they've separated like-functionality into a separate module that can be used over and over again in different collection types.
 
 When looking up documentation on arrays, you'll want to look at both the Array documention and the Enumerable documentation:
 
@@ -224,6 +229,19 @@ my_array[-1] # accesses 'Winston', the last item
 my_array[-2] # accesses 'Peter', the second last item
 ```
 
+We can access a range of items from an array:
+
+```ruby
+countries = [
+  'Afghanistan', 'Bangladesh', 'Canada',  'Denmark', 'Egypt', 
+  'Finland',     'Guatemala',  'Hungary', 'India',   'Japan', 
+  'Kenya',       'Laos',       'Mexico',  'Norway',  'Oman'
+]
+
+countries[4..7] # returns ["Egypt", "Finland", "Guatemala", "Hungary"]
+```
+
+
 ## Modifying Values
 
 Change the value of an array by accessing its index and using the `=` assignment operator:
@@ -334,7 +352,7 @@ Look at the [array documentation](https://ruby-doc.org/core-2.4.1/Array.html) an
 
 ## Documentation
 
-https://ruby-doc.org/core-2.4.1/Hash.html
+[https://ruby-doc.org/core-2.4.1/Hash.html](https://ruby-doc.org/core-2.4.1/Hash.html)
 
 Notice that Hashes include `Enumerable`, so you'll need to consult that [documentation](https://ruby-doc.org/core-2.4.1/Enumerable.html) too.
 
@@ -351,7 +369,7 @@ my_hash = {}
 Here's how to create a hash with values:
 
 ```ruby
-sean = { :nose => 'big', :eyes => 'brown', :age => 21 }
+bobby = { :nose => 'big', :eyes => 'brown', :age => 21 }
 ```
 
 The `=>` is called a ***hash rocket*** as it's commonly used for create hashes and looks like a rocket.
@@ -365,13 +383,13 @@ Each item in a hash must have both a `key` and a `value`. In the example above:
 Newer versions of Ruby support a more elegant syntax for creating hashes:
 
 ```ruby
-sean = { nose: 'big', eyes: 'brown', age: 21 }
+bobby = { nose: 'big', eyes: 'brown', age: 21 }
 ```
 
 This example is identical to the first example. Even though the `nose` symbol is created with a `:` on the right side instead of the left side. When you read it back in irb, `nose` will be a symbol with the `:` on the left sie:
 
 ```ruby
-irb > sean = { nose: 'big', eyes: 'brown', age: 21 }
+irb > bobby = { nose: 'big', eyes: 'brown', age: 21 }
 => {:nose=>"big", :eyes=>"brown", :age=>21}
 ```
 
@@ -380,7 +398,7 @@ The newer `:` on the right side makes creating a hash in Ruby very similar to cr
 Symbols are often used as keys for a hash, but any Ruby object can be a key. For example, here's a similar method assignment using strings instead of symbols:
 
 ```ruby
-sean = { 'nose' => 'big', 'eyes' => 'brown', 'age' => 21 }
+bobby = { 'nose' => 'big', 'eyes' => 'brown', 'age' => 21 }
 ```
 
 See how I used hash rockets for the assignments in the above example: if you aren't using symbols as keys, hash rockets must be used. If you are using symbols as keys, the best practice is to use a right-sided `:` for assignment.
@@ -391,8 +409,8 @@ See how I used hash rockets for the assignments in the above example: if you are
 To add a new key / value pair to an existing hash, access the hash using the variable name, and use `[]` along with an `=` to assign the value to the key:
 
 ```ruby
-irb > sean = { nose: 'big', eyes: 'brown', age: 21 }
-irb > sean[:hair] = 'nonexistent'
+irb > bobby = { nose: 'big', eyes: 'brown', age: 21 }
+irb > bobby[:hair] = 'nonexistent'
 ```
 
 ## Accessing Values
@@ -400,19 +418,19 @@ irb > sean[:hair] = 'nonexistent'
 To obtain the value of a key, use `[]`:
 
 ```ruby
-irb > sean = { nose: 'big', eyes: 'brown', age: 21 }
-irb > sean[:eyes]
+irb > bobby = { nose: 'big', eyes: 'brown', age: 21 }
+irb > bobby[:eyes]
 => "brown"
 ```
 
 If you create your hash with strings instead of symbols, you'll need to access the values using the strings:
 
 ```ruby
-irb > sean = { 'nose' => 'big', 'eyes' => 'brown', 'age' => 21 }
+irb > bobby = { 'nose' => 'big', 'eyes' => 'brown', 'age' => 21 }
 => {"nose"=>"big", "eyes"=>"brown", "age"=>21}
-irb > sean['nose']
+irb > bobby['nose']
 => "big"
-irb > sean[:nose]
+irb > bobby[:nose]
 => nil
 ```
 
@@ -423,13 +441,13 @@ There is no `:nose` key in the above hash, so irb reports back `nil` as the valu
 Values can be overwritten using the same syntax as adding a new key / value pair:
 
 ```ruby
-irb > sean = { nose: 'big', eyes: 'brown', age: 21, hair: 'nonexistent' }
+irb > bobby = { nose: 'big', eyes: 'brown', age: 21, hair: 'nonexistent' }
 => {:nose=>"big", :eyes=>"brown", :age=>21, :hair=>"nonexistent"}
 
-irb > sean[:hair] = 'long, brown mane'
+irb > bobby[:hair] = 'long, brown mane'
 => "long, brown mane"
 
-irb > sean
+irb > bobby
 => {:nose=>"big", :eyes=>"brown", :age=>21, :hair=>"long, brown mane"}
 ```
 
@@ -438,20 +456,20 @@ irb > sean
 You can set a value to `nil`, which in Ruby is a valid value that means **nothing**.
 
 ```ruby
-sean[:hair] = nil
+bobby[:hair] = nil
 ```
 
 But you'll still have the key / value pair in your hash:
 
 ```ruby
-irb > sean
+irb > bobby
 => {:nose=>"big", :eyes=>"brown", :age=>21, :hair=>nil}
 ```
 
 To remove the key / value from the hash, use `delete`:
 
 ```ruby
-sean.delete(:hair)
+bobby.delete(:hair)
 ```
 
 ## Nested Hashes
@@ -459,7 +477,7 @@ sean.delete(:hair)
 It's common to nest hashes within hashes:
 
 ```ruby
-sean =  { name: 'Sean',  role: 'Instructor', features: { hair: 'wonderful', eyes: 'brown', age: 21, nose: 'big'     } }
+bobby =  { name: 'Bobby',  role: 'Instructor', features: { hair: 'wonderful', eyes: 'brown', age: 21, nose: 'big'     } }
 sasha = { name: 'Sasha', role: 'Instructor', features: { hair: 'curly',     eyes: 'brown', age: 15, nose: 'nice'    } }
 alice = { name: 'Alice', role: 'Student',    features: { hair: 'red',       eyes: 'blue',  age: 71, nose: 'massive' } }
 bob =   { name: 'Bob',   role: 'Student',    features: { hair: 'blonde',    eyes: 'green', age: 11, nose: 'lovely'  } }
@@ -543,14 +561,14 @@ You can imagine a web browser parsing it like so when it's trying to figure out 
 
 ```ruby
 styles = [
-  'body'      => { background: 'yellow' },
-  'h1'        => { color: 'tomato', font: '25px' },
-  '.inverted' => { color: 'white', background: 'black' },
-  '.normal'   => { color: 'black', background: 'white' },
-  '.big'      => { font: '20px' }
+  { 'body'      => { background: 'yellow' } },
+  { 'h1'        => { color: 'tomato', font: '25px' } },
+  { '.inverted' => { color: 'white', background: 'black' } },
+  { '.normal'   => { color: 'black', background: 'white' } },
+  { '.big'      => { font: '20px' } }
 ]
 
-page = [
+page = {
   html: { parent: :root },
   head: { parent: :html },
   title: { parent: :head, content: 'Kitty Catty Ipsum' },
@@ -559,7 +577,7 @@ page = [
     { p: { content: 'Hide head under blanket so no one can see. Proudly present butt to human. Then cats take over the world kitty loves pigs.',
            attributes: [id: 'leading', class: ['inverted', 'big']] } }
   ]
-]
+}
 ```
 
 You can see in the above example we need to use both hashes and arrays together.
@@ -569,6 +587,33 @@ You can see in the above example we need to use both hashes and arrays together.
 ---
 
 # Iteration
+
+
+---
+
+## Simple Iteration
+
+The simplest way of going through a collection in Ruby is by calling `times` and a number.
+
+For example:
+
+```ruby
+5.times do 
+  puts "Hello, Bitmaker!"
+end
+```
+
+We can store a local variable in each iteration of the number by setting up the variable in ***pipes***.
+
+For example:
+
+```ruby
+5.times do |my_number|
+  puts "#{my_number} cheers for Bitmaker!"
+end
+```
+
+<br>
 
 ## Iterating Through Arrays
 
@@ -1106,10 +1151,11 @@ What's important to take away for today is:
 # Further Resources
 
 **Ruby Array Class Documentation**
-https://ruby-doc.org/core-2.4.1/Array.html
+[https://ruby-doc.org/core-2.4.1/Array.html](https://ruby-doc.org/core-2.4.1/Array.html)
 
 **Ruby Hash Class Documentation**
-https://ruby-doc.org/core-2.4.1/Hash.html
+[https://ruby-doc.org/core-2.4.1/Hash.html](https://ruby-doc.org/core-2.4.1/Hash.html)
 
 **Ruby Enumerable Module Documentation**
-https://ruby-doc.org/core-2.4.1/Enumerable.html
+[https://ruby-doc.org/core-2.4.1/Enumerable.html](https://ruby-doc.org/core-2.4.1/Enumerable.html)
+
