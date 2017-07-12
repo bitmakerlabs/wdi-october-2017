@@ -63,7 +63,7 @@ Common request methods:
 How the HTTP Verbs relate to CRUD:
 
 HTTP Verb | Action   | Explanation
-----------+----------+-------------
+----------|----------|-------------
 POST      | (C)reate | Create data
 GET       | (R)ead   | Fetch data
 PUT/PATCH | (U)pdate | Update data
@@ -83,13 +83,13 @@ Response code categories:
 
 Most important:
 
-* 200: OK
-* 301: Moved Permanently
-* 302: Found
-* 403: Forbidden
-* 404: Not Found
-* 500: Internal Server Error
-* 503: Service Unavailable
+* 200: [OK](https://http.cat/200)
+* 301: [Moved Permanently](https://http.cat/301)
+* 302: [Found](https://http.cat/302)
+* 403: [Forbidden](https://http.cat/403)
+* 404: [Not Found](https://http.cat/404)
+* 500: [Internal Server Error](https://http.cat/500)
+* 503: [Service Unavailable](https://http.cat/503)
 
 ## Sinatra
 
