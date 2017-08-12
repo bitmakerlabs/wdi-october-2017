@@ -35,7 +35,6 @@ Introduction to objects and classes, what they are, why we use them, how to code
 * Instantiating instances of Person
 * Instance variables and the `@` symbol
 * Getters and Setters
-* `attr_reader` / `attr_writer` / `attr_accessor`
 * Examples of other instance methods
 
 ## Slides
