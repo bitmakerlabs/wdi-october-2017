@@ -1,5 +1,4 @@
 <section class="restaurant-details">
-  <%= image_tag @restaurant.picture %>
 
   <h3><%= @restaurant.name %></h3>
 
@@ -20,7 +19,7 @@
     <%= render 'shared/form_errors', :thing => @reservation %>
     <div class="field">
       <%= f.label :begin_time, 'When' %>
-      <%= f.select :begin_time, @restaurant.time_slots.map{|dt| [nice_datetime(dt), dt] } %>
+      <%= f.time_select :begin_time, discard_minute: true, start_hour: @restaurant.opening_hour, end_hour: @restaurant.closing_hour %>
     </div>
     <div class="field">
       <%= f.label :notes %>
@@ -34,13 +33,3 @@
   <% end %>
 <% end %>
 
-<h2>Nearby Restaurants</h2>
-<ol>
-  <% @nearby_restaurants.each do |r| %>
-    <li>
-      <p><%= r.name %></p>
-      <p><%= r.address %></p>
-      <p><%= r.display_distance_to(@restaurant) %>  kms aways</p>
-    </li>
-  <% end %>
-</ol>

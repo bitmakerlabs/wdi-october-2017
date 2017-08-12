@@ -14,7 +14,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      UserMailer.welcome(@user).deliver_later
       self.current_user = @user
       redirect_to root_path, :notice => "Welcome #{@user.name}!"
     else

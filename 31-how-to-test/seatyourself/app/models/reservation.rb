@@ -1,5 +1,4 @@
 class Reservation < ActiveRecord::Base
-  include ActionView::Helpers::TextHelper
 
   validates :people, :numericality => { :only_integer => true, :greater_than => 0, :less_than => 500 }
 

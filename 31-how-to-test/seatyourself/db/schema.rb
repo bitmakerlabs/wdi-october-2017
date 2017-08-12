@@ -12,18 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20170620003125) do
 
-  create_table "authentications", force: :cascade do |t|
-    t.integer  "user_id",                null: false
-    t.string   "provider",   limit: 255, null: false
-    t.string   "uid",        limit: 255, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -31,8 +23,8 @@ ActiveRecord::Schema.define(version: 20170620003125) do
     t.integer  "restaurant_id"
     t.integer  "user_id"
     t.text     "notes"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "people",        default: 1
     t.index ["restaurant_id"], name: "index_reservations_on_restaurant_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
@@ -45,8 +37,8 @@ ActiveRecord::Schema.define(version: 20170620003125) do
     t.string   "picture"
     t.text     "description"
     t.integer  "category_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "capacity",     default: 100
     t.float    "latitude"
     t.float    "longitude"
@@ -59,8 +51,8 @@ ActiveRecord::Schema.define(version: 20170620003125) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
