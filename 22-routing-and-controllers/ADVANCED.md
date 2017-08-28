@@ -1,6 +1,6 @@
 # Routing and Controllers - Advanced Concepts
 
-This lesson is meant to come after the Routing and Controllers - Introduction lesson, and introduces some more complex topics.
+This lesson is meant to be given as a breakout after the Routing and Controllers - Introduction lesson. It introduces some more complex topics.
 
 ## Agenda
 
@@ -63,7 +63,7 @@ We can nest resources to group collections with in collections. For example, if 
 resources :products do
 ```
 
-That would create the seven basic routes for our product and the would be accessable with 
+That would create the seven basic routes for our product and the would be accessable with
 
 ```
 /products

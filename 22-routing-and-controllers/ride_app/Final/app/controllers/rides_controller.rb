@@ -63,5 +63,4 @@ class RidesController < ApplicationController
     'Hodor, hodor; hodor HODOR hodor, hodor hodor? Hodor hodor - hodor...'
   end
 
-
 end

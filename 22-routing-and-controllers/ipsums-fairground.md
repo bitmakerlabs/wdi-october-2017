@@ -29,14 +29,15 @@ Unlike Sinatra, Rails does not need a restart when most files are changed.
 
 **Rails does not need a restart when the following are changed:**
 
-- anything inside of `/app` (models, view controllers, assets, etc.)
+- anything inside of `app/` (models, view controllers, assets, etc.)
 - `config/routes.rb`
 
-**Rails does need a restart when the following are changed:**
+**Rails should be restarted when the following are changed:**
 
 - `Gemfile`
-- `/initializers/*`
-- `/config/*` (except for `routes.rb`)
+- `initializers/*`
+- `config/*` (except for `routes.rb`)
+- `db/migrate/*`
 
 ---
 # Routing

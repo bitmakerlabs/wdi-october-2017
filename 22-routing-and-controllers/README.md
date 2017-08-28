@@ -33,7 +33,7 @@ Today we'll take our first deep dive into Rails and learn about Routing and Cont
     - Update
     - Destroy
   </ul>
-  
+
 - #### Wrap-up <small>(5 min)</small>
   - Recap
   - Further Resources
@@ -428,9 +428,9 @@ end
 
 ---
 
-## Lesson Exercise: Ipsum's Fairground 
+## Lesson Exercise: Ipsum's Fairground
 
 Let's create a Rails App!
 
-Open [ipsums-fairground.html](ipsums-fairground.html)
+Open [IPSUMS-FAIRGROUND.md](ipsums-fairground.md)
 

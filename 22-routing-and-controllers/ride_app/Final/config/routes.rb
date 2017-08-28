@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root                     to: 'rides#home'
+  root                     to: 'rides#index'
   resources :rides
 
   # get    'rides',          to: 'rides#index'
