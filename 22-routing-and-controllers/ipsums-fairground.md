@@ -272,7 +272,7 @@ Now I'll catch-up to where you're at.
 ```ruby
 # config/routes.rb
 ...
-  root to: 'rides#home'
+  root to: 'rides#index'
 ...
 ```
 
@@ -290,13 +290,13 @@ http://localhost:3000/
 ### Terminal:
 
 ```shell
-touch app/views/rides/home.html.erb
+touch app/views/rides/index.html.erb
 ```
 
 ### Editor:
 
 ```html
-<!-- app/views/rides/home.html.erb -->
+<!-- app/views/rides/index.html.erb -->
 
 <h1>Welcome to the Ipsum Fair</h1>
 ```
