@@ -111,7 +111,7 @@ Anything static (not prefixed with a **colon**) must be matched exactly for its 
 In the following example:
 
 ```ruby
-get '/products/:id' => 'products#show'
+get '/products' => 'products#index'
 ```
 
 `products` is a static segment.
@@ -171,7 +171,7 @@ We will be able to use the following methods to generate a links to the product:
 To see what routes currently exist in your application, use the following from the command line:
 
 ```bash
-rails routes
+bin/rails routes
 ```
 
 For our products example above, we would see the following:
