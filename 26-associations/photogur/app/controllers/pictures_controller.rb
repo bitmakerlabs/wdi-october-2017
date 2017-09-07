@@ -1,7 +1,11 @@
 class PicturesController < ApplicationController
 
   def create
-    @picture = Picture.new(picture_params)
+    @picture = Picture.new
+    @picture.title = params[:picture][:title]
+    @picture.description = params[:picture][:description]
+    @picture.url = params[:picture][:url]
+
     if @picture.save
       redirect_to pictures_path
     else
@@ -27,7 +31,11 @@ class PicturesController < ApplicationController
 
   def update
     @picture = Picture.find(params[:id])
-    if @picture.update_attributes(picture_params)
+    @picture.title = params[:picture][:title]
+    @picture.description = params[:picture][:description]
+    @picture.url = params[:picture][:url]
+
+    if @picture.save
       redirect_to picture_path(@picture)
     else
       render :edit
@@ -43,8 +51,4 @@ class PicturesController < ApplicationController
     end
   end
 
-  private
-  def picture_params
-    params.require(:picture).permit(:url, :title, :description)
-  end
 end
