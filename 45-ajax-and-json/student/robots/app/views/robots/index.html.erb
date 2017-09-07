@@ -1,0 +1,16 @@
+<h1>Robots</h1>
+
+<div id="robot-container" class="robot-box">
+  <% @robots.each do |robot| %>
+    <article class="robot">
+      <%= link_to robot_url(robot) do %>
+        <h2><%= robot.name %></h2>
+      <% end %>
+    </article>
+  <% end %>
+</div>
+
+<aside id="robot-details-container" class="robot-box">
+  <h2>Robot Details</h2>
+  <div id="robot-details"></div>
+</aside>

@@ -11,7 +11,7 @@
 ```shell
 rails new RideApp
 cd RideApp
-rails server
+bin/rails server
 ```
 
 ### Browser:
@@ -29,14 +29,15 @@ Unlike Sinatra, Rails does not need a restart when most files are changed.
 
 **Rails does not need a restart when the following are changed:**
 
-- anything inside of `/app` (models, view controllers, assets, etc.)
+- anything inside of `app/` (models, view controllers, assets, etc.)
 - `config/routes.rb`
 
-**Rails does need a restart when the following are changed:**
+**Rails should be restarted when the following are changed:**
 
 - `Gemfile`
-- `/initializers/*`
-- `/config/*` (except for `routes.rb`)
+- `initializers/*`
+- `config/*` (except for `routes.rb`)
+- `db/migrate/*`
 
 ---
 # Routing
@@ -45,7 +46,7 @@ Use the `rails routes` command to see what routes are configured.
 
 ### Terminal
 ```shell
-rails routes
+bin/rails routes
 ```
 
 Let's see what happens when we try to go to a path.
@@ -74,7 +75,7 @@ end
 
 ### Terminal:
 ```shell
-rails routes
+bin/rails routes
 ```
 
 - A controller action is a method
@@ -87,7 +88,7 @@ rails routes
 http://localhost:3000/about
 ```
 
-- No more routing error. 
+- No more routing error.
 - Now what's the problem?
 
 ---
@@ -98,7 +99,7 @@ Let's create a controller.
 ### Terminal:
 
 ```shell
-rails generate controller rides
+bin/rails generate controller rides
 ```
 
 What happens when we try the website now?
@@ -148,7 +149,7 @@ First let's check our routes before we add one.
 
 ### Terminal:
 ```shell
-rails routes
+bin/rails routes
 ```
 
 Then we'll add our route and save our file.
@@ -159,14 +160,14 @@ Then we'll add our route and save our file.
 # config/routes.rb
 ...
   get 'lorem' => 'rides#lorem_ride'
-...  
+...
 ```
 
 Now let's see if the route we just added exists:
 
 ### Terminal:
 ```shell
-rails routes
+bin/rails routes
 ```
 
 Notice that our new route's path `lorem` is different than the action name `lorem_ride` (unlike our first `about` route)
@@ -188,7 +189,7 @@ http:// What url goes here?
 # app/controllers/rides_controller.rb
 
 class RidesController < ApplicationController
-...  
+...
   def lorem_ride
     render plain: '???' # we need to generate some lorem ipsum text
   end
@@ -246,7 +247,7 @@ Now I'll catch-up to where you're at.
 ```ruby
 # app/controllers/rides_controller.rb
 
-...  
+...
   def bacon_ride
     render plain: 'Bacon ipsum dolor amet pastrami alcatra kevin ribeye turkey, spare ribs shank jerky.'
   end
@@ -271,8 +272,8 @@ Now I'll catch-up to where you're at.
 ```ruby
 # config/routes.rb
 ...
-  root to: 'rides#home'
-...  
+  root to: 'rides#index'
+...
 ```
 
 ### Browser:
@@ -289,13 +290,13 @@ http://localhost:3000/
 ### Terminal:
 
 ```shell
-touch app/views/rides/home.html.erb
+touch app/views/rides/index.html.erb
 ```
 
 ### Editor:
 
 ```html
-<!-- app/views/rides/home.html.erb -->
+<!-- app/views/rides/index.html.erb -->
 
 <h1>Welcome to the Ipsum Fair</h1>
 ```
@@ -309,7 +310,7 @@ touch app/views/rides/home.html.erb
 # config/routes.rb
 ...
   get 'rides/:ride_name' => 'rides#show'
-...  
+...
 ```
 
 ### Browser:
@@ -325,7 +326,7 @@ http://localhost:3000/rides/lorem
 
 ```ruby
 # app/controllers/rides_controller.rb
-...  
+...
   def show
     render html: params.inspect
   end
@@ -344,7 +345,7 @@ http://localhost:3000/rides/lorem
 
 ```ruby
 # app/controllers/rides_controller.rb
-...  
+...
   def show
     render plain: "Your Ride is '#{params[:ride_name]}'"
   end
@@ -387,7 +388,7 @@ Let's take away the `render plain` line from our `show`.
 
 ```ruby
 # app/controllers/rides_controller.rb
-...  
+...
   def show
   end
 ...
@@ -436,7 +437,7 @@ Let's pass our ride name to the view.
 
 ```ruby
 # app/controllers/rides_controller.rb
-...  
+...
   def show
     @ride_name = params[:ride_name]
   end
@@ -469,7 +470,7 @@ Now how do I get the Ride Name?
 
 ```ruby
 # app/controllers/rides_controller.rb
-...  
+...
   def show
     @ride_name = params[:id]
   end
@@ -488,14 +489,14 @@ Let's move our Lorem Ipsum text to be retrieved by the show.
 ### Editor:
 ```ruby
 # app/controllers/rides_controller.rb
-...  
+...
   def show
     @ride_name = params[:id]
     @description = case @ride_name
                    when 'lorem'
                      lorem_ride
                    when 'bacon'
-                     bacon_ride                    
+                     bacon_ride
                    when 'hodor'
                      game_of_thrones_ride
                    else
@@ -507,7 +508,7 @@ Let's move our Lorem Ipsum text to be retrieved by the show.
   def lorem_ride
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
   end
-    
+
   def bacon_ride
     'Bacon ipsum dolor amet pastrami alcatra kevin ribeye turkey, spare ribs shank jerky.'
   end
@@ -515,7 +516,7 @@ Let's move our Lorem Ipsum text to be retrieved by the show.
   def game_of_thrones_ride
     'Hodor, hodor; hodor HODOR hodor, hodor hodor? Hodor hodor - hodor...'
   end
-  
+
 ```
 
 
@@ -565,7 +566,7 @@ http://localhost:3000/rides/are-you-for-real
 # config/routes.rb
 ...
   get 'rides' => 'rides#index'
-...  
+...
 
 ```
 
@@ -575,7 +576,7 @@ http://localhost:3000/rides/are-you-for-real
   def index
     @rides = { lorem: lorem_ride, bacon: bacon_ride, hodor: game_of_thrones_ride }
   end
-...  
+...
 
 ```
 
@@ -600,7 +601,7 @@ http://localhost:3000/rides/are-you-for-real
 ...
   get 'rides/new' => 'rides#new'
   post 'rides' 	 => 'rides#create'
-...  
+...
 
 ```
 
@@ -611,12 +612,12 @@ http://localhost:3000/rides/are-you-for-real
   def new
     # Code to display the new form
   end
-  
+
   def create
     # Code to create a new ride
     redirect_to rides_path
-  end  
-...  
+  end
+...
 
 ```
 
@@ -644,7 +645,7 @@ http://localhost:3000/rides/are-you-for-real
 ...
   get   'rides/:id/edit' => 'rides#edit'
   patch 'rides'          => 'rides#update'
-...  
+...
 
 ```
 
@@ -654,15 +655,15 @@ http://localhost:3000/rides/are-you-for-real
   def show
     get_name_and_description
   end
-...  
+...
   def edit
     get_name_and_description
   end
-  
+
   def update
     # Code to update the ride
     redirect_to rides_path
-  end  
+  end
 ...
   def get_name_and_description
     @ride_name = params[:id]
@@ -707,7 +708,7 @@ http://localhost:3000/rides/are-you-for-real
 
 ...
   delete 'ride' => 'rides#destroy'
-...  
+...
 
 ```
 
@@ -720,7 +721,7 @@ http://localhost:3000/rides/are-you-for-real
     # Code to destroy a record
     redirect_to rides_path
   end
-...  
+...
 
 ```
 
@@ -730,7 +731,7 @@ Let's use resourceful routing to create these routes instead.
 
 ### Terminal:
 ```shell
-rails routes
+bin/rails routes
 ```
 
 ### Editor:
@@ -739,11 +740,11 @@ rails routes
 # config/routes.rb
 ...
   resources :rides
-...  
+...
 ```
 
 ### Terminal:
 ```shell
-rails routes
+bin/rails routes
 ```
 
