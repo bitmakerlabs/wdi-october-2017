@@ -394,7 +394,7 @@ your_array.length
 
 Look at the [array documentation](https://ruby-doc.org/core-2.4.1/Array.html) and experiment with some of the other methods.
 
-*Refer to this lesson in Alexa for details on each step:*
+ Refer to this lesson in Alexa for details on each step:*
 
 ### Step #1: Create Your Array Of Items
 ### Step #2: Exchange Items With Classmate
@@ -1033,7 +1033,7 @@ puts 'Your bears after the `pop`:'
 puts bears
 ```
 
-*Output:*
+ Output:*
 
 ```
 Your bears:
@@ -1048,7 +1048,7 @@ Funshine
 Love-a-lot
 ```
 
-*Oh no! Grumpy Bear has disappeared!*
+ Oh no! Grumpy Bear has disappeared!*
 
 This is because `pop` mutates even though pop doesn't have a `!` bang.
 
@@ -1195,7 +1195,7 @@ end
 puts 'to the battle as they do the most damage.'
 ```
 
-*Output:*
+ Output:*
 
 ```
 Let's bring
