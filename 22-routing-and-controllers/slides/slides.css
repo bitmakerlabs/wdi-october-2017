@@ -1,0 +1,120 @@
+/*
+ * build-files/fonts.sass */
+@font-face {
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Regular.ttf); }
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Roboto/Roboto-Regular.ttf); }
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url(fonts/Roboto/Roboto-Bold.ttf); }
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 700;
+  src: url(fonts/Roboto/Roboto-BoldItalic.ttf); }
+@font-face {
+  font-family: "Droid Serif";
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Droid_Serif/DroidSerif.ttf); }
+@font-face {
+  font-family: "Droid Serif";
+  font-style: normal;
+  font-weight: 700;
+  src: url(fonts/Droid_Serif/DroidSerif-Bold.ttf); }
+@font-face {
+  font-family: "Droid Serif";
+  font-style: italic;
+  font-weight: 400;
+  src: url(fonts/Droid_Serif/DroidSerif-Italic.ttf); }
+@font-face {
+  font-family: "Ubuntu Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf); }
+@font-face {
+  font-family: "Ubuntu Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url(fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf); }
+@font-face {
+  font-family: "Ubuntu Mono";
+  font-style: italic;
+  font-weight: 400;
+  src: url(fonts/Ubuntu_Mono/UbuntuMono-Italic.ttf); }
+/*
+ * build-files/slides.sass */
+body {
+  font-family: "Roboto"; }
+
+.remark-slide-content {
+  padding-top: 0; }
+
+.remark-slide-content p,
+.remark-slide-content ul {
+  font-size: 25px; }
+
+#slide-agenda p,
+#slide-agenda ul {
+  font-size: 20px; }
+
+.agenda-time {
+  float: right;
+  font-size: small; }
+
+.remark-code, .remark-inline-code {
+  font-family: "Ubuntu Mono"; }
+
+code.css.remark-inline-code.hljs {
+  display: inline-block;
+  overflow: inherit;
+  padding: 0 0.1em; }
+
+.right-heading {
+  position: absolute;
+  right: 0.5em;
+  top: 0.2em; }
+
+h1,
+.right-heading {
+  border-bottom: 5px solid black;
+  display: inline-block;
+  font-size: 55px; }
+
+h1 {
+  margin-top: 0.25em;
+  margin-bottom: 0; }
+
+h1, h2, h3,
+.right-heading,
+.sliding-heading {
+  font-family: "Yanone Kaffeesatz";
+  font-weight: normal; }
+
+h4 {
+  margin-bottom: 0;
+  margin-top: 1em; }
+
+.table ul code {
+  width: 6em; }
+
+ul {
+  margin-top: 0.3em; }
+
+a {
+  color: blue; }
+
+#red {
+  color: tomato; }
+
+#green,
+#refactor {
+  color: green; }
