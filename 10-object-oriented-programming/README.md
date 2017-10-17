@@ -12,7 +12,7 @@ Introduction to objects and classes, what they are, why we use them, how to code
 
 * What is a Method?
   * Has inputs (arguments), and an output (return value)
-  * [Espresso Machine](https://www.espressomachineinsider.com/wp-content/uploads/2016/06/Breville-BES870XL-Review.png)
+  * [Espresso Machine](http://guides.hardwaresphere.com/wp-content/uploads/breville-barista-express-alt.jpg)
   * [Pasta Maker](http://www.whatsbestforum.com/attachment.php?attachmentid=23513&d=1448130239)
 * Implement `order_pizza` method
 
