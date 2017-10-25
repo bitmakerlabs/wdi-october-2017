@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -43,6 +45,14 @@ main {
 h1 {
   color: red;
   /*color: purple;*/
+}
+
+h1::before {
+  content: '"';
+}
+
+h1::after {
+  content: '"';
 }
 
 header {
