@@ -1,0 +1,257 @@
+/* -------------------------------------------------- */
+/* HINTS, TIPS, AND TRICKS */
+/* -------------------------------------------------- */
+/*
+- When working from a reference, start by:
+	- Identifying the colours.
+	- Identifying the fonts/typefaces.
+- Write generic styles, then move on to more complex/specific styles.
+	- Generic styles include:
+		- elements that can be targeted by tag name (eg. 'main')
+		- links
+		- type elements ('h1', 'p', etc.)
+	- Complex/specific styles include:
+		- elements that must be targeted by class (eg. '.post')
+		- elements that must be targeted using a descendant selector.
+- When starting to write responsive styles:
+	- Identify the number of layouts.
+	- Identify when the layouts change (eg. the 'breakpoints').
+	- Test your media queries by making an obvious change to the document, and seeing if it's correctly applied.
+- Keep in mind:
+	- Preview your CSS in the browser often. Small mistakes can prevent entire stylesheets from being applied.
+	- If you're writing a rule that should only be applied when the screen is a certain size, make sure it's inside a media query!
+*/
+
+/* -------------------------------------------------- */
+/* BOILERPLATE STYLES */
+/* -------------------------------------------------- */
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.clearfix:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+/* -------------------------------------------------- */
+/* BASE STYLES */
+/* -------------------------------------------------- */
+/* GENERIC STYLES */
+html {
+	font-family: Georgia, sans-serif;
+	font-size: 62.5%; /* 10px / 16px = 0.625 (62.5%) */
+	line-height: 1.5;
+}
+
+body {
+	background: #eee;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+a {
+	color: darkslateblue;
+	text-decoration: none;
+}
+
+h1, h2 {
+	font-family: Arial, sans-serif;
+}
+
+/* HEADER STYLES */
+header {
+	background: #fff;
+	padding: 1.5rem 0;
+	text-align: center;
+}
+
+.brand {
+	margin: 0;
+	font-size: 2rem; /* 20px / 10px = 2rem */
+}
+
+.brand-main {
+	color: darkslateblue;
+}
+
+.brand-supporting {
+	display: none;
+}
+
+/* FOOTER STYLES */
+footer {
+	color: #999;
+	background: #222;
+	font-size: 1.5rem; /* 15px / 10px = 1.5rem */
+	padding: 2rem; /* 20px / 10px = 2rem */
+}
+
+footer p {
+	width: 92%;
+	font-size: 1em;
+}
+
+/* INTRO STYLES */
+.intro {
+	display: none;
+}
+
+/* POST STYLES */
+.post {
+	margin-bottom: 4rem; /* 40px / 10px = 4rem */
+	background: white;
+	border-bottom: 0.1rem solid #bbb;
+	font-size: 4vw; /* 16px / 400px = 4vw */
+}
+
+.post div {
+	padding: 2rem; /* 20px / 10px = 2rem */
+}
+
+/* This is our post title */
+.post h2 {
+	font-size: 2em; /* 8vw / 4vw = 2em */
+	margin-top: 0;
+}
+
+/* This is our post excerpt */
+.post p {
+	font-size: 1em;
+	margin-top: 0;
+}
+
+/* This is our post author information */
+.post h3 {
+	font-size: 0.75em; /* 3vw / 4vw = 0.75em */
+	margin-top: 0;
+}
+
+/* 'CALL TO ACTION'/BUTTON STYLES */
+.call-to-action {
+	padding: 2rem;
+}
+
+button {
+	width: 100%;
+	max-width: 40rem; /* 400px / 10px = 40rem */
+	display: block;
+	color: white;
+	background: darkslateblue;
+	border: none;
+	margin: 3rem auto; /* 30px / 10px = 3rem */
+	padding: 2rem; /* 20px / 10px = 2rem */
+	font-size: 1.5rem; /* 15px / 10px = 1.5rem */
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/* -------------------------------------------------- */
+/* RESPONSIVE STYLES: TABLET */
+/* -------------------------------------------------- */
+@media ( min-width: 600px ) {
+	/* GENERIC STYLES */
+	main {
+		width: 92%;
+		margin: 0 auto;
+	}
+
+	/* HEADER STYLES */
+	header {
+		text-align: left;
+		margin-bottom: 4rem;
+		border-bottom: 0.1rem solid #bbb;
+	}
+
+	.brand {
+		width: 92%;
+		margin: 0 auto;
+		font-size: 3rem; /* 30px / 10px = 3rem */
+	}
+
+	.brand-supporting {
+		color: #999;
+		display: inline-block;
+		font-weight: normal;
+		font-size: 0.666em; /* 20px / 30px = 0.666em */
+	}
+
+	/* POST STYLES */
+	.post {
+		width: 48%;
+		border: 0.1rem solid #bbb;
+		margin-bottom: 4%;
+		float: left;
+		font-size: 1.5rem; /* 15px / 10px = 1.5rem */
+	}
+
+	.post:nth-child( 2n ) {
+		margin-left: 4%;
+	}
+}
+
+/* -------------------------------------------------- */
+/* RESPONSIVE STYLES: DESKTOP */
+/* -------------------------------------------------- */
+@media ( min-width: 960px ) {
+	/* INTRO STYLES */
+	.intro {
+		width: 75%;
+		display: block;
+		margin: 0 auto 4rem;
+		font-size: 2rem; /* 20px / 10px = 2rem */
+		text-align: center;
+	}
+
+	.intro h2 {
+		display: inline-block;
+		color: darkslateblue;
+		border-bottom: 0.5rem solid darkslateblue;
+		padding-bottom: 1rem; /* 10px / 10px = 1rem */
+		margin: 0 auto 3rem;  /* 30px / 10px = 3rem */
+		font-size: 3em; /* 60px / 20px = 3em */
+	}
+
+	.intro h3 {
+		margin-top: 0;
+		font-weight: normal;
+	}
+
+	/* POST STYLES */
+	.post {
+		width: 32%;
+		margin-bottom: 2%;
+	}
+
+	/* Remove `margin-left` set in previous media query. */
+	.post:nth-child( 2n ) {
+		margin-left: 0;
+	}
+
+	/* Add a `margin-left` to the 3rd 'post' in each row. */
+	.post:nth-child( 3n ) {
+		margin-left: 2%;
+	}
+
+	/* Add a `margin-left` to the 2nd 'post' in each row. */
+	.post:nth-child( 3n - 1 ) {
+		margin-left: 2%;
+	}
+
+	/* 'CALL TO ACTION'/BUTTON STYLES */
+	button {
+		max-width: 32%;
+	}
+}

@@ -1,54 +1,114 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Media Queries!</title>
-    <link rel="stylesheet" href="styles/styles.css" />
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Examples - RWD Demo</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<!-- HEADER -->
+	<header>
+		<h1 class="brand">
+			<strong class="brand-main">news.io</strong> <span class="brand-supporting">Lorem ipsum dolor sit amet.</span>
+		</h1>
+	</header>
 
-    <!--  Link to CDN came from here: http://getbootstrap.com/getting-started/ -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
 
-    <!-- Add your viewport tag here -->
+	<!-- MAIN/PRIMARY CONTENT -->
+	<main>
 
-  </head>
-  <body>
-    <div class="pk-container">
-      <header class="pk-header">
-        <h1 class="pk-title">Pikachu <span class="pk-title-alt">Is the Greatest!</span></h1>
+		<!-- 'INTRO TEXT' -->
+		<section class="intro clearfix">
+			<h2>Hey There!</h2>
+			<h3>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque error nihil consequuntur illum harum adipisci voluptatem nostrum odio maiores repudiandae? Labore aut, totam a iusto? Dolore laboriosam adipisci, veritatis ipsam!
+			</h3>
+			<h3>Check us out!</h3>
+		</section>
 
-        <img class="pk-banner-sm" src="images/pikachu-banner-sm.jpg" alt="Pikachu Banner" />
-        <img class="pk-banner-lg" src="images/pikachu-banner-lg.png" alt="Pikachu Banner" />
-      </header>
+		<!-- ALL POSTS -->
+		<section class="post-wrapper clearfix">
+			<article class="post">
+				<img src="images/image-1.jpg" alt="Featured image for 'The Title' post.">
+				<div>
+					<h2><a href="#">The Title</a></h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus perspiciatis, provident odio consequatur delectus nostrum voluptas sapiente, optio officia aspernatur cupiditate. Aspernatur nesciunt nisi cumque corporis possimus, natus temporibus cum.
+					</p>
+					<h3>Author Name, Date of Publication</h3>
+				</div>
+			</article>
+			<article class="post">
+				<img src="images/image-2.jpg" alt="Featured image for 'The Title' post.">
+				<div>
+					<h2><a href="#">The Title</a></h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus perspiciatis, provident odio consequatur delectus nostrum voluptas sapiente, optio officia aspernatur cupiditate. Aspernatur nesciunt nisi cumque corporis possimus, natus temporibus cum.
+					</p>
+					<h3>Author Name, Date of Publication</h3>
+				</div>
+			</article>
+			<article class="post">
+				<img src="images/image-3.jpg" alt="Featured image for 'The Title' post.">
+				<div>
+					<h2><a href="#">The Title</a></h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus perspiciatis, provident odio consequatur delectus nostrum voluptas sapiente, optio officia aspernatur cupiditate. Aspernatur nesciunt nisi cumque corporis possimus, natus temporibus cum.
+					</p>
+					<h3>Author Name, Date of Publication</h3>
+				</div>
+			</article>
+			<article class="post">
+				<img src="images/image-4.jpg" alt="Featured image for 'The Title' post.">
+				<div>
+					<h2><a href="#">The Title</a></h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus perspiciatis, provident odio consequatur delectus nostrum voluptas sapiente, optio officia aspernatur cupiditate. Aspernatur nesciunt nisi cumque corporis possimus, natus temporibus cum.
+					</p>
+					<h3>Author Name, Date of Publication</h3>
+				</div>
+			</article>
+			<article class="post">
+				<img src="images/image-5.jpg" alt="Featured image for 'The Title' post.">
+				<div>
+					<h2><a href="#">The Title</a></h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus perspiciatis, provident odio consequatur delectus nostrum voluptas sapiente, optio officia aspernatur cupiditate. Aspernatur nesciunt nisi cumque corporis possimus, natus temporibus cum.
+					</p>
+					<h3>Author Name, Date of Publication</h3>
+				</div>
+			</article>
+			<article class="post">
+				<img src="images/image-6.jpg" alt="Featured image for 'The Title' post.">
+				<div>
+					<h2><a href="#">The Title</a></h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus perspiciatis, provident odio consequatur delectus nostrum voluptas sapiente, optio officia aspernatur cupiditate. Aspernatur nesciunt nisi cumque corporis possimus, natus temporibus cum.
+					</p>
+					<h3>Author Name, Date of Publication</h3>
+				</div>
+			</article>
+		</section>
 
-      <main class="pk-main">
-        <section class="pk-description">
-          <h2>So Cute</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo modi excepturi, voluptatem fugit explicabo incidunt inventore voluptas fugiat nostrum est expedita commodi eos adipisci, minima. Dolorum aliquam quo dicta numquam.</p>
-        </section>
-        <section class="pk-description">
-          <h2>Real Fancy</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi ad quia adipisci, eaque error voluptatum quos. Minima temporibus debitis esse magnam illum nisi ullam nostrum dolorum sit libero. Saepe, suscipit.</p>
-        </section>
-        <section class="pk-description">
-          <h2>Muchos Adorbz</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus molestiae tempora repudiandae veritatis atque accusamus. Itaque praesentium, iure laborum repudiandae, sapiente laudantium ab tempore perspiciatis tenetur commodi dolores quos corrupti.</p>
-        </section>
-        <section class="pk-description">
-          <h2>Trop Mignonne</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam voluptatibus quia eius minus, doloremque, in quibusdam sunt cumque adipisci ut voluptate atque quod dolore deserunt tempora illum fugiat dolorum, recusandae!</p>
-        </section>
-        <section class="pk-description">
-          <h2>Tellement Petite</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa praesentium excepturi, voluptatum debitis placeat voluptate ullam atque veritatis, cum in! Quibusdam maxime incidunt laborum vel consectetur voluptates obcaecati inventore nostrum.</p>
-        </section>
-        <section class="pk-description">
-          <h2>Er Mer Gerd</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae asperiores eveniet impedit distinctio minima sit earum tempora dolorum et, natus itaque magnam incidunt! Delectus magnam odio, repellat debitis libero inventore.</p>
-        </section>
-      </main>
-      <footer class="pk-footer">
-        Copyright 2016
-      </footer>
-    </div>
-  </body>
+		<!-- BUTTON -->
+		<section class="call-to-action clearfix">
+			<button>
+				Read On!
+			</button>
+		</section>
+	</main>
+
+
+	<!-- FOOTER -->
+	<footer>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			Prepared by J R Mykolyn for Bitmaker Labs Inc, Copyright 2017
+		</p>
+	</footer>
+</body>
 </html>

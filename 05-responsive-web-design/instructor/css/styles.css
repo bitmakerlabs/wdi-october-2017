@@ -1,0 +1,51 @@
+/* -------------------------------------------------- */
+/* HINTS, TIPS, AND TRICKS */
+/* -------------------------------------------------- */
+/*
+- When working from a reference, start by:
+	- Identifying the colours.
+	- Identifying the fonts/typefaces.
+- Write generic styles, then move on to more complex/specific styles.
+	- Generic styles include:
+		- elements that can be targeted by tag name (eg. 'main')
+		- links
+		- type elements ('h1', 'p', etc.)
+	- Complex/specific styles include:
+		- elements that must be targeted by class (eg. '.post')
+		- elements that must be targeted using a descendant selector.
+- When starting to write responsive styles:
+	- Identify the number of layouts.
+	- Identify when the layouts change (eg. the 'breakpoints').
+	- Test your media queries by making an obvious change to the document, and seeing if it's correctly applied.
+- Keep in mind:
+	- Preview your CSS in the browser often. Small mistakes can prevent entire stylesheets from being applied.
+	- If you're writing a rule that should only be applied when the screen is a certain size, make sure it's inside a media query!
+*/
+
+/* -------------------------------------------------- */
+/* BOILERPLATE STYLES */
+/* -------------------------------------------------- */
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.clearfix:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+/* -------------------------------------------------- */
+/* BASE STYLES */
+/* -------------------------------------------------- */
+/*
+ Write *YOUR* styles here!
+*/
