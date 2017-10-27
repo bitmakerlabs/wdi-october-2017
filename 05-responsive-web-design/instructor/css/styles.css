@@ -46,6 +46,76 @@ body {
 /* -------------------------------------------------- */
 /* BASE STYLES */
 /* -------------------------------------------------- */
-/*
- Write *YOUR* styles here!
-*/
+
+html {
+	font-size: 62.5%; /* 10px / 16px = 0.625 (or 62.5%) */
+}
+
+body {
+	background: #eee;
+}
+
+h1, a {
+	color: purple;
+	font-family: Arial;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	text-align: center;
+	background: #fff;
+	padding: 3rem; /* 30px / 10px = 3 ( or 3 rem ) */
+}
+
+.brand {
+	margin: 0;
+}
+
+.brand-supporting,
+.intro {
+	display: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+/* POST STYLES */
+.post {
+	margin-bottom: 4rem; /* 40px / 10px = 4 ( or 4rem ) */
+	background: #fff;
+	font-size: 4vw; /* 16px / 400px = 4 ( or 4vw ) */
+}
+
+.post div {
+	padding: 2rem;
+}
+
+.post h2 {
+	font-size: 2em; /*  8vw / 4vw = 2 ( or 2em ) */
+}
+
+.post h3 {
+	font-size: 0.75em /* 3vw / 4vw = 0.75em */
+}
+
+/* MEDIA QUERIES */
+@media ( min-width: 600px ) {
+	.post-wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.post {
+		width: 48%;
+		float: left;
+		font-size: 1.5rem;
+	}
+
+	.post:nth-child( 2n ) {
+		margin-left: 4%;
+	}
+}
