@@ -30,7 +30,7 @@ After this lesson, you will know:
   * Object-Oriented
   * Dynamically-typed
 
-Find info about every Ruby data type in the [Ruby docs](http://ruby-doc.org/core-2.3.0/)!
+Find info about every Ruby data type in the [Ruby docs](http://ruby-doc.org/core/)!
 
 ## Basic Data Types
 Data types are basic building blocks of programming languages. Programs are constructed by using these basic types to build up larger and more complex things, similar to how we combine words into sentences to convey deeper meaning than the words on their own.

@@ -5,16 +5,26 @@
 # (optionally) otherwise
 #   then do something else
 
+count = 9
 
+if count > 10
+  puts "Count is greater than ten"
+elsif count < 10
+  puts "Count is less than ten"
+else
+  puts "Count is equal to ten"
+end
 
+discount = (count > 10) ? 0.15 : 0.10
 
+puts discount
 
-# Looping
+puts "Count is equal to ten" if count == 10
 
-# for loop
-# while loop
-# until loop
+unless count > 10
+  puts "Count is less than or equal to ten"
+else
+  # Nobody knows what you're trying
+end
 
-
-
-# Iteration
+puts "Count is greater than ten" unless count < 10
