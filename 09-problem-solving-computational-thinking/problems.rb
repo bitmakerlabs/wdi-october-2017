@@ -1,10 +1,20 @@
-# Problem 1: Get the total sum of a list of numbers
+# Problem: Get the total sum of a list of numbers
+# 1 2 5 11 1
 
-# Problem 2: Find frequency of the letter "s" in a string
-# Problem 3: Find frequency of the letter "a" in a string
-# Problem 4: Find the most frequent letter in a string
 
-# Problem 5: Find the number of violations in each violation category
+# Problem: Pig Latin
+# Pig Latin
+ # "apple" => "appleay"
+ # "plum" => "umplay"
+ # grape => apegray
+ # Natalie => atalieNay
+ # "squeeze" => "eezesquay"
+
+# Problem: Find frequency of the letter "s" in a string
+# Problem: Find frequency of the letter "a" in a string
+# Problem: Find the most frequent letter in a string
+
+# Problem: Find the number of violations in each violation category
 
 
 violations = [ {money_owed: 50.0, violation_category: "Garbage and Refuse", date: "2012-11-01 00:00:00", inspection_id: "232528"},
@@ -161,5 +171,5 @@ violations = [ {money_owed: 50.0, violation_category: "Garbage and Refuse", date
 {money_owed: 44.0, violation_category: "Garbage and Refuse", date: "2012-09-19 00:00:00", inspection_id: "223813"} ]
 
 
-# Problem 6: Find the total money owed for each violation category
+# Problem: Find the total money owed for each violation category
 
