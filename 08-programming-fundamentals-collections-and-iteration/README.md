@@ -533,22 +533,67 @@ light.delete(:colour)
 It's common to nest hashes within hashes:
 
 ```ruby
-led          = { type: 'led',          duration: '1000', store: { name: 'home depot',    address: '1000 gerrard st', price: 1.99 } }
-incandescent = { type: 'incandescent', duration: '2000', store: { name: 'roma',          address: '22 yonge st',     price: 7.77 } }
-fluorescent  = { type: 'fluorescent',  duration: '3000', store: { name: 'home hardware', address: '1 danforth ave',  price: 14.99 } }
-halogen      = { type: 'halogen',      duration: '8000', store: { name: 'walmart',       address: '383 bloor st w',  price: 20.00 } }
 
-puts "#{incandescent[:store]} is the store and it costs $#{incandescent[:store][:price]}."
+led = { type:     'led',
+        duration: '1000',
+        store:   { name: 'home depot', address: '1000 gerrard st', price: 1.99 } }
+
+incandescent = { type:     'incandescent',
+                 duration: '2000',
+                 store:   { name: 'roma', address: '22 yonge st', price: 7.77 } }
+
+fluorescent = { type:     'fluorescent',
+                duration: '3000',
+                store:   { name: 'toolshed', address: '1 bay st',  price: 8.00 } }
+
+halogen = { type: 'halogen',
+            duration: '8000',
+            store: { name: 'walmart', address: '383 bloor st w', price: 20.00 } }
+
 ```
 
-Notice we needed to access the light bulb's store's price by using two sets of square brackets: `incandescent[:store][:price]`.
+## Nested Hashes
 
-`incandescent[:store]` returns the nested hash:
-`{ name: 'roma', address: '22 yonge st', price: 7.77 }`
+To access a value within a nested hash, first we have to access the key of the outer hash. This retrieves its value, and then we have to access a key in this value to ultimately retrieve the value of the inner hash.
+
+We do this by doubling-up the square brackets beside each other:
+
+```ruby
+
+led = { type:     'led',
+        duration: '1000',
+        store:   { name: 'home depot', address: '1000 gerrard st', price: 1.99 } }
+
+price = led[:store][:price]
+
+puts "#{led[:store]} is the store and it costs $#{price}."
+```
+
+Notice we needed to access the light bulb's store's price by using two sets of square brackets: `led[:store][:price]`.
+
+`led[:store]` returns the nested hash:
+`{ name: 'home depot', address: '1000 gerrard st', price: 1.99 }`
+
+## Nested Hashes
+
+```ruby
+
+led = { type:     'led',
+        duration: '1000',
+        store:   { name: 'home depot', address: '1000 gerrard st', price: 1.99 } }
+
+price = led[:store][:price]
+
+puts "#{led[:store]} is the store and it costs $#{price}."
+```
+
+`led[:store]` returns the nested hash:
+
+`{ name: 'home depot', address: '1000 gerrard st', price: 1.99 }`
 
 We then take that returned hash and add `[:price]` to access the value under that key in the returned hash:
 
-`incandescent[:store][:price]` which ultimately returns `"7.77"`.
+`led[:store][:price]` which ultimately returns `"1.99"`.
 
 To get the `keys` of a hash, use `.keys`:
 
