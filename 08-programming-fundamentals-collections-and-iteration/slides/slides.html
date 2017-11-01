@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Floats and Positioning</title>
+    <title>Collections and Iteration</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="slides.js"></script>
     <style type="text/css">
@@ -928,9 +928,12 @@ light.delete(:colour)
 ---
 
 
-## Nested Hashes
+layout: true
 
---
+# Nested Hashes
+
+---
+
 
 It's common to nest hashes within hashes:
 
@@ -958,8 +961,6 @@ halogen = { type: 'halogen',
 
 ---
 
-
-## Nested Hashes
 
 To access a value within a nested hash, first we have to access the key of the outer hash. This retrieves its value, and then we have to access a key in this value to ultimately retrieve the value of the inner hash.
 
@@ -989,8 +990,6 @@ Notice we needed to access the light bulb's store's price by using two sets of s
 
 ---
 
-
-## Nested Hashes
 
 ```ruby
 

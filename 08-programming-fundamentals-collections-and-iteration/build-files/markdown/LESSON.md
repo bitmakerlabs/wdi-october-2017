@@ -973,9 +973,13 @@ light.delete(:colour)
 
 for: alexa readme slides
 
-## Nested Hashes
+layout: true
 
---
+# Nested Hashes
+
+---
+
+for: alexa readme slides
 
 It's common to nest hashes within hashes:
 
@@ -1004,8 +1008,6 @@ halogen = { type: 'halogen',
 ---
 
 for: alexa readme slides
-
-## Nested Hashes
 
 To access a value within a nested hash, first we have to access the key of the outer hash. This retrieves its value, and then we have to access a key in this value to ultimately retrieve the value of the inner hash.
 
@@ -1036,8 +1038,6 @@ Notice we needed to access the light bulb's store's price by using two sets of s
 ---
 
 for: alexa readme slides
-
-## Nested Hashes
 
 ```ruby
 

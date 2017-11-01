@@ -528,7 +528,7 @@ To remove the key / value from the hash, use `delete`:
 light.delete(:colour)
 ```
 
-## Nested Hashes
+# Nested Hashes
 
 It's common to nest hashes within hashes:
 
@@ -552,8 +552,6 @@ halogen = { type: 'halogen',
 
 ```
 
-## Nested Hashes
-
 To access a value within a nested hash, first we have to access the key of the outer hash. This retrieves its value, and then we have to access a key in this value to ultimately retrieve the value of the inner hash.
 
 We do this by doubling-up the square brackets beside each other:
@@ -573,8 +571,6 @@ Notice we needed to access the light bulb's store's price by using two sets of s
 
 `led[:store]` returns the nested hash:
 `{ name: 'home depot', address: '1000 gerrard st', price: 1.99 }`
-
-## Nested Hashes
 
 ```ruby
 
