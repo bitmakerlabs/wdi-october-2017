@@ -1,8 +1,20 @@
+require 'pry'
+require_relative 'player.rb'
+
 class Game
 
   def initialize(number_of_players)
+    @width = 500
+    @height = 400
+
+    puts "Width: #{@width}"
+    puts "Height: #{@height}"
+
     number_of_players.times do
-      @players << Player.new((0..@width).sample, (0..@height).sample)
+      x_position = (0..@width).to_a.sample
+      y_position = (0..@height).to_a.sample
+
+      @players << Player.new
     end
   end
 
@@ -13,7 +25,6 @@ class Game
 
     g = Game.new(number_of_players)
     game.turn
-    end
   end
 
   def turn
