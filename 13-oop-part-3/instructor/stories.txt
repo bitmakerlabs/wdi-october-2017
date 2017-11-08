@@ -1,0 +1,25 @@
+1 - As a user, I should be able to see a list of contacts
+1 - As a user, I should be able to add a new contact
+1 - As a user, I should be able to find/select a contact
+1 - As a user, I should be able to view the details of a contact
+
+2 - As a user, I should be able to edit a contact
+2 - As a user, I should be able to call a contact
+2 - As a user, I should be able to delete a contact
+
+3 - As a user, I should be able to share a contact by text message
+3 - As a user, I should be able to text a contact
+3 - As a user, I should be able to add a picture to a contact
+3 - As a user, I should be able to group contacts
+3 - As a user, I should be able to search for a contact
+3 - As a user, I should be able to favourite a contact
+3 - As a user, I should be able to see a list of my favourite contacts
+3 - As a user, I should be able to see a list of recently contacted contacts
+3 - As a user, I should be able to block a contact
+3 - As a user, I should be able to sort my contacts alphabetically
+
+4 - As a user, I should be able to set a custom ringtone to a contact
+4 - As a user, I should be able to 'poke' a contact
+4 - As a user, I should be able to share my location with a contact
+4 - As a user, I should be able to backup my list of contacts
+4 - As a user, I should be able to export my list of contacts
