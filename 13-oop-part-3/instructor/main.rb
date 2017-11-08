@@ -1,7 +1,18 @@
 require './contact.rb'
 
-clark = Contact.new('Clark', 'Kent', 'clark@dailyplanet.com', 'goes into the phone booth a lot...')
-diana = Contact.new('Diana', 'Prince', 'diana@amazon.com', '')
+Contact.create('Clark', 'Kent', 'clark@dailyplanet.com', 'goes into the phone booth a lot...')
+Contact.create('Diana', 'Prince', 'diana@amazon.com')
+Contact.create('Bruce', 'Wayne', 'bruce@wayne-foundation.com', 'kinda scary guy')
+Contact.create('Barry', 'Allen', 'barry@centralcitypolice.com')
+Contact.create('Dave', 'Wong', '')
+Contact.create('Dave', 'Wong', '')
 
-puts clark.full_name
-puts diana.full_name
+jen = Contact.new('Jen', 'Jones', '')
+jen.save
+
+Contact.all.each do |contact|
+  puts "#{ contact.id } #{ contact.full_name }"
+end
+
+#mystery_person = Contact.find(1004)
+#puts mystery_person.full_name
