@@ -1,0 +1,17 @@
+<?DOCTYPE html>
+<html>
+  <head>
+    <title>My awesome page</title>
+  </head>
+  <body>
+    <h1>Hello world!</h1>
+
+    <p>The current time is: <%= @current_time %></p>
+
+    <ul>
+      <% @todo_list.each do |item| %>
+        <li><%= item %></li>
+      <% end %>
+    </ul>
+  </body>
+</html>
