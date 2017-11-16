@@ -28,5 +28,16 @@ get '/recipes' do
 end
 
 get '/recipes/:id' do
+  recipes = {
+    1 => 'BBQ Ribs',
+    2 => 'Avocado Sushi',
+    3 => 'Gluten-free Cookies',
+    4 => 'Nitrogen Chocolate Ice Cream'
+  }
+
+  recipe_id = params[:id].to_i
+
+  @recipe_name = recipes[recipe_id]
+
   erb :recipe
 end
