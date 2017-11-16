@@ -1,1 +1,11 @@
-<h1><%= @recipe_name %></h1>
+<h1><%= @recipe.name %></h1>
+
+<p>
+  <strong>Prep Time: </strong><%= @recipe.prep_time %>
+</p>
+
+<h2>Instructions</h2>
+
+<p>
+  <%= @recipe.instructions %>
+</p>
