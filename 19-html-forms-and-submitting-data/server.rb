@@ -11,7 +11,17 @@ get '/films' do
 end
 
 post '/films' do
-  "POST request: #{params}"
+  @film = Film.new
+
+  @film.title = params[:title]
+  @film.description = params[:summary]
+  @film.rating = params[:rating]
+
+  @film.save
+
+  puts "POST request: #{params}"
+
+  redirect to('/')
 end
 
 put '/films' do
@@ -20,4 +30,8 @@ end
 
 delete '/films' do
   "DELETE request: #{params}"
+end
+
+get '/contacts/:id' do
+  params[:id]
 end

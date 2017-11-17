@@ -58,3 +58,10 @@ fieldset > label {
 [type=email] {
   padding: 0.25em 0.5em;
 }
+
+[type=submit] {
+  border: 0;
+  background-color: cobaltblue;
+  color: white;
+  font-size: 24px;
+}
