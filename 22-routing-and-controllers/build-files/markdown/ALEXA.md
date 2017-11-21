@@ -422,9 +422,3 @@ def destroy
   redirect_to products_url
 end
 ```
-
-## Recap and Further Resources
-
-#### Rails Guides: Rails Routing from the Outside In:<br>[http://guides.rubyonrails.org/routing.html](http://guides.rubyonrails.org/routing.html)
-
-#### Rails Guides: Action Controller Overview:<br>[http://guides.rubyonrails.org/action_controller_overview.html](http://guides.rubyonrails.org/action_controller_overview.html)

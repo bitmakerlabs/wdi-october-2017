@@ -1,22 +1,52 @@
+for: slides
+
+layout: true
+
+### *Today's Lesson*
+
+---
+
+for: alexa readme slides
+
 # Routing and Controllers - An Introduction
+
+--
 
 Today we'll take our first deep dive into Rails and learn about Routing and Controllers.
 
+---
+
+for: alexa readme slides
+
+layout: true
+
 # Agenda
 
-### Introduction <small>(5 min)</small>
+---
+
+for: alexa readme slides
+
+### Introduction .agenda-time[(5 min)]
   - Intro
   - Agenda
   - Overview
 
-### Routing <small>(25 min)</small>
+---
+
+for: alexa readme slides
+
+### Routing .agenda-time[(25 min)]
   - Static Segments
   - Dynamic Segments
   - Path Helpers
   - How To Display Routes
   - Resource Routing
 
-### Controllers <small>(35 min)</small>
+---
+
+for: alexa readme slides
+
+### Controllers .agenda-time[(35 min)]
   - CRUD
   - Seven Controller Methods: Overview
   - Views
@@ -30,12 +60,37 @@ Today we'll take our first deep dive into Rails and learn about Routing and Cont
     - Update
     - Destroy
 
-### Wrap-up <small>(5 min)</small>
+---
+
+for: alexa readme slides
+
+### Wrap-up .agenda-time[(5 min)]
   - Recap
   - Further Resources
 
-### Lesson Exercise: Ipsum's Fairground <small>(remaining time)</small>
+--
+
+### Lesson Exercise: Ipsum's Fairground .agenda-time[(remaining time)]
   - Let's create a Rails App!
+
+---
+
+for: slides
+
+layout: false
+
+## Overview
+
+When an http request hits a Rails app, the **Router** analyzes the request and decides which **Controller** it will direct it to.
+
+The **Controller** works with any **Models** necessary, and then renders the appropriate **View**.
+
+
+[![](Ruby-on-Rails-Request-Response-Cycle-small.png)](https://github.com/bitmakerlabs/wdi-july-2017/raw/master/22-routing-and-controllers/Ruby%20on%20Rails%20-%20Request%20Response%20Cycle.pdf)
+
+---
+
+for: alexa readme
 
 ## Overview
 
@@ -45,15 +100,49 @@ The **Controller** works with any **Models** necessary, and then renders the app
 
 ![](slides/Ruby-on-Rails-Request-Response-Cycle-big.png)
 
+---
+
+for: slides
+
+![](Ruby-on-Rails-Request-Response-Cycle-big.png)
+
+---
+
+for: alexa readme slides
+
+layout: true
+
 # Routing
+
+---
+
+for: alexa readme slides
+
+--
+
+for: alexa readme slides
 
 Routes are defined in `config/routes.rb`.
 
+--
+
 The router looks at the **http request method** and **path** of the request, and then using pattern matching, calls the appropriate **controller** and **action** (ruby method).
+
+---
+
+for: alexa readme slides
+
+layout: true
 
 # Routing Example
 
+---
+
+for: alexa readme slides
+
 A visitor looking for details on a particular product goes to `http://store.com/products/55` with their web browser.
+
+--
 
 We have the following route defined:
 
@@ -67,19 +156,37 @@ end
 
 This routes matches the request like so:
 
+--
+
 - `get` - matches the ***http request method***.
+
+--
 
 - `/products/` - matches **/products/** in http://store.com/products/55
 
+--
+
 - `:id` - as it starts with a colon `:`, it's a wildcard match and will match anything. Therefore it matches **55** in http://store.com/products/55
+
+---
+
+for: alexa readme slides
 
 It then sends that request to:
 
+--
+
 - `products` - the **Products**Controller
+
+--
 
 - `show` - the **show** action (ruby method) in the ProductsController
 
+--
+
 Inside of the Products Controller:
+
+--
 
 ```ruby
 # app/controllers/products_controller.rb
@@ -92,12 +199,25 @@ class ProductsController < ApplicationController
 
 end
 ```
+--
 
 The show method finds the product and then renders and returns the view.
 
+---
+
+for: alexa readme slides
+
+layout: true
+
 # Routing - Static Segments
 
+---
+
+for: alexa readme slides
+
 Anything static (not prefixed with a **colon**) must be matched exactly for its route to take effect.
+
+--
 
 In the following example:
 
@@ -107,9 +227,23 @@ get '/products' => 'products#index'
 
 `products` is a static segment.
 
+---
+
+for: alexa readme slides
+
+layout: true
+
 # Routing - Dynamic Segments
 
+---
+
+for: alexa readme slides
+
+--
+
 Anything dynamic (prefixed with a **colon**) can match on *anything*.
+
+--
 
 In the following example:
 
@@ -119,6 +253,8 @@ get '/products/:id' => 'products#show'
 
 `:id` is a dynamic segment.
 
+--
+
 The following would be legitimate matches:
 
 ```bash
@@ -126,11 +262,17 @@ http://localhost:3000/products/333
 http://localhost:3000/products/spiderman_comic
 ```
 
+---
+
+for: alexa readme slides
+
 Our route:
 
 ```ruby
 get '/products/:id' => 'products#show'
 ```
+
+--
 
 The URL sent by the browser:
 
@@ -138,7 +280,13 @@ The URL sent by the browser:
 http://localhost:3000/products/333
 ```
 
+--
+
 `:id` captures `333`
+
+---
+
+for: alexa readme slides
 
 Our route:
 
@@ -146,36 +294,68 @@ Our route:
 get '/products/:id' => 'products#show'
 ```
 
+--
+
 The URL sent by the browser:
 
 ```bash
 http://localhost:3000/products/spiderman_comic
 ```
 
+--
+
 `:id` captures `spiderman_comic`
+
+---
+
+for: alexa readme slides
+
+layout: true
 
 # Path Helpers
 
+---
+
+for: alexa readme slides
+
 Along with deciding how it will dispatch an http request, the router can create Path and URL helpers that can be used in Controllers and Views.
 
+--
+
 For example, if we add `as: 'product'` to the end of our route like so:
+
+--
 
 ```ruby
 # config/routes.rb
 get 'products/:id' => 'products#show', as: 'product'
 ```
 
+--
+
 We will be able to use the following methods in our views and controllers to generate a links to the product:
 
+--
+
 `product_path(55)` generates `/products/55`
+
+---
+
+for: alexa readme slides
+
+layout: false
 
 # Displaying Routes
 
 To see what routes currently exist in your application, use the following from the command line:
 
+--
+
 ```bash
 rails routes
 ```
+
+--
 
 For our products example above, we would see the following:
 
@@ -184,9 +364,15 @@ Prefix   Verb  URI Pattern    Controller#Action
 product  GET   /products/:id  products#show
 ```
 
+---
+
+for: alexa readme slides
+
 # Resource Routing
 
 Shorthand for creating the standard routes is called Resourceful Routing.
+
+--
 
 ```ruby
 # config/routes.rb
@@ -194,7 +380,11 @@ Shorthand for creating the standard routes is called Resourceful Routing.
 resources :products
 ```
 
+--
+
 is the equivalent of:
+
+--
 
 ```ruby
 # config/routes.rb
@@ -207,36 +397,70 @@ patch  'products/:id'      => 'products#update'
 delete 'products/:id'      => 'products#destroy'
 ```
 
+---
+
+for: alexa readme slides
+
 # Root
 
 To direct a url without a path (aka the `root` path), use:
+
+--
 
 ```ruby
 root 'products#index'
 ```
 
+--
+
 If your url is `localhost:3000`, then this would direct
 `http://localhost:3000/` to the `index` method in the `ProductsController`.
 
+---
+
+for: alexa readme slides
+
+layout: false
+
 # Controllers
+
+--
 
 ## CRUD
 
 When we think about data and how we manipulate it, we use the acronym CRUD to describe what we can do with this data:
 
+--
+
 - **C**reate a record
+
+--
 
 - **R**ead a record
 
+--
+
 - **U**pdate a record
+
+--
 
 - **D**elete a record
 
+--
+
 You'll hear developers say things like "Oh ya, it's just a basic **CRUD** app." (and one day, you'll say it too).
+
+---
+
+for: alexa readme slides
+
+layout: false
 
 # Seven Controller Methods - Overview
 
 A standard controller will have the following methods:
+
+--
 
 ```
              HTTP
@@ -253,11 +477,22 @@ destroy     delete    remove a single record
 
 ```
 
+---
+
+for: alexa readme slides
+
 # Views
+
+--
 
 For `get` requests, the **controller** will implicitly try to render (create html) from a template in a folder named after the controller, and a file named after the method.
 
+--
+
 For example, a `ProductsController` will try to render the following:
+
+--
+
 
 ```ruby
 class ProductsController < ApplicationController
@@ -281,15 +516,35 @@ class ProductsController < ApplicationController
 end
 ```
 
+---
+
+for: alexa readme slides
+
+layout: true
+
 # Params Hash
+
+---
+
+for: alexa readme slides
 
 Information about the http request will be accessible via the **Params Hash**.
 
+--
+
 It will contain:
+
+--
 
 - form data from a `post` or `patch` request
 
+--
+
 - dynamic segment route matches in url. For example:
+
+---
+
+for: alexa readme slides
 
 For example:
 
@@ -297,9 +552,13 @@ For example:
 get 'products/:id' => 'products#show'
 ```
 
+--
+
 would match the route:
 
 `http://localhost:3000/products/333`
+
+--
 
 and would make `{ id: 333 }` accessible via the params hash:
 
@@ -307,11 +566,23 @@ and would make `{ id: 333 }` accessible via the params hash:
 params[:id]  # returns 333
 ```
 
+---
+
+for: alexa readme slides
+
+layout: true
+
 # Seven Controller Methods - In-depth
+
+---
+
+for: alexa readme slides
 
 ### Index
 
 For retrieving a collection of items.
+
+--
 
 ```ruby
 def index
@@ -321,11 +592,20 @@ end
 
 Notice how `@products` is pluralized. This is because it's a collection (zero, one, two or more) of all the products.
 
+--
+
 Pluralizing variable names for collections is a convention. Technically, a variable name for a collection can be singular, but your code will be easier to read and reason about if you pluralize it.
+
+
+---
+
+for: alexa readme slides
 
 ### Show
 
 For retrieving a single item.
+
+--
 
 ```ruby
 def show
@@ -333,11 +613,19 @@ def show
 end
 ```
 
+--
+
 Notice how `@product` is singular. This is because it's only one item.
+
+---
+
+for: alexa readme slides
 
 ### New
 
 For retrieving a form for a new item.
+
+--
 
 ```ruby
 def new
@@ -345,11 +633,19 @@ def new
 end
 ```
 
+--
+
 We setup a `new` product and store it inside the `@product` **instance variable**. Note that this `product` hasn't yet been saved to the database.
+
+---
+
+for: alexa readme slides
 
 ### Create:
 
 For processing a **post** request to create a new item.
+
+--
 
 ```ruby
 def create
@@ -369,14 +665,22 @@ end
 ```
 
 <small>
+--
 If `@product` successfully saves, it will now be stored permanently in the database.
 <br>
+--
 If `@product` doesn't save, the form will be displayed again. It will contain validation errors and the fields filled out from the previous submission.
 </small>
+
+---
+
+for: alexa readme slides
 
 ### Edit
 
 For retrieving a form for an existing item.
+
+--
 
 ```ruby
 def edit
@@ -384,11 +688,19 @@ def edit
 end
 ```
 
+--
+
 This loads the product from the database and stores its current state inside the `@product` **instance variable**. Note that the **edit** method does not yet save the changes to `@product`.
+
+---
+
+for: alexa readme slides
 
 ### Update
 
 For processing a **patch** request to update an existing item.
+
+--
 
 ```ruby
 def update
@@ -408,11 +720,19 @@ def update
 end
 ```
 
+--
+
 If the `product` successfully saves with the altered values from the form, the changes will be stored permanently in the database.
+
+---
+
+for: alexa readme slides
 
 ### Destroy
 
 For removing an item from the database.
+
+--
 
 ```ruby
 def destroy
@@ -423,8 +743,28 @@ def destroy
 end
 ```
 
+---
+
+for: readme slides
+
+layout: false
+
 ## Recap and Further Resources
+
+--
 
 #### Rails Guides: Rails Routing from the Outside In:<br>[http://guides.rubyonrails.org/routing.html](http://guides.rubyonrails.org/routing.html)
 
+--
+
 #### Rails Guides: Action Controller Overview:<br>[http://guides.rubyonrails.org/action_controller_overview.html](http://guides.rubyonrails.org/action_controller_overview.html)
+
+---
+
+for: slides
+
+## Lesson Exercise
+
+# Ipsum's Fairground
+
+Let's create a Rails App!
