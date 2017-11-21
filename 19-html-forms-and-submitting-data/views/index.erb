@@ -6,41 +6,133 @@
 </ul>
 
 <h2>New Film</h2>
-<form class="new-film" action="/films" method="post">
+<form class="new-film" action="/films" method="post" enctype="multipart/form-data">
   <div>
     <!-- input type: text -->
+    <label for="film-title">
+      <span>Title:</span>
+      <input type="text" name="title" id="film-title" placeholder="Back to the Future">
+    </label>
   </div>
-
+  <div>
+    <!-- input type: text -->
+    <label for="film-director">
+      <span>Director:</span>
+      <input type="text" name="director" id="film-director" placeholder="Michael Bay">
+    </label>
+  </div>
+  <div>
+    <!-- input type: text -->
+    <label for="film-date">
+      <span>Release Date:</span>
+      <input type="date" name="date" id="film-date">
+    </label>
+  </div>
   <div>
     <!-- input types: date / time / email / tel / url / color / range / number / search -->
+    <!-- <input type="date"><br>
+    <input type="time"><br>
+    <input type="email"><br>
+    <input type="tel"><br>
+    <input type="url"><br>
+    <input type="color"><br>
+    <input type="range"><br>
+    <input type="number"><br>
+    <input type="search"> -->
   </div>
 
   <div>
     <!-- textarea -->
+    <label for="film-summary">Summary:</label>
+    <textarea name="summary" id="film-summary" rows="8" cols="80" placeholder="yooyoyoyo"></textarea>
   </div>
 
-  <div>
+  <fieldset>
+  <legend>Rating</legend>
   <!-- input radio -->
-  </div>
+  <label>
+  <input type="radio" name="rating" value="1" checked="checked">
+  <span>1</span>
+</label>
 
-  <div>
+  <label>
+  <input type="radio" name="rating" value="2">
+  <span>2</span>
+</label>
+
+  <label>
+  <input type="radio" name="rating" value="3">
+  <span>3</span>
+</label>
+
+  <label>
+  <input type="radio" name="rating" value="4">
+  <span>4</span>
+</label>
+
+  <label>
+  <input type="radio" name="rating" value="5">
+  <span>5</span>
+</label>
+
+  </fieldset>
+
+  <fieldset>
+  <legend>Genre</legend>
   <!-- input checkbox -->
-  </div>
+  <label>
+  <input type="checkbox" name="genre" value="action">
+  <span>Action</span>
+  </label>
+
+  <label>
+  <input type="checkbox" name="genre[]" value="romance">
+  <span>Romance</span>
+  </label>
+
+  <label>
+  <input type="checkbox" name="genre[]" value="comedy">
+  <span>Comedy</span>
+  </label>
+
+  <label>
+  <input type="checkbox" name="genre[]" value="horror">
+  <span>Horror</span>
+  </label>
+
+  <label>
+  <input type="checkbox" name="genre[]" value="Drama">
+  <span>Drama</span>
+  </label>
+</fieldset>
 
 
   <div>
     <!-- select / option -->
+    <label for="film-country">Country:</label>
+    <select name="country" id="film-country">
+    <option value="None">Select a Country</option>
+    <option value="CA">Canada</option>
+    <option value="USA">United States</option>
+    <option value="MX">Mexico</option>
+    <option value="JP">Japan</option>
+    <option value="CN">China</option>
+    </select>
   </div>
 
 
   <div>
     <!-- file -->
+    <label for="film-poster">Poster</label>
+    <input type="file" name="poster" id="film-poster">
   </div>
 
   <!-- hidden -->
+  <input type="hidden" name="admin" value="true">
 
   <div>
     <!-- input submit / button -->
+    <input type="submit" value="Go">
   </div>
 
 </form>

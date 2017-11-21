@@ -1,28 +1,14 @@
-class Film
-  attr_accessor :id, :title, :country, :genre, :rating, :description
+gem "activerecord", "=4.2.10"
+require "mini_record"
+require "active_record"
 
-  @@library = []
-  @@id = 1;
+ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'dbfile.sqlite3')
 
-  def initialize(options)
-    @title = options[:title]
-    @country = options[:country]
-    @genre = options[:genre]
-    @rating = options[:rating]
-    @description = options[:description]
-    @id = @@id
-
-    @@id += 1
-  end
-
-  def self.create(options)
-    film = self.new(options)
-    @@library << film
-    return film
-  end
-
-  def self.all
-    return @@library
-  end
-
+class Film < ActiveRecord::Base
+  field :title, as: :text
+  field :country, as: :text
+  field :genre, as: :text
+  field :rating, as: :integer
+  field :description, as: :text
 end
+Film.auto_upgrade!

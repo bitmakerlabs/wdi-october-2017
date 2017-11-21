@@ -1,0 +1,7 @@
+<h1>Posts#index</h1>
+
+<% link_to "New Post", new_post_path %>
+
+<%if @posts.empty? %>
+  <p>There are no posts yet..</p>
+<%end%>

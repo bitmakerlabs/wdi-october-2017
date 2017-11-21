@@ -1,0 +1,7 @@
+<% @recipes.each_with_index do |key, i| %>
+  <li>
+    <a href="/recipes/<%= i+1 %>">
+    <%= @recipes[i + 1] %>
+    </a>
+  </li>
+<% end %>
