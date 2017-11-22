@@ -1,0 +1,16 @@
+
+<%= form_for restaurant do |form_helper| %>
+  <p>
+    <%= form_helper.label :name %>
+    <%= form_helper.text_field :name, placeholder: "type here", class: "classname" %>
+  </p>
+
+  <p>
+    <%= form_helper.label :capacity %>
+    <%= form_helper.number_field :capacity %>
+  </p>
+
+  <p>
+    <%= form_helper.submit %>
+  </p>
+<% end  %>
