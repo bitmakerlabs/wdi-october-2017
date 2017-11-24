@@ -16,11 +16,19 @@ class Track < ApplicationRecord
   end
 
   def self.shorter_than(milliseconds)
-    where('milliseconds < ?', milliseconds)
+    if milliseconds && milliseconds > 0
+      where('milliseconds < ?', milliseconds)
+    else
+      all
+    end
   end
 
   def self.longer_than_or_equal_to(milliseconds)
-    where('milliseconds >= ?', milliseconds)
+    if milliseconds > 0
+      where('milliseconds >= ?', milliseconds)
+    else
+      all
+    end
   end
 
   def self.starts_with(char)
