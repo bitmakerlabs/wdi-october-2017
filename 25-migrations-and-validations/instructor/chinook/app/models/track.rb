@@ -16,11 +16,15 @@ class Track < ApplicationRecord
   end
 
   def self.shorter_than(milliseconds)
-    where("milliseconds < ?", milliseconds)
+    where('milliseconds < ?', milliseconds)
   end
 
   def self.longer_than_or_equal_to(milliseconds)
-    where("milliseconds >= ?", milliseconds)
+    where('milliseconds >= ?', milliseconds)
+  end
+
+  def self.starts_with(char)
+    where('name ILIKE ?', "#{ char }%")
   end
 
 end
