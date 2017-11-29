@@ -1,6 +1,20 @@
 <p><%= link_to 'New User', new_users_path %></p>
 <p><%= link_to 'Login', new_sessions_path %></p>
 
+<%
+  def user_is_logged_in
+    true
+  end
+%>
+
+<p>
+  <% if user_is_logged_in %>
+    Your balance is $<%= 0 %>
+  <% else %>
+    Please login to see your balance.
+  <% end %>
+</p>
+
 <h1>All our Games</h1>
 
 <p>All our games are listed here</p>
