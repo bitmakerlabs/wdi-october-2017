@@ -7,6 +7,10 @@ class SessionsController < ApplicationController
 
     if u && u.authenticate(params[:session][:password])
       flash[:notice] = 'Login successful'
+
+      # Put on the wristband
+      session[:user_id] = u.id
+
       redirect_to root_url
     else
       flash[:error] = 'Access DENIED!'
@@ -18,3 +22,8 @@ class SessionsController < ApplicationController
   def destroy
   end
 end
+
+# These 3 magic hashes are always avilable to you in a SessionsController
+# params
+# flash
+# session
