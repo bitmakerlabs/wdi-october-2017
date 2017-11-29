@@ -1,19 +1,14 @@
-<p><%= link_to 'New User', new_users_path %></p>
-<p><%= link_to 'Login', new_sessions_path %></p>
 
-<%
-  def user_is_logged_in
-    session[:user_id]
-  end
-%>
-
-<p>
-  <% if user_is_logged_in %>
-    Your balance is $<%= 0 %>
-  <% else %>
-    Please login to see your balance.
-  <% end %>
-</p>
+<% if session[:user_id] %>
+  <p>
+    <%= link_to 'Logout', sessions_path, method: :delete %>
+  </p>
+  Your balance is $<%= 0 %>
+<% else %>
+  <p><%= link_to 'New User', new_users_path %></p>
+  <p><%= link_to 'Login', new_sessions_path %></p>
+  Please login to see your balance.
+<% end %>
 
 <h1>All our Games</h1>
 
