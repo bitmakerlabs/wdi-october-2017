@@ -25,7 +25,14 @@ class RestaurantTest < ActiveSupport::TestCase
   end
 
   def test_restaurant_is_invalid_without_closing_hour
-    skip
+    # arrange
+    restaurant = Restaurant.new(name: "Chez Spencer", opening_hour: 4)
+
+    # act
+    valid = restaurant.save
+
+    # assert
+    refute(valid)
   end
 
   def test_restaurant_is_available_when_empty_during_opening_hours
