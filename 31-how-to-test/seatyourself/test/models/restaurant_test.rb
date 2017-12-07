@@ -14,7 +14,14 @@ class RestaurantTest < ActiveSupport::TestCase
   end
 
   def test_restaurant_is_invalid_without_opening_hour
-    skip
+    # arrange
+    restaurant = Restaurant.new(name: "Tyler's Kitchen", closing_hour: 3)
+
+    # act
+    if_valid = restaurant.valid?
+
+    # assert
+    refute(if_valid)
   end
 
   def test_restaurant_is_invalid_without_closing_hour
