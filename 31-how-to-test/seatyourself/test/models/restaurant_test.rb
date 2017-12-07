@@ -3,7 +3,14 @@ require 'test_helper'
 class RestaurantTest < ActiveSupport::TestCase
 
   def test_restaurant_is_invalid_without_name
-    skip
+    # arrange
+    restaurant = Restaurant.new(opening_hour: 10, closing_hour: 23)
+
+    # Act
+    is_valid = restaurant.valid?
+
+    # assert
+    refute(is_valid)
   end
 
   def test_restaurant_is_invalid_without_opening_hour
