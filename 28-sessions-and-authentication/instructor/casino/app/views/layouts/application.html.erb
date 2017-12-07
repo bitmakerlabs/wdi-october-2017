@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Casino</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if current_user %>
+      <p>
+        <%= link_to 'Home', root_path %>
+        |
+        <%= link_to 'Logout', sessions_path, method: :delete %>
+      </p>
+
+      Hello <%= current_user.email %>, Your balance is $<%= 0 %>
+    <% else %>
+      <p>
+        <%= link_to 'New User', new_users_path %>
+        |
+        <%= link_to 'Login', new_sessions_path %>
+      </p>
+
+      Please login to see your balance.
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
