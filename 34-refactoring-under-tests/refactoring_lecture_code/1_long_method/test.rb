@@ -21,6 +21,6 @@ class LongMethodTest < Minitest::Test
     Treadmill.stub(:first_available, treadmill) do
       work_out
     end
-    treadmill.verify
+    assert treadmill.verify
   end
 end

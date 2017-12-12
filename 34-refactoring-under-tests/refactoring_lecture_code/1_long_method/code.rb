@@ -1,18 +1,32 @@
 def work_out
-  treadmill = Treadmill.first_available
+  jogging
+  running
+  walking
+end
 
-  treadmill.pace = :jogging
-  treadmill.set_time(5)
-  treadmill.start
-  treadmill.stop
+def treadmill
+  Treadmill.first_available
+end
 
-  treadmill.pace = :running
-  treadmill.set_time(40)
-  treadmill.start
-  treadmill.stop
+def treadmill_session(activity, minutes)
+  treadmill.pace = activity
+  treadmill.set_time(minutes)
+  start_stop
+end
 
-  treadmill.pace = :walking
-  treadmill.set_time(5)
+def walking
+  treadmill_session(:walking, 5)
+end
+
+def running
+  treadmill_session(:running, 40)
+end
+
+def jogging
+  treadmill_session(:jogging, 5)
+end
+
+def start_stop
   treadmill.start
   treadmill.stop
 end
