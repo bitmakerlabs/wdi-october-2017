@@ -9,7 +9,7 @@ class BadNameTest < Minitest::Test
     interest = 12.0
     years = 5
 
-    loan = tot(principal, interest, years)
+    loan = total_accrued_amount_on_loan(principal, interest, years)
 
     assert_equal(1600, loan)
   end
@@ -19,7 +19,7 @@ class BadNameTest < Minitest::Test
     interest = 0.0
     years = 5
 
-    loan = tot(principal, interest, years)
+    loan = total_accrued_amount_on_loan(principal, interest, years)
 
     assert_equal(1000, loan)
   end
@@ -29,7 +29,7 @@ class BadNameTest < Minitest::Test
     interest = 9.0
     years = 0
 
-    loan = tot(principal, interest, years)
+    loan = total_accrued_amount_on_loan(principal, interest, years)
 
     assert_equal(1000, loan)
   end
@@ -39,7 +39,7 @@ class BadNameTest < Minitest::Test
     interest = 9.0
     years = 10
 
-    loan = tot(principal, interest, years)
+    loan = total_accrued_amount_on_loan(principal, interest, years)
 
     assert_equal(0.0, loan)
   end
