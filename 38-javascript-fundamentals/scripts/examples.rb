@@ -6,6 +6,8 @@ a_floating_point_number = 3.1415
 a_string = 'this is a string'
 another_string = "This is also a string"
 
+
+
 # Booleans (True and False)
 a_true = true
 a_false = false
