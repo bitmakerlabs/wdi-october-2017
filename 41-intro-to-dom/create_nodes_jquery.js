@@ -1,1 +1,0 @@
-// jQuery DOM Manipulation

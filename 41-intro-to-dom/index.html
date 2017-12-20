@@ -3,72 +3,28 @@
   <head>
     <meta charset="UTF-8">
     <title>Manipulating the DOM</title>
-
-    <style>
-      html {
-        box-sizing: border-box;
-      }
-
-      *,
-      *:before,
-      *:after {
-        box-sizing: inherit;
-      }
-
-      body {
-        margin: 0;
-        padding: 0;
-        font-size: 24px;
-        line-height: 1.5em;
-        font-family: Georgia, Times, serif;
-      }
-
-      body {
-        width: 80%;
-        margin: 0 auto;
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
-
-      .list-unstyled {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-      }
-
-      .item {
-        margin: 0;
-        padding: 0.25em 0;
-        background-color: #ccc;
-      }
-
-      .item:nth-child(2n) {
-        background-color: #f0f0f0;
-      }
-
-      .item.highlight {
-        background-color: yellow;
-      }
-    </style>
+    <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
-    <header>
-      <h1 id="title">The Document Object Model</h1>
-      <h2 id="subtitle">How your browser sees your HTML</h2>
-    </header>
+    <h1 id="page-title">Manipulating the DOM</h1>
+
     <main>
-      <ul class="list-unstyled">
-        <li class="item first">Item 1</li>
-        <li class="item second">Item 2</li>
-        <li class="item third">Item 3</li>
-        <li class="item fourth">Item 4</li>
-        <li class="item fifth">Item 5</li>
+      <img src="img/blinking.gif">
+
+      <h2>TODO</h2>
+      <ul id="todo">
+        <li class="item">Wake up</li>
+        <li class="item">Drink coffee</li>
+        <li class="item">Give lecture</li>
+        <li class="item">Take nap</li>
       </ul>
+
+      <form>
+        <input type="text" placeholder="New Todo">
+        <input type="submit" value="Go!">
+      </form>
+
+      <button onclick="console.log('I have been clicked!')">Click me!</button>
     </main>
   </body>
-
-
-
 </html>
