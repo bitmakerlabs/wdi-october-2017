@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var boxMaker = document.querySelector('#box-maker');
 
+  container.addEventListener('click', function(e) {
+    if ( e.target.classList.contains('circle') ) {
+      e.target.remove();
+    }
+  });
+
   boxMaker.addEventListener('click', function() {
       var x = Math.ceil(Math.random() * 400),
           y = Math.ceil(Math.random() * 200),
@@ -23,8 +29,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
       circle.innerHTML = count++;
 
+      // circle.addEventListener('click', function(e) {
+      //   this.remove();
+      //   // e.target.remove();
+      //   console.log('circle was clicked');
+      // });
+
       container.append(circle);
 
       console.log('link was clicked');
   });
+
+  // FAIL: Not gonna work, no circles on page yet!
+  // var circles = document.querySelectorAll('.circle');
+  //
+  // circles.forEach(function(circle) {
+  //   circle.addEventListener('click', function() {
+  //     console.log('circle was clicked');
+  //   });
+  // })
 });
