@@ -1,0 +1,15 @@
+<h1>Todos</h1>
+
+<% if @todos.any? %>
+  <ul id="todos-list">
+    <% @todos.each do |todo| %>
+      <li><%= todo.content %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You're up to date!</p>
+<% end %>
+
+<%= render partial: 'form', locals: { todo: Todo.new } %>
+
+<%= link_to "New Todo", new_todo_path %>
