@@ -1,0 +1,18 @@
+<h1>Hi.. The Todos List</h1>
+
+
+<%= link_to 'Add new Todo', new_todo_path %>
+<% if @todos.any? %>
+
+  <div>
+    <ul id ="my_list">
+      <% @todos.each do |todo|  %>
+      <%= render partial: 'todo' , locals: {todo: todo} %>
+
+      <%end%>
+    </ul>
+  </div>
+<% else %>
+ <p> Sorry ! No Todos yet ! </p>
+<% end %>
+<%= render partial: 'form' , locals: {todo: @todo} %>
