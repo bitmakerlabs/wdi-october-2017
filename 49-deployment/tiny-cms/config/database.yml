@@ -2,10 +2,14 @@
 
 development:
   adapter: postgresql
+  host: localhost
+  username: postgres
   database: <%= app_name %>_development
 
 test:
   adapter: postgresql
+  host: localhost
+  username: postgres
   database: <%= app_name %>_test
 
 production:
